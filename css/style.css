@@ -9,7 +9,7 @@
   /* Colors */
   --primary-color: #aa80b9ff; /* Now the Secondary color (was Primary) */
   --secondary-color: #e99068ff; /* Now the Primary color (was Secondary) */
-  --tertiary-color: #7b4a34ff; /* Tertiary accent color #e99068ff */
+  --tertiary-color: #7b4a34ff; /* Tertiary accent color */
   --background-color: #ffffffff; /* General background */
   --highlight-color: #e7b9adff; /* Highlight color */
   /* Additional highlight */
@@ -30,10 +30,17 @@
   --logo-font: "agent_orangeregular";
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1c1c1c; /* Dark background */
+    --text-color: #ffffff; /* Text color for dark mode */
+  }
+}
+
 html {
   font-family: var(--main-font), Arial, Helvetica, sans-serif;
   font-size: var(--font-size-medium);
-  
+  background-color: var(--background-color);
 }
 .custom-shape-divider-bottom-1728563540 {
   position: absolute;
@@ -53,7 +60,7 @@ html {
 }
 
 .custom-shape-divider-bottom-1728563540 .shape-fill {
-  fill: #ffffff;
+  fill: var(--background-color);
 }
 
 .hero-section {
@@ -64,7 +71,7 @@ html {
   padding: 5rem 0;
   align-content: center;
   text-align: center;
-  color: var(--background-color);
+  color: var(--text-color);
 }
 
 .hero-img {
@@ -115,7 +122,7 @@ h1 {
 
 h2 {
   font-size: var(--font-size-xlarge);
-  color: var(--background-color);
+  color: var(--text-color);
 }
 
 h3 {
@@ -127,8 +134,9 @@ h3 {
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
+  /* border: 1px solid rgba(255, 255, 255, 0.125); */
   padding: 1rem;
+  color: var(--text-color);
 }
 
 .selling {
@@ -167,8 +175,9 @@ h3 {
 }
 
 .service-price {
-  font-size: calc(var(--font-size-medium)*1.25);
+  font-size: calc(var(--font-size-medium) * 1.25);
   font-weight: normal;
+  font-weight: bolder;
 }
 
 /* Flexbox layout for contact info */
@@ -196,12 +205,12 @@ h3 {
   align-content: center;
   justify-content: center;
   flex-direction: row;
-  color: var(--background-color);
+  color: var(--text-color);
   margin: 1rem;
 }
 
 .contact-container-first h3 {
-  color: var(--background-color);
+  color: var(--text-color);
   font-size: var(--font-size-medium);
   font-weight: normal;
   margin: 0px;
@@ -210,7 +219,7 @@ h3 {
 .contact-container-first a {
   font-weight: bold;
   font-size: var(--font-size-large);
-  color: var(--background-color);
+  color: var(--text-color);
 }
 
 .call {
@@ -227,6 +236,21 @@ h3 {
   padding: 1rem;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 5px;
+}
+
+.surcharge {
+  font-size: var(--font-size-small);
+  font-weight: lighter;
+}
+
+.contact-info p {
+  font-size: var(--font-size-medium);
+}
+
+.working-hours {
+  background-color: var(--highlight-color);
+  padding: 1rem;
+  border-radius: 8px;
 }
 
 @media (min-width: 48em) {
@@ -273,9 +297,17 @@ h3 {
     font-size: var(--font-size-xlarge);
     font-weight: bold;
   }
-  
+
   .service-price {
-    font-size: calc(var(--font-size-large)*1.25);
+    font-size: calc(var(--font-size-large) * 1.25);
     font-weight: normal;
+  }
+
+  .surcharge {
+    font-size: var(--font-size-medium);
+  }
+
+  .contact-info p {
+    font-size: var(--font-size-large);
   }
 }

@@ -2,22 +2,46 @@ body {
   margin: 0;
 }
 
+/* Light Mode (Default) */
+:root {
+  --primary-text-color: #000000;
+  --navicon-color: #333;
+  --header-background: rgba(255, 255, 255, 0.6);
+  --header-shadow: rgba(0, 0, 0, 0.1);
+  --header-border: rgba(255, 255, 255, 0.125);
+  --header-hover-background: rgba(255, 255, 255, 0.2);
+  --link-color: #000;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-text-color: #ffffff;
+    --navicon-color: #cccccc;
+    --header-background: rgba(0, 0, 0, 0.6);
+    --header-shadow: rgba(255, 255, 255, 0.1);
+    --header-border: rgba(0, 0, 0, 0.125);
+    --header-hover-background: rgba(0, 0, 0, 0.2);
+    --link-color: #fff;
+  }
+}
+
 /* Verlinkungen */
 a {
-  color: #000;
+  color: var(--link-color);
 }
 
 /* Header */
 .header {
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.6); /* Helleres Glas-Feeling */
-  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  background-color: var(--header-background);
+  box-shadow: 1px 1px 4px 0 var(--header-shadow);
   position: fixed;
   width: 100%;
   z-index: 3;
   border-radius: 0px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
+  border: 1px solid var(--header-border);
 }
 
 .header ul {
@@ -25,19 +49,19 @@ a {
   padding: 0;
   list-style: none;
   overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.4); /* Halbtransparent für Glas-Effekt */
+  background-color: var(--header-background); /* Halbtransparent für Glas-Effekt */
 }
 
 .header li a {
   display: block;
   padding: 20px 20px;
-  border-right: 1px solid rgba(255, 255, 255, 0.125);
+  border-right: 1px solid var(--header-border);
   text-decoration: none;
 }
 
 .header li a:hover,
 .header .menu-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Hover auch transparent */
+  background-color: var(--header-hover-background); /* Hover auch transparent */
 }
 
 /* Logo */
@@ -47,6 +71,7 @@ a {
   font-size: 2em;
   padding: 10px 20px;
   text-decoration: none;
+  color: var(--primary-text-color);
 }
 
 /* Menü */
@@ -67,7 +92,7 @@ a {
 }
 
 .header .menu-icon .navicon {
-  background: #333;
+  background: var(--navicon-color);
   display: block;
   height: 2px;
   position: relative;
@@ -77,7 +102,7 @@ a {
 
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
-  background: #333;
+  background: var(--navicon-color);
   content: '';
   display: block;
   height: 100%;
