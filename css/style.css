@@ -30,12 +30,7 @@
   --logo-font: "agent_orangeregular";
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #1c1c1c; /* Dark background */
-    --text-color: #ffffff; /* Text color for dark mode */
-  }
-}
+
 
 html {
   font-family: var(--main-font), Arial, Helvetica, sans-serif;
