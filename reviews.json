@@ -1,0 +1,12 @@
+[
+    {
+      "content": "Reviews coming soon!",
+      "reviewer": "John Doe",
+      "rating": 5
+    },
+    {
+      "content": "Lorem ipsum dolor sit amet",
+      "reviewer": "Jane Smith",
+      "rating": 4
+    }
+  ]
