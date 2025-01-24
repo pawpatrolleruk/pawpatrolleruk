@@ -1,21 +1,12 @@
-import { defineConfig } from 'vite'
-import { resolve } from 'path'
+import { defineConfig } from 'vite';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  base: '/pawpatrolleruk.github.io/',
+
+  plugins: [tailwindcss()],
+  base: '/PawPatrollerUK/',
   build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        testimonials: resolve(__dirname, 'pages/testimonials.html')
-      }
-    }
-  },
-  server: {
-    historyApiFallback: {
-      rewrites: [
-        { from: /\/pages\/testimonials/, to: '/pages/testimonials.html' }
-      ]
-    }
+    outDir: 'dist',
+    assetsDir: 'assets'
   }
 })

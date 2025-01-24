@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Custom Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #9B7CB9 0%, #8A6CA8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-pattern {
+  background-image:
+    radial-gradient(circle at 100% 100%, #9B7CB920 0%, transparent 50%),
+    radial-gradient(circle at 0% 0%, #FFCDB120 0%, transparent 50%);
+}
