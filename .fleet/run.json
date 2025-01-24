@@ -1,0 +1,23 @@
+{
+  "configurations": [
+    {
+      "type": "command",
+      "name": "Dev Server",
+      "program": "cmd.exe",
+      "args": ["/c", "npx vite --host --open"]
+    },
+    {
+      "type": "command",
+      "name": "Open Firefox Dev Profile",
+      "program": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "args": [
+        "-CreateProfile",
+        "dev-profile",
+        "-P",
+        "dev-profile",
+        "--no-remote",
+        "http://localhost:5173"
+      ]
+    }
+  ]
+}

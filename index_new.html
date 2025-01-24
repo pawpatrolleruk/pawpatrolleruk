@@ -58,32 +58,6 @@
       }
     }
   </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      fetch('reviews.json')
-              .then(response => response.json())
-              .then(data => {
-                const reviewContainer = document.getElementById('review-container');
-                data.reviews.forEach(review => {
-                  const reviewElement = document.createElement('div');
-                  reviewElement.className = 'review-item flex-shrink-0 w-80 bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1';
-                  reviewElement.innerHTML = `
-            <div class="flex items-center mb-4">
-              <span class="text-yellow-400 text-2xl">${'★'.repeat(review.rating)}</span>
-            </div>
-            <p class="mb-4">"${review.text}"</p>
-            <p class="font-semibold">- ${review.name}</p>
-          `;
-                  reviewContainer.appendChild(reviewElement);
-                });
-
-                // Duplicate reviews for continuous scrolling effect
-                const reviewsToAdd = reviewContainer.innerHTML;
-                reviewContainer.innerHTML += reviewsToAdd;
-              })
-              .catch(error => console.error('Error loading reviews:', error));
-    });
-  </script>
 
 
   <style>
@@ -275,8 +249,6 @@
   </section>
 
 
-
-  <!-- Services Section -->
   <!-- Services Section -->
   <section id="services" class="py-24 bg-white">
     <div class="container mx-auto px-4">
@@ -505,7 +477,30 @@
             </div>
           </details>
         </div>
+
+        <!-- Dog training section -->
+        <!-- Dog Training Card -->
+        <div class="card bg-white shadow-xl rounded-xl p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+          <div class="flex items-center mb-4">
+            <span class="material-icons text-brand-purple text-3xl mr-2 transition-all duration-300 group-hover:scale-110">pets</span> <!--TODO: Change Icon-->
+            <h3 class="font-fredoka text-2xl">Dog Training</h3>
+          </div>
+          <p class="mb-6"> We offer professional dog training services upon request. Please contact us for more information.</p>
+
+          <div class="pricing mb-6 space-y-2">
+            <div class="flex justify-between items-center p-2 bg-brand-light rounded">
+              <span>Training</span>
+              <span class="font-bold text-brand-purple">£--</span>
+            </div>
+            <div class="flex justify-between items-center p-2 bg-brand-light rounded">
+              <span>1-hour walk</span>
+              <span class="font-bold text-brand-purple">£25</span>
+            </div>
+          </div>
+        </div>
       </div>
+
+
 
       <!-- Service Hours Notice -->
       <div class="mt-12 p-6 bg-brand-light rounded-xl">
@@ -529,17 +524,47 @@
 
   <!-- Add more sections (About, Gallery, Testimonials, FAQ, Contact) -->
 
-  <!-- testiomals -->
-  <section id="testimonials" class="py-24 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="font-fredoka text-4xl md:text-5xl text-center mb-16 gradient-text">Why Choose Paw Patroller UK?</h2>
-      <div class="overflow-hidden">
-        <div id="review-container" class="review-scroll flex gap-8">
-          <!-- Reviews will be dynamically inserted here -->
-        </div>
+ <!-- Testimonials Section -->
+<section id="testimonials" class="py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="font-fredoka text-4xl md:text-5xl text-center mb-16 gradient-text">Why Choose Paw Patroller UK?</h2>
+    <div class="overflow-hidden">
+      <div id="review-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- First 5 reviews will be loaded here -->
+      </div>
+      <div class="text-center mt-8">
+        <a href="/testimonials" class="btn btn-lg bg-brand-purple hover:bg-brand-purple/90 text-white font-fredoka group transition-all duration-300">
+          View All Reviews
+          <span class="material-icons ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('reviews.json')
+    .then(response => response.json())
+    .then(data => {
+      const reviewContainer = document.getElementById('review-container');
+      data.reviews.slice(0, 5).forEach(review => {
+        const reviewElement = document.createElement('div');
+        reviewElement.className = 'review-item bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1';
+        reviewElement.innerHTML = `
+          <div class="flex items-center mb-4">
+            <span class="text-yellow-400 text-2xl">${'★'.repeat(review.rating)}</span>
+          </div>
+          <p class="mb-4">"${review.text}"</p>
+          <p class="font-semibold">- ${review.name}</p>
+        `;
+        reviewContainer.appendChild(reviewElement);
+      });
+    })
+    .catch(error => console.error('Error loading reviews:', error));
+});
+</script>
+
 
   <!-- Contact Section -->
   <section id="contact" class="py-24 bg-white">
@@ -692,44 +717,53 @@
 </footer>
 
 <!-- WhatsApp Button -->
-<a href="https://wa.me/447300888847" class="fixed bottom-4 right-4 btn btn-circle btn-lg bg-green-500 hover:bg-green-600 border-none text-white transition-all duration-300 hover:scale-110 animate-bounce-subtle">
-  <svg class="w-8 h-8 text-white" viewBox="0 0 512 513" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-    <path d="M256.064 0h-.128C114.784 0 0 114.816 0 256c0 56 18.048 107.904 48.736 150.048l-31.904 95.104 98.4-31.456C155.712 496.512 204 512 256.064 512 397.216 512 512 397.152 512 256S397.216 0 256.064 0zm148.96 361.504c-6.176 17.44-30.688 31.904-50.24 36.128-13.376 2.848-30.848 5.12-89.664-19.264-75.232-31.168-123.68-107.616-127.456-112.576-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624 26.176-62.304c6.176-6.304 16.384-9.184 26.176-9.184 3.168 0 6.016.16 8.576.288 7.52.32 11.296.768 16.256 12.64 6.176 14.88 21.216 51.616 23.008 55.392 1.824 3.776 3.648 8.896 1.088 13.856-2.4 5.12-4.512 7.392-8.288 11.744-3.776 4.352-7.36 7.68-11.136 12.352-3.456 4.064-7.36 8.416-3.008 15.936 4.352 7.36 19.392 31.904 41.536 51.616 28.576 25.44 51.744 33.568 60.032 37.024 6.176 2.56 13.536 1.952 18.048-2.848 5.728-6.176 12.8-16.416 20-26.496 5.12-7.232 11.584-8.128 18.368-5.568 6.912 2.4 43.488 20.48 51.008 24.224 7.52 3.776 12.48 5.568 14.304 8.736 1.792 3.168 1.792 18.048-4.384 35.52z"/>
+<a href="https://wa.me/447300888847"
+   class="fixed bottom-4 right-4 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20BD5A] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-40">
+  <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
 </a>
 
+
 <!-- Cookie Banner -->
-<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white shadow-lg p-4 hidden">
-  <div class="container mx-auto flex justify-between items-center">
-    <p class="text-sm">This website uses cookies to analyse website traffic and optimize your website experience.</p>
-    <div class="flex gap-4">
-      <button id="decline-cookies" class="btn btn-ghost btn-sm">Decline</button>
-      <button id="accept-cookies" class="btn btn-primary btn-sm">Accept</button>
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white shadow-lg transform translate-y-full transition-transform duration-300 z-50">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-600">We use cookies to analyse website traffic and optimize your website experience. By accepting our use of cookies, your data will be aggregated with all other user data.</p>
+      <div class="flex gap-4">
+        <button id="decline-cookies" class="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors">
+          Decline
+        </button>
+        <button id="accept-cookies" class="px-4 py-2 text-sm font-medium text-white bg-brand-purple hover:bg-brand-purple/90 rounded-md transition-colors">
+          Accept
+        </button>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- Scripts -->
 <script>
-  // Cookie banner logic
-  document.addEventListener('DOMContentLoaded', function() {
-    const cookieBanner = document.getElementById('cookie-banner');
-    const acceptButton = document.getElementById('accept-cookies');
-    const declineButton = document.getElementById('decline-cookies');
+document.addEventListener('DOMContentLoaded', function() {
+  const cookieBanner = document.getElementById('cookie-banner');
+  const acceptButton = document.getElementById('accept-cookies');
+  const declineButton = document.getElementById('decline-cookies');
 
-    if (!localStorage.getItem('cookiesAccepted')) {
-      cookieBanner.classList.remove('hidden');
-    }
+  if (!localStorage.getItem('cookiesAccepted')) {
+    setTimeout(() => {
+      cookieBanner.classList.remove('translate-y-full');
+    }, 1000);
+  }
 
-    acceptButton.addEventListener('click', function() {
-      localStorage.setItem('cookiesAccepted', 'true');
-      cookieBanner.classList.add('hidden');
-    });
-
-    declineButton.addEventListener('click', function() {
-      cookieBanner.classList.add('hidden');
-    });
+  acceptButton.addEventListener('click', function() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    cookieBanner.classList.add('translate-y-full');
   });
+
+  declineButton.addEventListener('click', function() {
+    cookieBanner.classList.add('translate-y-full');
+  });
+});
 </script>
+
 </body>
 </html>
