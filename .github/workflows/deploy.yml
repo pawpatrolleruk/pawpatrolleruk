@@ -11,12 +11,14 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Use v3 for broader compatibility.  v2 is older.
+        with:
+          fetch-depth: 0  # Required for actions-gh-pages to work properly.
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3  # Use v3 for broader compatibility.  v2 is older.
         with:
-          node-version: '20'  # Use a supported Node.js version
+          node-version: '20'
 
       - name: Clear npm cache
         run: npm cache clean --force
@@ -35,3 +37,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: gh-pages  # Specify the branch to deploy to (gh-pages).
+          force_orphan: true  # Create an orphan branch if it doesn't exist.
+          enable_jekyll: false # disable jekyll
