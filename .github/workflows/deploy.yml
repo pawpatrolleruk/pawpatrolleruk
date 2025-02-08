@@ -1,4 +1,4 @@
-name: Deploy Vite App
+name: Production Deployment
 on:
   push:
     branches: [main]
@@ -9,7 +9,7 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
+concurrency: 
   group: 'pages-${{ github.ref }}'
   cancel-in-progress: true
 
@@ -17,25 +17,20 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
+      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+      - run: npm ci
+      - run: npm run build
 
-      - name: Build production assets
-        run: npm run build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+      - uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: ./dist
 
   deploy:
     needs: build
@@ -45,6 +40,5 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     
     steps:
-      - name: Deploy to GitHub Pages
+      - uses: actions/deploy-pages@v4
         id: deployment
-        uses: actions/deploy-pages@v2
