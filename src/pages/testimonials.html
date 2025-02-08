@@ -1,47 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Testimonials - Paw Patroller UK</title>
-  <link rel="stylesheet" href="/src/main.css">
-</head>
-<body class="bg-brand-light">
-  <header class="sticky top-0 z-50 transition-all duration-300 shadow-sm bg-white/90 backdrop-blur-md hover:bg-white">
-    <div class="container mx-auto">
-      <div class="navbar min-h-[4rem]">
-        <div class="navbar-start">
-          <a href="/" class="text-2xl font-semibold font-fredoka gradient-text">Paw Patroller UK</a>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - Paw Patroller UK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../main.css">
+  </head>
+  <body class="bg-brand-light">
+    
+    <header class="sticky top-0 z-50 transition-all duration-300 shadow-sm bg-white/90 backdrop-blur-md">
+      <div class="container mx-auto">
+        <div class="navbar min-h-[4rem]">
+          <div class="navbar-start">
+            <div class="dropdown lg:hidden">
+              <label tabindex="0" class="btn btn-ghost btn-circle">
+                <span class="material-icons">menu</span>
+              </label>
+              <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#faq">FAQs</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+              </ul>
+            </div>
+            <a href="index.html" class="text-2xl font-semibold font-fredoka gradient-text">Paw Patroller UK</a>
+          </div>
+          <div class="hidden navbar-center lg:flex">
+            <ul class="px-1 menu menu-horizontal font-fredoka">
+              <li><a href="index.html#home">Home</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="index.html#gallery">Gallery</a></li>
+              <li><a href="index.html#testimonials">Testimonials</a></li>
+              <li><a href="index.html#faq">FAQs</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <a href="tel:07300888847" class="btn btn-ghost btn-circle">
+              <span class="material-icons">phone</span>
+            </a>
+          </div>
         </div>
-        <div class="navbar-end">
-          <a href="tel:07300888847" class="btn btn-ghost btn-circle">
-            <span class="material-icons">phone</span>
-          </a>
+      </div>
+    </header>
+    
+    <main>
+      <section id="testimonials" class="py-24 bg-white">
+        <div class="container px-4 mx-auto">
+          <h2 class="mb-16 text-4xl text-center font-fredoka md:text-5xl gradient-text">Testimonials</h2>
+          <div id="all-reviews" class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <!-- All testimonials loaded here similar to index -->
+          </div>
+          <div class="mt-8 text-center">
+            <a href="index.html" class="text-white transition-all duration-300 btn btn-lg bg-brand-purple hover:bg-brand-purple/90 font-fredoka group">
+              Back to Home
+              <span class="ml-2 transition-transform material-icons group-hover:translate-x-1">arrow_back</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <footer class="py-8 text-white bg-brand-purple">
+      <div class="container px-4 mx-auto">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <p>© <script>document.write(new Date().getFullYear());</script> Paw Patroller UK. All rights reserved.</p>
+          <div class="flex justify-center mt-4 space-x-4">
+            <a href="https://www.facebook.com/PawPatrollerUK" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/Paw_Patroller_UK" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="tel:07300888847">073 0088 8847</a>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
-
-  <main class="py-24">
-    <div class="container px-4 mx-auto">
-      <h1 class="mb-16 text-4xl text-center font-fredoka md:text-5xl gradient-text">Client Testimonials</h1>
-      <!-- NEW: Introductory Tagline -->
-      <p class="mb-8 text-lg text-center">Hear from our satisfied clients about their experiences.</p>
-      <div id="review-container" class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <!-- Reviews will be loaded here -->
-      </div>
-    </div>
-  </main>
-
-  <footer class="py-8 text-white bg-brand-purple">
-    <div class="container px-4 mx-auto">
-      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-        <!-- Footer content -->
-      </div>
-    </div>
-  </footer>
-
-  <script>
+    </footer>
+    
+    <script>
   document.addEventListener('DOMContentLoaded', function() {
     fetch('/reviews.json')
       .then(response => response.json())
@@ -63,5 +100,5 @@
       .catch(error => console.error('Error loading reviews:', error));
   });
   </script>
-</body>
+  </body>
 </html>
