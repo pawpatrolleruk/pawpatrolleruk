@@ -43,3 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .catch(error => console.error('Error loading reviews:', error));
 });
+
+// NEW: Example enhancement for "Get In Touch" smooth scroll (if needed)
+document.addEventListener('click', function(e) {
+  if (e.target.closest('.btn-get-in-touch')) {
+    e.preventDefault();
+    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+  }
+});
