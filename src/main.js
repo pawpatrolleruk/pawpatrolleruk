@@ -1,25 +1,10 @@
-import './style.css'
+import './main.css';
+import { initCookieConsent } from './js/cookie-consent';
+import '@js/cookie-consent.js';
 
-// Cookie Banner
-document.addEventListener('DOMContentLoaded', function() {
-  const cookieBanner = document.getElementById('cookie-banner');
-  const acceptButton = document.getElementById('accept-cookies');
-  const declineButton = document.getElementById('decline-cookies');
-
-  if (!localStorage.getItem('cookiesAccepted')) {
-    setTimeout(() => {
-      cookieBanner.classList.remove('translate-y-full');
-    }, 1000);
-  }
-
-  acceptButton.addEventListener('click', function() {
-    localStorage.setItem('cookiesAccepted', 'true');
-    cookieBanner.classList.add('translate-y-full');
-  });
-
-  declineButton.addEventListener('click', function() {
-    cookieBanner.classList.add('translate-y-full');
-  });
+// Initialize cookie consent when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    initCookieConsent();
 });
 
 // Reviews

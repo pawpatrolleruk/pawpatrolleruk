@@ -1,12 +1,35 @@
 import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
+import path from 'path';
 
 export default defineConfig({
-
+  resolve: {
+    alias: {
+      '@js': path.resolve(__dirname, 'src/js')
+    }
+  },
   plugins: [tailwindcss()],
-  base: '/pawpatrolleruk/',
+  base: './',
   build: {
     outDir: 'dist',
-    assetsDir: 'assets'
+    rollupOptions: {
+      input: {
+        main: '/index.html'
+      },
+      output: {
+        assetFileNames: ({ name }) => {
+          if (/\.(css)$/.test(name ?? '')) {
+            return 'assets/css/[name]-[hash][extname]';
+          }
+          if (/\.(png|jpe?g|gif|svg)$/.test(name ?? '')) {
+            return 'assets/images/[name]-[hash][extname]';
+          }
+          return 'assets/[name]-[hash][extname]';
+        },
+      },
+    },
+  },
+  server: {
+    open: true
   }
-})
+});

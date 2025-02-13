@@ -3,15 +3,140 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paw Patroller UK</title> 
+    <title>Paw Patroller UK</title>
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- SEO improvements -->
+    <meta name="description" content="Experience personalized dog care services with Paw Patroller UK. From dog walking and pet visits to live streaming virtual walks, we care for your pet with passion.">
+    <meta name="keywords" content="dog care, dog walking, pet sitting, pet visits, virtual walks, dog training">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://pawpatrolleruk.github.io/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Paw Patroller UK - Premium Dog Care Services">
+    <meta property="og:description" content="Experience personalized dog care services with Paw Patroller UK. From dog walking and pet visits to live streaming virtual walks, we care for your pet with passion.">
+    <meta property="og:image" content="src/assets/hero-desktop.jpg">
+    <meta property="og:url" content="https://pawpatrolleruk.github.io/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Paw Patroller UK - Premium Dog Care Services">
+    <meta name="twitter:description" content="Experience personalized dog care services with Paw Patroller UK.">
+    <meta name="twitter:image" content="src/assets/hero-desktop.jpg">
+    
+    <!-- Google Fonts: Fredoka for friendly accents, Poppins for headlines, Roboto for body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+    <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
-    <!-- Vite CSS -->
+    <!-- Styles -->
     <link rel="stylesheet" href="src/main.css">
+    <link rel="stylesheet" href="css/cookie-consent.css">
+    
+    <!-- Vite entry point -->
+    <script type="module" src="src/main.js"></script>
+    <style>
+      /* Removed stray "}" */
+      
+      @keyframes slide-up {
+        from {
+          transform: translateY(100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+      
+      #cookie-preferences {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1050;
+      }
+      
+      #cookie-preferences h2 {
+        font-size: 18px;
+      }
+      
+      #preferences-form label {
+        display: flex;
+        align-items: center;
+      }
+      
+      #preferences-form input[type="checkbox"] {
+        margin-right: .5rem;
+      }
+      
+
+      #cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: #ffffff;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+      }
+      
+      #cookie-banner p {
+        font-size: 14px;
+        color: #333;
+      }
+      
+      #cookie-banner .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      #cookie-banner button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+      
+      #accept-cookies {
+        background-color: #6a1b9a; /* Brand purple */
+        color: white;
+      }
+      
+      #reject-cookies {
+        background-color: #e0e0e0; /* Light gray */
+      }
+      
+      #manage-cookies {
+        border: solid 1px #6a1b9a; /* Purple border */
+      }
+      
+
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+      
+      h1 {
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      h2 {
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      p {
+        font-family: 'Roboto', sans-serif;
+      }
+      
+      
+    </style>
   </head>
+  
 <body class="bg-brand-light">
 
 <!-- Header -->
@@ -60,56 +185,23 @@
 
 <!-- Main Content -->
 <main>
-  <!-- Hero Section -->
-  <section class="hero min-h-[80vh] relative overflow-hidden" id="home">
-    <!-- Background Image with Overlay -->
-    <div class="absolute inset-0">
-      <div class="absolute inset-0 bg-hero_dog bg-cover bg-center filter blur-[2px]"></div>
-      <div class="absolute inset-0 bg-white/30"></div>
-    </div>
+ <!-- Updated Hero Section -->
+<section id="home" class="hero parallax relative overflow-hidden min-h-[80vh] flex items-center">
+  <!-- Removed <picture> element for parallax background -->
+  <div class="absolute inset-0 opacity-50 bg-gradient-to-b from-gray-700 via-transparent to-transparent"></div>
+  <div class="container relative z-10 px-4 mx-auto text-center">
+    <h1 class="text-4xl font-bold text-white md:text-6xl font-poppins">
+      Owners Trust Us. Dogs Love Us!
+    </h1>
+    <p class="max-w-2xl mx-auto mt-4 text-lg text-gray-100 md:text-xl">
+      At Paw Patroller UK, we provide premium dog care and walking services ensuring your furry friends are happy, safe, and well-exercised.
+    </p>
+    <a href="#contact" class="inline-block px-6 py-3 mt-8 text-lg text-white transition duration-300 rounded-full bg-brand-purple hover:bg-brand-purple-dark">
+      Get in Touch
+    </a>
+  </div>
+</section>
 
-    <!-- Content Layer -->
-    <div class="relative z-10 text-center hero-content">
-      <div class="max-w-3xl">
-        <!-- NEW: Hero Tagline -->
-        <h1 class="mb-4 text-4xl md:text-5xl font-fredoka text-brand-purple">Owners Trust Us. Dogs Love Us!</h1>
-        <h1 class="font-fredoka text-5xl md:text-7xl font-bold mb-8 gradient-text leading-tight drop-shadow
-                 opacity-0 translate-y-4 motion-safe:animate-[fade-in-up_1s_ease-out_forwards]">
-          Owners Trust Us.<br>Dogs Love Us!
-        </h1>
-        <div class="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-xl mb-8 border border-brand-purple/10
-                  opacity-0 translate-y-4 motion-safe:animate-[fade-in-up_1s_ease-out_0.3s_forwards]">
-          <p class="mb-6 text-lg">Welcome to Paw Patroller UK, your go-to dog care company!</p>
-          <ul class="max-w-xl mx-auto space-y-4 text-left">
-            <li class="flex items-center gap-3 p-4 transition-all bg-brand-purple/5 rounded-xl hover:bg-brand-purple/10 hover:translate-x-1">
-              <span class="text-2xl material-icons text-brand-purple">work</span>
-              Are you concerned about your fur baby whilst at work?
-            </li>
-            <li class="flex items-center gap-3 p-4 transition-all bg-brand-purple/5 rounded-xl hover:bg-brand-purple/10 hover:translate-x-1">
-              <span class="text-2xl material-icons text-brand-purple">directions_walk</span>
-              Want to ensure they are walked and kept entertained?
-            </li>
-            <li class="flex items-center gap-3 p-4 transition-all bg-brand-purple/5 rounded-xl hover:bg-brand-purple/10 hover:translate-x-1">
-              <span class="text-2xl material-icons text-brand-purple">favorite</span>
-              By a passionate and experienced dog lover?
-            </li>
-            <li class="flex items-center gap-3 p-4 transition-all bg-brand-purple/5 rounded-xl hover:bg-brand-purple/10 hover:translate-x-1">
-              <span class="text-2xl material-icons text-brand-purple">pets</span>
-              Going on holiday and need a pet sitter?
-            </li>
-          </ul>
-        </div>
-        <a href="#contact" class="btn btn-lg bg-brand-purple hover:bg-brand-purple text-white font-fredoka group
-                               opacity-0 translate-y-4 motion-safe:animate-[fade-in-up_1s_ease-out_0.5s_forwards]">
-          Get in Touch
-          <span class="ml-2 transition-transform material-icons group-hover:translate-x-1">arrow_forward</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Gradient Transition -->
-    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white/90"></div>
-  </section>
 
   <!-- NEW: Trust & Safety Badges Section -->
   <div class="container flex justify-center mx-auto my-8 space-x-4">
@@ -602,45 +694,71 @@ document.addEventListener('DOMContentLoaded', function() {
 </a>
 
 
-<!-- Cookie Banner -->
-<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 transition-transform duration-300 transform translate-y-full bg-white shadow-lg">
-  <div class="container px-4 py-4 mx-auto">
-    <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
-      <p class="text-sm text-gray-600">We use cookies to analyse website traffic and optimize your website experience. By accepting our use of cookies, your data will be aggregated with all other user data.</p>
-      <div class="flex gap-4">
-        <button id="decline-cookies" class="px-4 py-2 text-sm font-medium text-gray-500 transition-colors hover:text-gray-700">
-          Decline
-        </button>
-        <button id="accept-cookies" class="px-4 py-2 text-sm font-medium text-white transition-colors rounded-md bg-brand-purple hover:bg-brand-purple">
-          Accept
-        </button>
-      </div>
+<!-- Updated GDPR-compliant Cookie Banner -->
+<div id="cookie-banner" class="cookie-consent" role="dialog" aria-labelledby="cookie-notice-title">
+  <div class="container px-4 mx-auto">
+    <h2 id="cookie-notice-title" class="mb-2 text-lg font-semibold">Cookie Settings</h2>
+    <p class="mb-4 text-sm text-gray-600">
+      We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. Visit our Cookie Policy for more information.
+    </p>
+    <div class="flex flex-wrap gap-2">
+      <button id="accept-cookies" class="px-4 py-2 text-white rounded bg-brand-purple hover:bg-brand-purple-dark">
+        Accept All
+      </button>
+      <button id="reject-cookies" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
+        Reject All
+      </button>
+      <button id="manage-cookies" class="px-4 py-2 border rounded border-brand-purple text-brand-purple hover:bg-gray-50">
+        Manage Preferences
+      </button>
     </div>
   </div>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const cookieBanner = document.getElementById('cookie-banner');
-  const acceptButton = document.getElementById('accept-cookies');
-  const declineButton = document.getElementById('decline-cookies');
+<!-- Updated Cookie Preferences Modal -->
+<div id="cookie-preferences" class="cookie-preferences" role="dialog" aria-labelledby="preferences-title">
+  <div class="cookie-preferences__content">
+    <h2 id="preferences-title" class="mb-4 text-xl font-semibold">Cookie Preferences</h2>
+    <div class="space-y-4">
+      <div class="cookie-type cookie-type--required">
+        <label class="flex items-start">
+          <input type="checkbox" checked disabled class="mt-1 mr-2">
+          <div>
+            <span class="font-medium">Necessary Cookies</span>
+            <p class="text-sm text-gray-600">Essential for website functionality. Cannot be disabled.</p>
+          </div>
+        </label>
+      </div>
+      <div class="cookie-type">
+        <label class="flex items-start">
+          <input type="checkbox" data-cookie-type="analytics" class="mt-1 mr-2">
+          <div>
+            <span class="font-medium">Analytics Cookies</span>
+            <p class="text-sm text-gray-600">Help us understand how visitors interact with our website.</p>
+          </div>
+        </label>
+      </div>
+      <div class="cookie-type">
+        <label class="flex items-start">
+          <input type="checkbox" data-cookie-type="marketing" class="mt-1 mr-2">
+          <div>
+            <span class="font-medium">Marketing Cookies</span>
+            <p class="text-sm text-gray-600">Used to deliver personalized advertisements.</p>
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="flex justify-end gap-2 mt-6">
+      <button id="save-preferences" class="px-4 py-2 text-white rounded bg-brand-purple hover:bg-brand-purple-dark">
+        Save Preferences
+      </button>
+      <button id="close-preferences" class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
 
-  if (!localStorage.getItem('cookiesAccepted')) {
-    setTimeout(() => {
-      cookieBanner.classList.remove('translate-y-full');
-    }, 1000);
-  }
-
-  acceptButton.addEventListener('click', function() {
-    localStorage.setItem('cookiesAccepted', 'true');
-    cookieBanner.classList.add('translate-y-full');
-  });
-
-  declineButton.addEventListener('click', function() {
-    cookieBanner.classList.add('translate-y-full');
-  });
-});
-</script>
 
 </body>
 </html>
