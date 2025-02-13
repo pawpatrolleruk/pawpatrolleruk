@@ -17,7 +17,7 @@ export default defineConfig({
       ]
     })
   ],
-  base: '/pawpatrolleruk/',
+  base: '/', // Updated for patpatrolleruk.com
   build: {
     outDir: 'dist',
     rollupOptions: {
