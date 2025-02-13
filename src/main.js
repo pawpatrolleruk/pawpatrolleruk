@@ -5,6 +5,12 @@ import '@js/cookie-consent.js';
 // Initialize cookie consent when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     initCookieConsent();
+    
+    // Set hero section background image using a reference that remains accessible on the site
+    const heroSection = document.getElementById('home');
+    if (heroSection) {
+      heroSection.style.backgroundImage = "url('assets/hero-desktop.jpg')";
+    }
 });
 
 // Reviews

@@ -25,6 +25,12 @@ html {
     radial-gradient(circle at 0% 0%, #FFCDB120 0%, transparent 50%);
 }
 
+.hero {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect */
+}
+
 .hero.parallax {
   background: url('src/assets/hero-desktop.jpg') no-repeat center center fixed;
   background-size: cover;
