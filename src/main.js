@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Reviews
 document.addEventListener('DOMContentLoaded', function() {
-  fetch('/reviews.json')
+  fetch('./reviews.json') // updated relative URL for static sites
     .then(response => response.json())
     .then(data => {
       const reviewContainer = document.getElementById('review-container');

@@ -17,12 +17,12 @@ export default defineConfig({
       ]
     })
   ],
-  base: '/pawpatrolleruk/',
+  base: '/', // updated for static-site deployment
   build: {
     outDir: 'dist',
     rollupOptions: {
       input: {
-        main: '/index.html'
+        main: path.resolve(__dirname, 'index.html') // ensure index.html is recognized
       },
       output: {
         assetFileNames: ({ name }) => {
