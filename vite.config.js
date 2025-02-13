@@ -17,7 +17,7 @@ export default defineConfig({
       ]
     })
   ],
-  base: '/', // updated for static-site deployment
+  base: '/pawpatrolleruk/',
   build: {
     outDir: 'dist',
     rollupOptions: {
