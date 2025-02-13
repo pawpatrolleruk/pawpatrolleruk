@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
   resolve: {
@@ -8,7 +9,14 @@ export default defineConfig({
       '@js': path.resolve(__dirname, 'src/js')
     }
   },
-  plugins: [tailwindcss()],
+  plugins: [
+    tailwindcss(),
+    viteStaticCopy({
+      targets: [
+        { src: 'src/assets', dest: 'assets' }
+      ]
+    })
+  ],
   base: './',
   build: {
     outDir: 'dist',
