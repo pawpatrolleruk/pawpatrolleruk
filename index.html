@@ -133,6 +133,28 @@
         font-family: 'Roboto', sans-serif;
       }
       
+      /* Added hero/parallax background rules for compatibility */
+      #home.hero {
+        background-image: url('assets/hero-desktop.jpg');
+        background-size: cover;
+        -webkit-background-size: cover; /* Safari compatibility */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        -webkit-background-attachment: fixed;
+      }
+      /* iOS Safari fix: fallback to scroll */
+      @supports (-webkit-overflow-scrolling: touch) {
+        #home.hero {
+          background-attachment: scroll;
+        }
+      }
+      /* iOS Safari and similar devices fallback */
+      @media screen and (max-device-width: 1024px) {
+        #home.hero {
+          background-attachment: scroll;
+        }
+      }
       
     </style>
   </head>
@@ -163,7 +185,7 @@
         <ul class="px-1 menu menu-horizontal font-fredoka">
           <li><a href="#home">Home</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#gallery">Gallery</a></li>
+          <!-- <li><a href="#gallery">Gallery</a></li> -->
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#faq">FAQs</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -570,109 +592,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </section>
 
 
-  <!-- FAQ Section -->
-  <section id="faq" class="py-24 bg-brand-light">
-    <div class="container px-4 mx-auto">
-      <h2 class="mb-16 text-4xl text-center font-fredoka md:text-5xl gradient-text">Frequently Asked Questions</h2>
-      <div class="max-w-3xl mx-auto space-y-8">
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">What areas do you cover?</summary>
-          <p class="mt-4">We are based in Putney and we cover Putney, Richmond, Barnes and Wandsworth areas. If you're not sure, give us a call and we will explore options for you.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Where do you walk?</summary>
-          <p class="mt-4">We aim to diversify our walking routes, utilizing beautiful locations such as Richmond Park, Bushy Park, Putney Heath, and Wimbledon Common, along with their woodlands, fields, brooks, and ponds, as well as local parks. We strive to minimize the time dogs spend in the car.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">How long are the walks?</summary>
-          <p class="mt-4">Each walk lasts a minimum of 30 minutes or 1 hour, but frequently longer, depending on the walk you book. Please note that travel time is not included in the walking duration.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">How many dogs can you walk at once?</summary>
-          <p class="mt-4">We walk in small, well-managed groups to ensure personalized attention and care.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Do all employees have a current police check?</summary>
-          <p class="mt-4">Yes, all of our employees who are responsible for both your dogs and homes have undergone a DBS check.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Are you insured?</summary>
-          <p class="mt-4">Yes, we carry specialised business insurance.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Do you have any testimonials?</summary>
-          <p class="mt-4">Absolutely! Testimonials from our satisfied clients are available on our website.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Can you provide references?</summary>
-          <p class="mt-4">References can be provided upon request.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">How much do you charge?</summary>
-          <p class="mt-4">Please refer to our price list for detailed information.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Do you pick up and drop off my dog?</summary>
-          <p class="mt-4">Yes, we offer pick-up and drop-off services for your dog from your home.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">What payment methods do you accept?</summary>
-          <p class="mt-4">We accept cash, bank transfers, and payments via PayPal.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">When is payment due? Do you require a deposit?</summary>
-          <p class="mt-4">We will provide a quote for the service before beginning pet sitting, and payment is due in full within 24 hours after the service is completed. No deposit is required.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">What happens if my return home gets delayed?</summary>
-          <p class="mt-4">If your return home is delayed, simply message us, and we will continue to care for your animals until you arrive.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">How many days in advance do I need to contact you?</summary>
-          <p class="mt-4">While a day or two notice is preferred, we are flexible with sudden changes and can accommodate urgent requests. Just send us a message, and we can begin care as early as that day if needed.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">What types of animals do you care for?</summary>
-          <p class="mt-4">We are happy to care for dogs, cats, birds of all types, reptiles, and pocket pets such as guinea pigs and rats. However, we do not provide pet sitting services for horses, cows, or other large farm animals.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">How do I become a client?</summary>
-          <p class="mt-4">To become a client, please call 073 0088 8847 or email pawpatrolleruk@gmail.com. We will arrange a convenient time to visit you.</p>
-        </details>
-      </div>
-    </div>
-  </section>
+ 
 
 </main>
 
