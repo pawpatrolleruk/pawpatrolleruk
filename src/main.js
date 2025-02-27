@@ -3,6 +3,18 @@ import './style.css';
 
 // DOM ready event handler
 document.addEventListener('DOMContentLoaded', function() {
+  // Handle mobile menu dropdown
+  const mobileMenuToggle = document.querySelector('[data-mobile-menu-toggle]');
+  const mobileMenu = document.querySelector('[data-mobile-menu]');
+  
+  if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.addEventListener('click', function() {
+      const isOpen = mobileMenu.getAttribute('data-open') === 'true';
+      mobileMenu.setAttribute('data-open', isOpen ? 'false' : 'true');
+      mobileMenu.style.display = isOpen ? 'none' : 'block';
+    });
+  }
+
   // Current year for footer
   const currentYear = new Date().getFullYear();
   document.querySelectorAll('#current-year').forEach(element => {

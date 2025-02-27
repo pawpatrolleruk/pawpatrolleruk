@@ -26,19 +26,7 @@ body {
   min-width: 320px;
 }
 
-/* Utility classes */
-.btn {
-  @apply px-4 py-2 font-medium transition-colors rounded cursor-pointer;
-}
-
-.btn-ghost {
-  @apply bg-transparent hover:bg-gray-100;
-}
-
-.btn-circle {
-  @apply flex items-center justify-center p-2 rounded-full;
-}
-
+/* Improved Navbar Styles */
 .navbar {
   @apply flex items-center justify-between py-4;
 }
@@ -56,15 +44,19 @@ body {
 }
 
 .menu {
-  @apply flex list-none;
+  @apply flex p-0 m-0 list-none;
 }
 
 .menu-horizontal {
   @apply flex-row;
 }
 
-.divider {
-  @apply h-px my-2 bg-gray-200;
+.menu li {
+  @apply list-none;
+}
+
+.menu li a {
+  @apply block px-3 py-2 text-gray-700 transition-all duration-200 hover:text-brand-purple;
 }
 
 .dropdown {
@@ -72,9 +64,32 @@ body {
 }
 
 .dropdown-content {
-  @apply absolute z-50 bg-white rounded-lg shadow-lg;
+  @apply absolute z-50 hidden pt-2 mt-1 bg-white rounded-md shadow-lg w-max;
 }
 
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  @apply block;
+}
+
+/* Button styles */
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 font-medium transition-all duration-300 rounded cursor-pointer;
+}
+
+.btn-ghost {
+  @apply text-gray-700 bg-transparent hover:bg-gray-100;
+}
+
+.btn-circle {
+  @apply flex items-center justify-center w-10 h-10 p-0 rounded-full;
+}
+
+.divider {
+  @apply h-px my-2 bg-gray-200;
+}
+
+/* More utility classes */
 .gradient-text {
   background: linear-gradient(90deg, var(--brand-purple) 0%, #9c27b0 100%);
   -webkit-background-clip: text;
@@ -86,6 +101,17 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+/* Mobile menu dropdown */
+.dropdown-content {
+  @apply hidden;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content,
+.dropdown-content[data-open="true"] {
+  @apply block;
 }
 
 /* Badge styles */
