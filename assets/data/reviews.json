@@ -1,52 +1,66 @@
 [
     {
+      "reviewer_name": "Anonymous",
+      "date": null,
+      "verified_booking": false,
+      "review_text": "Kristina has been fantastic, very friendly and professional. Alby always seems to enjoy his walks with her and she's great at sending photos of their time together. Would definitely recommend!",
+      "images": ["anonymous-1.jpg"]
+    },
+    {
       "reviewer_name": "Melissa",
       "date": null,
       "verified_booking": false,
-      "review_text": "Kristina has been fantastic, very friendly and professional. Alby always seems to enjoy his walks with her and she's great at sending photos of their time together. We couldn't be happier with the daycare service Kristina provided for our dogs Kai and Finn. She's a true animal lover who keeps detailed notes about their routines and behaviors. Her regular updates and stunning photos show genuine dedication to pet care.",
-      "images": ["melissa-generic.jpg"]
+      "review_text": "Amazing Pet Sitter. We couldn't be happier with the daycare service Kristina provided for our dogs Kai and Finn. She's a true animal lover who keeps detailed notes about their routines and behaviors. Her regular updates and stunning photos show genuine dedication to pet care. Kristina went above and beyond in every way, providing responsive communication and exceptional attention to detail.",
+      "images": ["melissa-dog-daycare.jpg"]
     },
     {
       "reviewer_name": "Luana C.",
       "date": "2024-12-27",
       "verified_booking": true,
       "review_text": "I couldn't be happier with Kristina! She was absolutely amazing with my cat, providing regular updates and photos that gave me peace of mind. My cat was clearly comfortable and happy in her care. Highly recommended!",
-      "images": ["luana-c-2024-12-27.jpg"]
+      "images": ["luana-c-cat-care.jpg"]
     },
     {
       "reviewer_name": "Laurita P.",
       "date": null,
       "verified_booking": false,
-      "review_text": "We completely trust Paw_Patroller_UK with our mini-zoo (cats, dogs, bearded dragons, and sugar gliders). They're responsible, genuinely caring, and our pets are always happy/healthy when we return. Awesome service!",
-      "images": ["laurita-p-mini-zoo.jpg"]
+      "review_text": "We completely trust Paw_Patroller_UK with our mini-zoo (cats, dogs, bearded dragons, and sugar gliders). Our pets are always happy and healthy when we return. They're responsible, genuinely caring, and clearly enjoy the animals. Awesome service!",
+      "images": ["laurita-p-exotic-pets.jpg"]
     },
     {
       "reviewer_name": "AACC H.",
       "date": "2024-11-12",
       "verified_booking": false,
       "review_text": "Kristina is a SUPER cat feeder - reliable, organized, and deeply caring. She provides regular updates and photos while handling various animal species with expertise. Highly recommend her services.",
-      "images": ["aacc-h-cat-feeding.jpg"]
+      "images": ["aacc-h-multi-pet.jpg"]
     },
     {
       "reviewer_name": "Jodie Lee S.",
       "date": "2024-11-10",
       "verified_booking": false,
       "review_text": "Kristina has cared for my animals for years, from puppies to draught horses. She currently looks after my senior French Bulldog Blake with exceptional care. 10 stars+++ for her loving and knowledgeable approach.",
-      "images": ["jodie-lee-s-french-bulldog.jpg"]
+      "images": ["jodie-lee-s-senior-dog.jpg"]
+    },
+    {
+      "reviewer_name": "Anonymous",
+      "date": null,
+      "verified_booking": false,
+      "review_text": "I can't thank you enough for the incredible care you provided for my sphynx cat Gypsy. You went above and beyond to ensure her special needs were met. Daily updates, photos, and a spotless home showed your exceptional dedication. Highly recommend Paw_Patroller_UK!",
+      "images": ["anonymous-2-sphynx.jpg"]
     },
     {
       "reviewer_name": "Agata K.",
       "date": "2025-01-20",
       "verified_booking": true,
-      "review_text": "Kristina provided excellent care for our cat Boris over the weekend. Regular updates and pictures showed Boris relaxed and content. Will definitely use her services again.",
-      "images": ["agata-k-boris-cat.jpg"]
+      "review_text": "Kristina provided excellent care for our cat Boris over the weekend. Regular updates and pictures showed him relaxed and content. Will definitely use her services again.",
+      "images": ["agata-k-weekend-care.jpg"]
     },
     {
       "reviewer_name": "Hayley B.",
       "date": "2024-12-09",
       "verified_booking": true,
       "review_text": "Reliable dog walker with excellent timekeeping. Took great care of my cockapoo Molly while ensuring home security. Highly recommend Kristina's services.",
-      "images": ["hayley-b-cockapoo.jpg"]
+      "images": ["hayley-b-cockapoo-walk.jpg"]
     },
     {
       "reviewer_name": "Joao O.",
@@ -66,8 +80,8 @@
       "reviewer_name": "zivile t.",
       "date": "2024-10-18",
       "verified_booking": false,
-      "review_text": "Kristina made our shy cat Shanty feel comfortable immediately. Regular updates with pictures showed Shanty happy and well-fed. Highly recommend her responsible care.",
-      "images": ["zivile-t-shanty-cat.jpg"]
+      "review_text": "Kristina made our shy cat Shanty feel comfortable immediately. Regular updates with pictures showed her happy and well-fed. Highly recommend her responsible care.",
+      "images": ["zivile-t-shy-cat.jpg"]
     },
     {
       "reviewer_name": "Daniel U.",
@@ -81,14 +95,14 @@
       "date": "2024-07-28",
       "verified_booking": false,
       "review_text": "Exceptional cat sitting service. Kristina showed true passion for animal care from the first moment. Top-notch dedication and expertise.",
-      "images": ["jolanta-z-cat-care.jpg"]
+      "images": ["jolanta-z-cat-sitting.jpg"]
     },
     {
       "reviewer_name": "Tim J.",
       "date": "2024-07-11",
       "verified_booking": false,
       "review_text": "Consistently excellent dog walking services. Kristina built great rapport with my miniature schnauzer Ted. Warm, friendly, and highly recommended.",
-      "images": ["tim-j-schnauzer.jpg"]
+      "images": ["tim-j-schnauzer-walk.jpg"]
     }
   ]
   

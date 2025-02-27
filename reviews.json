@@ -1,0 +1,29 @@
+{
+  "reviews": [
+    {
+      "name": "Sarah J.",
+      "rating": 5,
+      "text": "Absolutely fantastic service! My dog always comes back happy and tired, which is exactly what I want. The videos and photos they send during walks are a lovely touch."
+    },
+    {
+      "name": "Michael T.",
+      "rating": 5,
+      "text": "Having recently moved to the area, I was worried about finding someone reliable to take care of my dog. Paw Patroller UK has been a godsend!"
+    },
+    {
+      "name": "Emma L.",
+      "rating": 5,
+      "text": "I love the live streaming walk option! Being able to see my dog having fun while I'm at work really brightens my day."
+    },
+    {
+      "name": "David P.",
+      "rating": 4,
+      "text": "Very professional service. My dog is always excited to see them arrive. Would definitely recommend!"
+    },
+    {
+      "name": "Lucy R.",
+      "rating": 5,
+      "text": "Trustworthy, reliable and genuinely care about the pets they look after. Worth every penny!"
+    }
+  ]
+}

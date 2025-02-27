@@ -1,20 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./*.{html,js}",
+    "./src/**/*.{js,ts,jsx,tsx,css}"
+  ],
   theme: {
     extend: {
       backgroundImage: {
         'hero_dog': "url('/assets/images/galaxyDog.jpg')",
       },
       colors: {
-        'brand': {
-          purple: '#9B7CB9',
-          peach: '#FFCDB1',
-          light: '#F5F0FF',
-        }
+        'brand-purple': '#6a1b9a',
+        'brand-purple-dark': '#4a148c',
+        'brand-light': '#f5f5f5',
+        'brand-peach': '#ffccbc',
       },
       fontFamily: {
-        fredoka: ['Fredoka', 'sans-serif'],
+        'fredoka': ['"Fredoka"', 'sans-serif'],
+        'poppins': ['"Poppins"', 'sans-serif'],
       },
       keyframes: {
         'fade-in-up': {
@@ -40,18 +43,15 @@ export default {
         'slide-in': 'slide-in 0.5s ease-out',
         'bounce-subtle': 'bounce-subtle 2s infinite'
       }
+    },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+      }
     }
   },
-  plugins: [
-    require('daisyui')
-  ],
-  daisyui: {
-    themes: ["light"],
-    base: true,
-    styled: true,
-    utils: true,
-    prefix: "",
-    logs: true,
-    themeRoot: ":root",
-  }
+  plugins: []
 }

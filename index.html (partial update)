@@ -1,0 +1,5 @@
+<!-- Only update the style link in the head section -->
+<!-- ...existing code... -->
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/style.css">
+<!-- ...existing code... -->

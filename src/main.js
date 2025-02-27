@@ -1,46 +1,84 @@
+// Import styles
 import './style.css';
-import './components/Header.js';
-import './components/Footer.js';
 
-// Cookie Banner and Reviews
+// DOM ready event handler
 document.addEventListener('DOMContentLoaded', function() {
-  // Reviews fetching code
-  fetch('reviews.json')
-    .then(response => response.json())
-    .then(data => {
-      const reviewContainer = document.getElementById('review-container');
-      data.reviews.slice(0, 5).forEach(review => {
-        const reviewElement = document.createElement('div');
-        reviewElement.className = 'p-6 transition-all duration-300 bg-white shadow-lg review-item rounded-xl hover:shadow-xl hover:-translate-y-1';
-        reviewElement.innerHTML = `
-          <div class="flex items-center mb-4">
-            <span class="text-2xl text-yellow-400">${'★'.repeat(review.rating)}</span>
-          </div>
-          <p class="mb-4">"${review.text}"</p>
-          <p class="font-semibold">- ${review.name}</p>
-        `;
-        reviewContainer.appendChild(reviewElement);
-      });
-    })
-    .catch(error => console.error('Error loading reviews:', error));
+  // Current year for footer
+  const currentYear = new Date().getFullYear();
+  document.querySelectorAll('#current-year').forEach(element => {
+    if (element) element.textContent = currentYear;
+  });
 
-  // Cookie banner functionality
+  // Cookie consent handling
   const cookieBanner = document.getElementById('cookie-banner');
   const acceptButton = document.getElementById('accept-cookies');
-  const declineButton = document.getElementById('decline-cookies');
-
-  if (!localStorage.getItem('cookiesAccepted')) {
-    setTimeout(() => {
-      cookieBanner.classList.remove('translate-y-full');
-    }, 1000);
+  const cookieSettingsLink = document.getElementById('open-cookie-settings');
+  
+  // Show banner if consent not already given
+  if (!localStorage.getItem('cookieConsentAcknowledged') && cookieBanner) {
+    cookieBanner.style.display = 'block';
+  }
+  
+  // Handle accept button click
+  if (acceptButton) {
+    acceptButton.addEventListener('click', function() {
+      localStorage.setItem('cookieConsentAcknowledged', 'true');
+      if (cookieBanner) cookieBanner.style.display = 'none';
+    });
+  }
+  
+  // Handle settings link click
+  if (cookieSettingsLink) {
+    cookieSettingsLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (cookieBanner) cookieBanner.style.display = 'block';
+    });
   }
 
-  acceptButton.addEventListener('click', () => {
-    localStorage.setItem('cookiesAccepted', 'true');
-    cookieBanner.classList.add('translate-y-full');
-  });
-
-  declineButton.addEventListener('click', () => {
-    cookieBanner.classList.add('translate-y-full');
-  });
+  // Testimonials loader
+  const loadTestimonials = function() {
+    const reviewContainer = document.getElementById('review-container');
+    if (!reviewContainer) return;
+    
+    fetch('reviews.json')
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json();
+      })
+      .then(data => {
+        if (!data || !data.reviews || !Array.isArray(data.reviews)) {
+          throw new Error('Invalid data format');
+        }
+        
+        // Clear any existing content
+        reviewContainer.innerHTML = '';
+        
+        // Add testimonials
+        data.reviews.slice(0, 5).forEach(review => {
+          const rating = Math.min(Math.max(parseInt(review.rating) || 0, 0), 5);
+          const safeText = (review.text || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+          const safeName = (review.name || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+          
+          const reviewElement = document.createElement('div');
+          reviewElement.className = 'p-6 transition-all duration-300 bg-white shadow-lg review-item rounded-xl hover:shadow-xl hover:-translate-y-1';
+          reviewElement.innerHTML = `
+            <div class="flex items-center mb-4">
+              <span class="text-2xl text-yellow-400">${'★'.repeat(rating)}</span>
+            </div>
+            <p class="mb-4">"${safeText}"</p>
+            <p class="font-semibold">- ${safeName}</p>
+          `;
+          reviewContainer.appendChild(reviewElement);
+        });
+      })
+      .catch(error => {
+        console.error('Error loading reviews:', error);
+        if (reviewContainer) {
+          reviewContainer.innerHTML = '<div class="text-center p-4"><p>See what our happy customers have to say about us on our social media!</p></div>';
+        }
+      });
+  };
+  
+  // Load testimonials if on a page that needs them
+  loadTestimonials();
 });
