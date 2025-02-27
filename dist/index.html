@@ -5,17 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paw Patroller UK</title>
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Essential SEO -->
+    <meta name="description" content="Experience personalized dog care services with Paw Patroller UK. From dog walking and pet visits to live streaming virtual walks, we care for your pet with passion.">
+    <meta name="keywords" content="dog care, dog walking, pet sitting, pet visits, virtual walks, dog training">
+    
+    <!-- Essential Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/agent-orange" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/gracility" rel="stylesheet">
+  
+    <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
-    <!-- Vite CSS -->
-    <link rel="stylesheet" crossorigin href="/pawpatrolleruk/assets/index-iP4L8Mw2.css">
+    <!-- Styles -->
+    
+    <!-- Vite entry point -->
+    <style>
+      /* Essential styles only */
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      h1, h2 {
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      #home.hero {
+        background-image: url('assets/hero-desktop.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      
+      @media screen and (max-device-width: 1024px) {
+        #home.hero {
+          background-attachment: scroll;
+        }
+      }
+
+      /* Cookie consent styles */
+      #cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        z-index: 1000;
+        display: none; /* Hidden by default, shown via JS */
+      }
+      
+      #cookie-preferences {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1100;
+        display: none; /* Hidden by default, shown via JS */
+      }
+      
+      #cookie-preferences-content {
+        background: white;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        width: 90%;
+        max-width: 500px;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+      
+      .cookie-btn {
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+      
+      .cookie-btn-primary {
+        background: var(--brand-purple, #6a1b9a);
+        color: white;
+      }
+      
+      .cookie-btn-secondary {
+        background: #f0f0f0;
+        color: #333;
+      }
+      
+      .cookie-btn-outline {
+        background: transparent;
+        border: 1px solid var(--brand-purple, #6a1b9a);
+        color: var(--brand-purple, #6a1b9a);
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/main-C2GG7IL5.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/css/main-HIlpSufk.css">
   </head>
+  
 <body class="bg-brand-light">
 
 <!-- Header -->
-<header class="sticky top-0 z-50 transition-all duration-300 shadow-sm bg-white/90 backdrop-blur-md hover:bg-white">
+<header class="sticky top-0 z-50 transition-all duration-300 shadow-sm backdrop-blur-md bg-white/90 hover:bg-white">
   <div class="container mx-auto">
     <div class="navbar min-h-[4rem]">
       <div class="navbar-start">
@@ -32,13 +130,13 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-        <a class="text-2xl font-semibold font-fredoka gradient-text">Paw Patroller UK</a>
+        <a href="index.html" class="text-2xl font-semibold gradient-text" style="font-family: 'Agent Orange', sans-serif;">Paw Patroller UK</a>
       </div>
       <div class="hidden navbar-center lg:flex">
         <ul class="px-1 menu menu-horizontal font-fredoka">
           <li><a href="#home">Home</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#gallery">Gallery</a></li>
+          <!-- <li><a href="#gallery">Gallery</a></li> -->
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#faq">FAQs</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -60,83 +158,72 @@
 
 <!-- Main Content -->
 <main>
-  <!-- Hero Section -->
-  <section class="hero min-h-[80vh] relative overflow-hidden" id="home">
-    <!-- Background Image with Overlay -->
-    <div class="absolute inset-0">
-      <div class="absolute inset-0 bg-hero_dog bg-cover bg-center filter blur-[2px]"></div>
-      <div class="absolute inset-0 bg-white/30"></div>
+ <!-- Updated Hero Section -->
+<section id="home" class="hero relative overflow-hidden min-h-[80vh] flex items-center">
+  <!-- Removed <picture> element for parallax background -->
+  <div class="absolute inset-0 opacity-50 bg-gradient-to-b from-gray-700 via-transparent to-transparent"></div>
+  <div class="container relative z-10 px-4 mx-auto text-center">
+    <h1 class="text-4xl font-bold text-white md:text-6xl" style="font-family: 'Gracility', sans-serif;">
+      Owners Trust Us. Dogs Love Us!
+    </h1>
+    <p class="max-w-2xl mx-auto mt-4 text-lg text-gray-100 md:text-xl">
+      At Paw Patroller UK, we provide premium dog care and walking services ensuring your furry friends are happy, safe, and well-exercised.
+    </p>
+    <a href="#contact" class="inline-block px-6 py-3 mt-8 text-lg font-medium text-white transition-all duration-300 transform rounded-full bg-brand-purple hover:bg-brand-purple-dark hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand-purple focus:ring-opacity-50">
+      Get in Touch
+    </a>
     </div>
-
-    <!-- Content Layer -->
-    <div class="relative z-10 text-center hero-content">
-      <div class="max-w-3xl">
-        <h1 class="font-fredoka text-5xl md:text-7xl font-bold mb-8 gradient-text leading-tight drop-shadow
-                 opacity-0 translate-y-4 motion-safe:animate-[fade-in-up_1s_ease-out_forwards]">
-          Owners Trust Us.<br>Dogs Love Us!
-        </h1>
-        <div class="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-xl mb-8 border border-brand-purple/10
-                  opacity-0 translate-y-4 motion-safe:animate-[fade-in-up_1s_ease-out_0.3s_forwards]">
-          <p class="mb-6 text-lg">Welcome to Paw Patroller UK, your go-to dog care company!</p>
-          <ul class="max-w-xl mx-auto space-y-4 text-left">
-            <li class="flex items-center gap-3 p-4 transition-all bg-brand-purple/5 rounded-xl hover:bg-brand-purple/10 hover:translate-x-1">
-              <span class="text-2xl material-icons text-brand-purple">work</span>
-              Are you concerned about your fur baby whilst at work?
-            </li>
-            <li class="flex items-center gap-3 p-4 transition-all bg-brand-purple/5 rounded-xl hover:bg-brand-purple/10 hover:translate-x-1">
-              <span class="text-2xl material-icons text-brand-purple">directions_walk</span>
-              Want to ensure they are walked and kept entertained?
-            </li>
-            <li class="flex items-center gap-3 p-4 transition-all bg-brand-purple/5 rounded-xl hover:bg-brand-purple/10 hover:translate-x-1">
-              <span class="text-2xl material-icons text-brand-purple">favorite</span>
-              By a passionate and experienced dog lover?
-            </li>
-            <li class="flex items-center gap-3 p-4 transition-all bg-brand-purple/5 rounded-xl hover:bg-brand-purple/10 hover:translate-x-1">
-              <span class="text-2xl material-icons text-brand-purple">pets</span>
-              Going on holiday and need a pet sitter?
-            </li>
-          </ul>
-        </div>
-        <a href="#contact" class="btn btn-lg bg-brand-purple hover:bg-brand-purple/90 text-white font-fredoka group
-                               opacity-0 translate-y-4 motion-safe:animate-[fade-in-up_1s_ease-out_0.5s_forwards]">
-          Get in Touch
-          <span class="ml-2 transition-transform material-icons group-hover:translate-x-1">arrow_forward</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Gradient Transition -->
-    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white/90"></div>
   </section>
 
-  <!-- About Section -->
+  <!-- About Paw Patroller Section -->
   <section id="about" class="relative z-10 py-24 bg-white">
     <div class="container px-4 mx-auto">
-      <h2 class="mb-16 text-4xl text-center font-fredoka md:text-5xl gradient-text">About Paw Patroller UK</h2>
-      <div class="max-w-3xl mx-auto">
-        <p class="mb-6 text-lg">Welcome to Paw Patroller UK, your dog walking service dedicated to keeping your furry friends happy and healthy!</p>
-        <p class="mb-6">Our team of passionate dog lovers is committed to providing personalized care and attention for each pet. Whether it's a brisk walk in the park or a playful romp around the neighbourhood, we ensure that every pup receives the exercise and socialization they need.</p>
-        <p class="mb-6">With Paw Patroller UK, you can trust that your beloved companion is in safe hands. Let us take your dog on an adventure while you focus on your day!</p>
-        <p class="font-semibold">For a no-obligation conversation about how we can assist you, please call us at 073 0088 8847. We look forward to discussing your needs!</p>
+      <h2 class="mb-16 text-4xl text-center font-fredoka md:text-5xl gradient-text">About Paw Patroller</h2>
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div class="space-y-6">
+          <div class="flex items-center mb-4"></div>
+      
+      <p>Are you concerned about your fur baby whilst at work?<br>
+      Are you going on holiday and need a pet sitter?</p>
+      
+      <p>Our team of passionate dog lovers is committed to providing personalized care and attention for each pet.</p>
+      
+      <p>Whether it's a brisk walk in the park or a playful romp around the neighbourhood, we ensure that every pup receives the exercise and socialization they need. With Paw Patroller UK, you can trust that your beloved companion is in safe hands.</p>
+      
+      <p>For a no-obligation conversation about how we can assist you, please call us at 073 0088 8847. We look forward to discussing your needs!</p>
+      
+      </div>
+      <div class="flex items-center justify-center">
+        <div class="relative w-full max-w-md">
+          <div class="absolute inset-0 transform rotate-6 rounded-xl bg-brand-purple/20"></div>
+          <img src="assets/about-image.jpg" alt="Happy dog with caretaker" class="relative z-10 object-cover w-full shadow-xl rounded-xl">
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
+  <!-- NEW: Trust & Safety Badges Section -->
+  <div class="container flex justify-center mx-auto my-8 space-x-4">
+    <img src="assets/protectivity-insurance.png" alt="Protectivity Insurance" class="h-10">
+    <img src="assets/dbs-checked.png" alt="DBS Checked" class="h-10">
+    <img src="assets/oplex-first-aid.png" alt="Oplex First Aid" class="h-10">
+  </div>
 
   <!-- Services Section -->
   <section id="services" class="py-24 bg-white">
     <div class="container px-4 mx-auto">
-      <h2 class="mb-16 text-4xl text-center font-fredoka md:text-5xl gradient-text">Professional Dog Care Services</h2>
+      <h2 class="max-w-4xl px-2 mx-auto mb-16 text-3xl leading-tight text-center sm:text-4xl font-fredoka md:text-5xl gradient-text">Professional Dog Care Services</h2>
 
       <!-- Service Grid -->
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         <!-- Dog Walking Card -->
-        <div class="p-6 transition-all duration-300 bg-white shadow-xl card rounded-xl hover:shadow-2xl hover:-translate-y-1">
+        <div class="p-6 transition-all duration-300 bg-white shadow-xl rounded-xl card hover:shadow-2xl hover:-translate-y-1">
           <div class="flex items-center mb-4">
             <span class="mr-2 text-3xl transition-all duration-300 material-icons text-brand-purple group-hover:scale-110">pets</span>
             <h3 class="text-2xl font-fredoka">Dog Walking</h3>
           </div>
-          <p class="mb-6">Experience peace of mind knowing your beloved pet is in caring hands while enjoying the outdoors!</p>
+          <p class="mb-6">Experience peace of mind knowing your beloved pet is in caring hands while enjoying the outdoors! <strong class="text-green-500">Ask for bundle discounts!</strong></p>
 
           <div class="mb-6 space-y-2 pricing">
             <div class="flex items-center justify-between p-2 rounded bg-brand-light">
@@ -159,10 +246,6 @@
                 <li class="flex items-start">
                   <span class="mt-1 mr-2 text-sm text-green-500 material-icons">check_circle</span>
                   <span>Initial Meet and Greet session</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="mt-1 mr-2 text-sm text-green-500 material-icons">check_circle</span>
-                  <span>Enjoy a complimentary first walk of 30 minutes</span>
                 </li>
                 <li class="flex items-start">
                   <span class="mt-1 mr-2 text-sm text-green-500 material-icons">check_circle</span>
@@ -214,7 +297,7 @@
         </div>
 
         <!-- Pet Visits Card -->
-        <div class="p-6 transition-all duration-300 bg-white shadow-xl card rounded-xl hover:shadow-2xl hover:-translate-y-1">
+        <div class="p-6 transition-all duration-300 bg-white shadow-xl rounded-xl card hover:shadow-2xl hover:-translate-y-1">
           <div class="flex items-center mb-4">
             <span class="mr-2 text-3xl transition-all duration-300 material-icons text-brand-purple group-hover:scale-110">home</span>
             <h3 class="text-2xl font-fredoka">Pet Visits</h3>
@@ -293,7 +376,7 @@
         </div>
 
         <!-- Live Streaming Virtual Walks Card -->
-        <div class="p-6 transition-all duration-300 shadow-xl card bg-gradient-to-r from-brand-purple/10 to-brand-peach/10 rounded-xl hover:shadow-2xl hover:-translate-y-1">
+        <div class="p-6 transition-all duration-300 shadow-xl bg-gradient-to-r rounded-xl card from-brand-purple/10 to-brand-peach/10 hover:shadow-2xl hover:-translate-y-1">
           <div class="flex items-center mb-4">
             <span class="mr-2 text-3xl transition-all duration-300 material-icons text-brand-purple group-hover:scale-110">videocam</span>
             <h3 class="text-2xl font-fredoka">Live Streaming Virtual Walks</h3>
@@ -301,12 +384,12 @@
           </div>
           <p class="mb-6">Let us help you stay connected with your pet, no matter where you are!</p>
 
-          <div class="mb-6 pricing">
-            <div class="flex items-center justify-between mb-2">
+          <div class="mb-6 space-y-2 pricing">
+            <div class="flex items-center justify-between p-2 rounded bg-brand-light">
               <span>30-minute virtual walk</span>
               <span class="font-bold text-brand-purple">£25</span>
             </div>
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between p-2 rounded bg-brand-light">
               <span>1-hour virtual walk</span>
               <span class="font-bold text-brand-purple">£35</span>
             </div>
@@ -327,10 +410,7 @@
                   <span class="mt-1 mr-2 text-sm text-green-500 material-icons">check_circle</span>
                   <span>Meet and Greet: Establish a connection and comfort before your virtual walk begins</span>
                 </li>
-                <li class="flex items-start">
-                  <span class="mt-1 mr-2 text-sm text-green-500 material-icons">check_circle</span>
-                  <span>Complimentary First Walk: Enjoy a complimentary 30-minute first walk to get started</span>
-                </li>
+
                 <li class="flex items-start">
                   <span class="mt-1 mr-2 text-sm text-green-500 material-icons">check_circle</span>
                   <span>See the Joy: Witness every playful moment and every walk as your furry friend enjoys their day</span>
@@ -354,7 +434,7 @@
 
         <!-- Dog training section -->
         <!-- Dog Training Card -->
-        <div class="p-6 transition-all duration-300 bg-white shadow-xl card rounded-xl hover:shadow-2xl hover:-translate-y-1">
+        <div class="p-6 transition-all duration-300 bg-white shadow-xl rounded-xl card hover:shadow-2xl hover:-translate-y-1">
           <div class="flex items-center mb-4">
             <span class="mr-2 text-3xl transition-all duration-300 material-icons text-brand-purple group-hover:scale-110">pets</span> <!--TODO: Change Icon-->
             <h3 class="text-2xl font-fredoka">Dog Training</h3>
@@ -377,16 +457,12 @@
 
 
       <!-- Service Hours Notice -->
-      <div class="p-6 mt-12 bg-brand-light rounded-xl">
+      <div class="p-6 mt-12 rounded-xl bg-brand-light">
         <h4 class="mb-4 text-xl font-fredoka">Service Hours</h4>
         <ul class="space-y-2">
           <li class="flex items-center">
             <span class="mr-2 material-icons text-brand-purple">schedule</span>
-            Morning walks: 9:30 AM - 11:30 AM
-          </li>
-          <li class="flex items-center">
-            <span class="mr-2 material-icons text-brand-purple">schedule</span>
-            Afternoon walks: 12:30 PM - 2:30 PM
+            Walks: 9:00 AM - 7:00 PM
           </li>
         </ul>
         <p class="mt-4 text-sm">* We operate Monday to Friday. Weekend and public holiday services are available with a 20% surcharge.</p>
@@ -407,7 +483,7 @@
         <!-- First 5 reviews will be loaded here -->
       </div>
       <div class="mt-8 text-center">
-        <a href="/testimonials" class="text-white transition-all duration-300 btn btn-lg bg-brand-purple hover:bg-brand-purple/90 font-fredoka group">
+        <a href="testimonials.html" class="inline-block px-6 py-3 text-lg font-medium text-white transition-all duration-300 transform rounded-full bg-brand-purple hover:bg-brand-purple-dark hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand-purple focus:ring-opacity-50 group">
           View All Reviews
           <span class="ml-2 transition-transform material-icons group-hover:translate-x-1">arrow_forward</span>
         </a>
@@ -444,7 +520,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <section id="contact" class="py-24 bg-white">
     <div class="container px-4 mx-auto">
       <h2 class="mb-16 text-4xl text-center font-fredoka md:text-5xl gradient-text">Contact Us</h2>
-      <div class="max-w-3xl p-8 mx-auto shadow-lg bg-brand-light rounded-xl">
+      <div class="max-w-3xl p-8 mx-auto shadow-lg rounded-xl bg-brand-light">
         <p class="mb-6 text-center">Feel free to send us a text or give us a call anytime to ask any questions you may have, arrange a meet and greet, or schedule any of our pet services.</p>
         <div class="space-y-4">
           <div class="flex items-center">
@@ -469,117 +545,96 @@ document.addEventListener('DOMContentLoaded', function() {
   </section>
 
 
-  <!-- FAQ Section -->
-  <section id="faq" class="py-24 bg-brand-light">
-    <div class="container px-4 mx-auto">
-      <h2 class="mb-16 text-4xl text-center font-fredoka md:text-5xl gradient-text">Frequently Asked Questions</h2>
-      <div class="max-w-3xl mx-auto space-y-8">
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">What areas do you cover?</summary>
-          <p class="mt-4">We are based in Putney and we cover Putney, Richmond, Barnes and Wandsworth areas. If you're not sure, give us a call and we will explore options for you.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Where do you walk?</summary>
-          <p class="mt-4">We aim to diversify our walking routes, utilizing beautiful locations such as Richmond Park, Bushy Park, Putney Heath, and Wimbledon Common, along with their woodlands, fields, brooks, and ponds, as well as local parks. We strive to minimize the time dogs spend in the car.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">How long are the walks?</summary>
-          <p class="mt-4">Each walk lasts a minimum of 30 minutes or 1 hour, but frequently longer, depending on the walk you book. Please note that travel time is not included in the walking duration.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">How many dogs can you walk at once?</summary>
-          <p class="mt-4">We walk in small, well-managed groups to ensure personalized attention and care.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Do all employees have a current police check?</summary>
-          <p class="mt-4">Yes, all of our employees who are responsible for both your dogs and homes have undergone a DBS check.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Are you insured?</summary>
-          <p class="mt-4">Yes, we carry specialised business insurance.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Do you have any testimonials?</summary>
-          <p class="mt-4">Absolutely! Testimonials from our satisfied clients are available on our website.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Can you provide references?</summary>
-          <p class="mt-4">References can be provided upon request.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">How much do you charge?</summary>
-          <p class="mt-4">Please refer to our price list for detailed information.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Do you pick up and drop off my dog?</summary>
-          <p class="mt-4">Yes, we offer pick-up and drop-off services for your dog from your home.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">What payment methods do you accept?</summary>
-          <p class="mt-4">We accept cash, bank transfers, and payments via PayPal.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">When is payment due? Do you require a deposit?</summary>
-          <p class="mt-4">We will provide a quote for the service before beginning pet sitting, and payment is due in full within 24 hours after the service is completed. No deposit is required.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">What happens if my return home gets delayed?</summary>
-          <p class="mt-4">If your return home is delayed, simply message us, and we will continue to care for your animals until you arrive.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">How many days in advance do I need to contact you?</summary>
-          <p class="mt-4">While a day or two notice is preferred, we are flexible with sudden changes and can accommodate urgent requests. Just send us a message, and we can begin care as early as that day if needed.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">What types of animals do you care for?</summary>
-          <p class="mt-4">We are happy to care for dogs, cats, birds of all types, reptiles, and pocket pets such as guinea pigs and rats. However, we do not provide pet sitting services for horses, cows, or other large farm animals.</p>
-        </details>
-
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
-
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">How do I become a client?</summary>
-          <p class="mt-4">To become a client, please call 073 0088 8847 or email pawpatrolleruk@gmail.com. We will arrange a convenient time to visit you.</p>
-        </details>
-      </div>
-    </div>
-  </section>
+ 
 
 </main>
 
 <!-- Footer -->
-<footer class="py-8 text-white bg-brand-purple">
+<footer class="py-12 text-white" style="background-color: #6a1b9a;">
   <div class="container px-4 mx-auto">
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-      <!-- Footer content -->
+    <div class="grid grid-cols-1 gap-8 mb-8 md:grid-cols-4">
+      <!-- Brand/Logo Section -->
+      <div class="col-span-1 md:col-span-1">
+        <div class="mb-4">
+          <a href="index.html" class="inline-block mb-4 text-2xl font-semibold text-white" style="font-family: 'Agent Orange', sans-serif;">
+            Paw Patroller UK
+          </a>
+        </div>
+        <p class="mb-6 text-sm text-white opacity-90">
+          Professional dog walking and pet care services in the UK. Fully insured, DBS checked, and dedicated to your pet's happiness.
+        </p>
+        <!-- Social Links -->
+        <div class="flex space-x-4">
+          <a href="https://www.facebook.com/PawPatrollerUK" target="_blank" rel="noopener noreferrer" class="p-2 text-white transition-all duration-300 rounded-full hover:bg-white/20">
+            <span class="material-icons">facebook</span>
+          </a>
+          <a href="https://www.instagram.com/Paw_Patroller_UK" target="_blank" rel="noopener noreferrer" class="p-2 text-white transition-all duration-300 rounded-full hover:bg-white/20">
+            <span class="material-icons">photo_camera</span>
+          </a>
+          <a href="https://wa.me/447300888847" target="_blank" rel="noopener noreferrer" class="p-2 text-white transition-all duration-300 rounded-full hover:bg-white/20">
+            <span class="material-icons">whatsapp</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="md:ml-8">
+        <h3 class="mb-4 text-lg font-semibold text-white">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#home" class="inline-block py-1 text-white hover:underline">Home</a></li>
+          <li><a href="#about" class="inline-block py-1 text-white hover:underline">About Us</a></li>
+          <li><a href="#services" class="inline-block py-1 text-white hover:underline">Services</a></li>
+          <li><a href="#testimonials" class="inline-block py-1 text-white hover:underline">Testimonials</a></li>
+          <li><a href="#contact" class="inline-block py-1 text-white hover:underline">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h3 class="mb-4 text-lg font-semibold text-white">Our Services</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#services" class="inline-block py-1 text-white hover:underline">Dog Walking</a></li>
+          <li><a href="#services" class="inline-block py-1 text-white hover:underline">Pet Visits</a></li>
+          <li><a href="#services" class="inline-block py-1 text-white hover:underline">Live Streaming Walks</a></li>
+          <li><a href="#services" class="inline-block py-1 text-white hover:underline">Dog Training</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="mb-4 text-lg font-semibold text-white">Contact Us</h3>
+        <ul class="space-y-3 text-sm text-white">
+          <li class="flex">
+            <span class="mr-3 material-icons">phone</span>
+            <a href="tel:07300888847" class="text-white">073 0088 8847</a>
+          </li>
+          <li class="flex">
+            <span class="mr-3 material-icons">email</span>
+            <a href="mailto:pawpatrolleruk@gmail.com" class="text-white">pawpatrolleruk@gmail.com</a>
+          </li>
+          <li class="flex">
+            <span class="mr-3 material-icons">schedule</span>
+            <span>Mon-Fri: 9:00 AM - 7:00 PM</span>
+          </li>
+          <li class="flex">
+            <span class="mr-3 material-icons">info</span>
+            <span>Weekend services available</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="pt-6 mt-6 border-t border-white/20">
+      <div class="flex flex-col justify-between text-sm sm:flex-row">
+        <div class="mb-4 sm:mb-0">
+          <p class="text-white">&copy; <span id="current-year"></span> Paw Patroller UK. All Rights Reserved.</p>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <a href="privacy-policy.html" class="text-white hover:underline">Privacy Policy</a>
+          <a href="#" id="open-cookie-settings" class="text-white hover:underline">Cookie Settings</a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
@@ -592,46 +647,309 @@ document.addEventListener('DOMContentLoaded', function() {
   </svg>
 </a>
 
-
-<!-- Cookie Banner -->
-<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 transition-transform duration-300 transform translate-y-full bg-white shadow-lg">
-  <div class="container px-4 py-4 mx-auto">
-    <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
-      <p class="text-sm text-gray-600">We use cookies to analyse website traffic and optimize your website experience. By accepting our use of cookies, your data will be aggregated with all other user data.</p>
-      <div class="flex gap-4">
-        <button id="decline-cookies" class="px-4 py-2 text-sm font-medium text-gray-500 transition-colors hover:text-gray-700">
-          Decline
-        </button>
-        <button id="accept-cookies" class="px-4 py-2 text-sm font-medium text-white transition-colors rounded-md bg-brand-purple hover:bg-brand-purple/90">
-          Accept
-        </button>
-      </div>
+<!-- GDPR Compliant Cookie Banner -->
+<div id="cookie-banner">
+  <div class="container mx-auto">
+    <h3 class="mb-2 text-lg font-semibold">We Value Your Privacy</h3>
+    <p class="mb-4">We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+    <div class="flex flex-wrap gap-2">
+      <button id="accept-all-cookies" class="cookie-btn cookie-btn-primary">
+        Accept All
+      </button>
+      <button id="reject-all-cookies" class="cookie-btn cookie-btn-secondary">
+        Reject All
+      </button>
+      <button id="cookie-preferences-btn" class="cookie-btn cookie-btn-outline">
+        Manage Preferences
+      </button>
     </div>
   </div>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const cookieBanner = document.getElementById('cookie-banner');
-  const acceptButton = document.getElementById('accept-cookies');
-  const declineButton = document.getElementById('decline-cookies');
+<!-- Cookie Preferences Modal -->
+<div id="cookie-preferences">
+  <div id="cookie-preferences-content">
+    <h3 class="mb-4 text-xl font-semibold">Cookie Preferences</h3>
+    <p class="mb-4">Please select which cookies you are willing to store on your browser.</p>
+    
+    <div class="mb-4">
+      <label class="flex items-start mb-2">
+        <input type="checkbox" checked disabled class="mt-1 mr-2">
+        <div>
+          <span class="font-semibold">Necessary</span>
+          <p class="text-sm text-gray-600">These cookies are essential for the website to function properly.</p>
+        </div>
+      </label>
+      
+      <label class="flex items-start mb-2">
+        <input type="checkbox" id="analytics-cookies" class="mt-1 mr-2">
+        <div>
+          <span class="font-semibold">Analytics</span>
+          <p class="text-sm text-gray-600">These cookies help us improve our website by collecting anonymous information.</p>
+        </div>
+      </label>
+      
+      <label class="flex items-start">
+        <input type="checkbox" id="marketing-cookies" class="mt-1 mr-2">
+        <div>
+          <span class="font-semibold">Marketing</span>
+          <p class="text-sm text-gray-600">These cookies are used to personalize advertisements and content.</p>
+        </div>
+      </label>
+    </div>
+    
+    <div class="flex justify-end gap-2">
+      <button id="save-preferences" class="cookie-btn cookie-btn-primary">Save Preferences</button>
+      <button id="close-preferences" class="cookie-btn cookie-btn-secondary">Cancel</button>
+    </div>
+  </div>
+</div>
 
-  if (!localStorage.getItem('cookiesAccepted')) {
-    setTimeout(() => {
-      cookieBanner.classList.remove('translate-y-full');
-    }, 1000);
+<style>
+  /* Essential styles only */
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h1, h2 {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  #home.hero {
+    background-image: url('assets/hero-desktop.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  @media screen and (max-device-width: 1024px) {
+    #home.hero {
+      background-attachment: scroll;
+    }
   }
 
-  acceptButton.addEventListener('click', function() {
-    localStorage.setItem('cookiesAccepted', 'true');
-    cookieBanner.classList.add('translate-y-full');
-  });
+  /* Cookie consent styles */
+  #cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    z-index: 1000;
+    display: none; /* Hidden by default, shown via JS */
+  }
+  
+  #cookie-preferences {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    display: none; /* Hidden by default, shown via JS */
+  }
+  
+  #cookie-preferences-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .cookie-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .cookie-btn-primary {
+    background-color: #6a1b9a !important;
+    color: white !important;
+  }
+  
+  .cookie-btn-secondary {
+    background-color: #f0f0f0 !important;
+    color: #333333 !important;
+  }
+  
+  .cookie-btn-outline {
+    background-color: transparent !important;
+    border: 1px solid #6a1b9a !important;
+    color: #6a1b9a !important;
+  }
+</style>
 
-  declineButton.addEventListener('click', function() {
-    cookieBanner.classList.add('translate-y-full');
+<script>
+  // GDPR compliant cookie consent management
+  document.addEventListener('DOMContentLoaded', function() {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookiePreferences = document.getElementById('cookie-preferences');
+    const analyticsCheckbox = document.getElementById('analytics-cookies');
+    const marketingCheckbox = document.getElementById('marketing-cookies');
+    const currentYearElements = document.querySelectorAll('#current-year');
+    
+    // Set current year in footer
+    const currentYear = new Date().getFullYear();
+    currentYearElements.forEach(element => {
+      element.textContent = currentYear;
+    });
+    
+    // Check if user has already set cookie preferences
+    const cookieConsent = JSON.parse(localStorage.getItem('cookieConsent') || 'null');
+    
+    // Show the banner if no consent is stored
+    if (!cookieConsent) {
+      cookieBanner.style.display = 'block';
+    }
+    
+    // Set checkboxes based on stored preferences (if any)
+    if (cookieConsent) {
+      analyticsCheckbox.checked = cookieConsent.analytics || false;
+      marketingCheckbox.checked = cookieConsent.marketing || false;
+    }
+    
+    // Accept all cookies
+    document.getElementById('accept-all-cookies')?.addEventListener('click', function() {
+      const consent = {
+        necessary: true,
+        analytics: true,
+        marketing: true,
+        timestamp: new Date().toISOString()
+      };
+      saveConsent(consent);
+      cookieBanner.style.display = 'none';
+      
+      // Here you would initialize any analytics or marketing scripts
+      initializeCookieDependentServices(consent);
+    });
+    
+    // Reject all cookies
+    document.getElementById('reject-all-cookies')?.addEventListener('click', function() {
+      const consent = {
+        necessary: true, // Necessary cookies are always allowed
+        analytics: false,
+        marketing: false,
+        timestamp: new Date().toISOString()
+      };
+      saveConsent(consent);
+      cookieBanner.style.display = 'none';
+    });
+    
+    // Open preferences modal
+    document.getElementById('cookie-preferences-btn')?.addEventListener('click', function() {
+      cookiePreferences.style.display = 'flex';
+    });
+    
+    // Close preferences modal
+    document.getElementById('close-preferences')?.addEventListener('click', function() {
+      cookiePreferences.style.display = 'none';
+    });
+    
+    // Save custom preferences
+    document.getElementById('save-preferences')?.addEventListener('click', function() {
+      const consent = {
+        necessary: true,
+        analytics: analyticsCheckbox.checked,
+        marketing: marketingCheckbox.checked,
+        timestamp: new Date().toISOString()
+      };
+      saveConsent(consent);
+      cookiePreferences.style.display = 'none';
+      cookieBanner.style.display = 'none';
+      
+      // Initialize services based on selections
+      initializeCookieDependentServices(consent);
+    });
+    
+    // Open cookie settings from footer link
+    document.getElementById('open-cookie-settings')?.addEventListener('click', function(e) {
+      e.preventDefault();
+      cookiePreferences.style.display = 'flex';
+    });
+    
+    // Helper function to save consent
+    function saveConsent(consent) {
+      localStorage.setItem('cookieConsent', JSON.stringify(consent));
+    }
+    
+    // Initialize services based on existing consent
+    if (cookieConsent) {
+      initializeCookieDependentServices(cookieConsent);
+    }
+    
+    // Initialize services that depend on cookie consent
+    function initializeCookieDependentServices(consent) {
+      if (consent.analytics) {
+        // Initialize analytics (example: Google Analytics)
+        console.log('Analytics initialized');
+        // Add your analytics initialization code here
+      }
+      
+      if (consent.marketing) {
+        // Initialize marketing cookies/scripts
+        console.log('Marketing initialized');
+        // Add your marketing scripts initialization code here
+      }
+    }
   });
-});
+  
+  // Safely load testimonials
+  document.addEventListener('DOMContentLoaded', function() {
+    const reviewContainer = document.getElementById('review-container');
+    if (!reviewContainer) return; // Guard clause for pages without reviews
+    
+    fetch('reviews.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (!data || !data.reviews || !Array.isArray(data.reviews)) {
+          throw new Error('Invalid data format');
+        }
+        
+        data.reviews.slice(0, 5).forEach(review => {
+          const rating = Math.min(Math.max(parseInt(review.rating) || 0, 0), 5); // Ensure rating is between 0-5
+          const reviewElement = document.createElement('div');
+          reviewElement.className = 'review-item bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1';
+          reviewElement.innerHTML = `
+            <div class="flex items-center mb-4">
+              <span class="text-2xl text-yellow-400">${'★'.repeat(rating)}</span>
+            </div>
+            <p class="mb-4">"${(review.text || '').replace(/</g, '&lt;').replace(/>/g, '&gt;')}"</p>
+            <p class="font-semibold">- ${(review.name || '').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
+          `;
+          reviewContainer.appendChild(reviewElement);
+        });
+      })
+      .catch(error => {
+        console.error('Error loading reviews:', error);
+        // Graceful fallback for reviews section
+        if (reviewContainer.parentElement) {
+          const fallbackMessage = document.createElement('div');
+          fallbackMessage.className = 'text-center';
+          fallbackMessage.innerHTML = '<p>See what our happy customers have to say about us on our social media!</p>';
+          reviewContainer.appendChild(fallbackMessage);
+        }
+      });
+  });
 </script>
 
 </body>
 </html>
+

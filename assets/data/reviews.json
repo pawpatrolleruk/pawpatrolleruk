@@ -1,0 +1,94 @@
+[
+    {
+      "reviewer_name": "Melissa",
+      "date": null,
+      "verified_booking": false,
+      "review_text": "Kristina has been fantastic, very friendly and professional. Alby always seems to enjoy his walks with her and she's great at sending photos of their time together. We couldn't be happier with the daycare service Kristina provided for our dogs Kai and Finn. She's a true animal lover who keeps detailed notes about their routines and behaviors. Her regular updates and stunning photos show genuine dedication to pet care.",
+      "images": ["melissa-generic.jpg"]
+    },
+    {
+      "reviewer_name": "Luana C.",
+      "date": "2024-12-27",
+      "verified_booking": true,
+      "review_text": "I couldn't be happier with Kristina! She was absolutely amazing with my cat, providing regular updates and photos that gave me peace of mind. My cat was clearly comfortable and happy in her care. Highly recommended!",
+      "images": ["luana-c-2024-12-27.jpg"]
+    },
+    {
+      "reviewer_name": "Laurita P.",
+      "date": null,
+      "verified_booking": false,
+      "review_text": "We completely trust Paw_Patroller_UK with our mini-zoo (cats, dogs, bearded dragons, and sugar gliders). They're responsible, genuinely caring, and our pets are always happy/healthy when we return. Awesome service!",
+      "images": ["laurita-p-mini-zoo.jpg"]
+    },
+    {
+      "reviewer_name": "AACC H.",
+      "date": "2024-11-12",
+      "verified_booking": false,
+      "review_text": "Kristina is a SUPER cat feeder - reliable, organized, and deeply caring. She provides regular updates and photos while handling various animal species with expertise. Highly recommend her services.",
+      "images": ["aacc-h-cat-feeding.jpg"]
+    },
+    {
+      "reviewer_name": "Jodie Lee S.",
+      "date": "2024-11-10",
+      "verified_booking": false,
+      "review_text": "Kristina has cared for my animals for years, from puppies to draught horses. She currently looks after my senior French Bulldog Blake with exceptional care. 10 stars+++ for her loving and knowledgeable approach.",
+      "images": ["jodie-lee-s-french-bulldog.jpg"]
+    },
+    {
+      "reviewer_name": "Agata K.",
+      "date": "2025-01-20",
+      "verified_booking": true,
+      "review_text": "Kristina provided excellent care for our cat Boris over the weekend. Regular updates and pictures showed Boris relaxed and content. Will definitely use her services again.",
+      "images": ["agata-k-boris-cat.jpg"]
+    },
+    {
+      "reviewer_name": "Hayley B.",
+      "date": "2024-12-09",
+      "verified_booking": true,
+      "review_text": "Reliable dog walker with excellent timekeeping. Took great care of my cockapoo Molly while ensuring home security. Highly recommend Kristina's services.",
+      "images": ["hayley-b-cockapoo.jpg"]
+    },
+    {
+      "reviewer_name": "Joao O.",
+      "date": "2024-12-28",
+      "verified_booking": true,
+      "review_text": "Kristina was an AMAZING cat sitter who went above and beyond. Our cats looked incredibly happy and well-cared for. Exceptional service!",
+      "images": ["joao-o-cat-duo.jpg"]
+    },
+    {
+      "reviewer_name": "Cat B.",
+      "date": "2024-10-23",
+      "verified_booking": true,
+      "review_text": "Excellent care for our 4-year-old French bulldog. Kristina took him on lovely walks and always ensured his wellbeing. Highly grateful!",
+      "images": ["cat-b-french-bulldog.jpg"]
+    },
+    {
+      "reviewer_name": "zivile t.",
+      "date": "2024-10-18",
+      "verified_booking": false,
+      "review_text": "Kristina made our shy cat Shanty feel comfortable immediately. Regular updates with pictures showed Shanty happy and well-fed. Highly recommend her responsible care.",
+      "images": ["zivile-t-shanty-cat.jpg"]
+    },
+    {
+      "reviewer_name": "Daniel U.",
+      "date": "2024-07-21",
+      "verified_booking": false,
+      "review_text": "Kristina's dog first aid training and genuine care shine through. Our dog loves walks with her. Highly recommended service.",
+      "images": ["daniel-u-dog-walk.jpg"]
+    },
+    {
+      "reviewer_name": "Jolanta Z.",
+      "date": "2024-07-28",
+      "verified_booking": false,
+      "review_text": "Exceptional cat sitting service. Kristina showed true passion for animal care from the first moment. Top-notch dedication and expertise.",
+      "images": ["jolanta-z-cat-care.jpg"]
+    },
+    {
+      "reviewer_name": "Tim J.",
+      "date": "2024-07-11",
+      "verified_booking": false,
+      "review_text": "Consistently excellent dog walking services. Kristina built great rapport with my miniature schnauzer Ted. Warm, friendly, and highly recommended.",
+      "images": ["tim-j-schnauzer.jpg"]
+    }
+  ]
+  

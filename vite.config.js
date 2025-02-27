@@ -17,7 +17,7 @@ export default defineConfig({
       ]
     })
   ],
-  base: '/', // Updated for patpatrolleruk.com
+  base: './', // Updated for patpatrolleruk.com
   build: {
     outDir: 'dist',
     rollupOptions: {
@@ -38,6 +38,8 @@ export default defineConfig({
     },
   },
   server: {
-    open: true
+    open: true,
+    host: '0.0.0.0',
+    port: 3000, // or any port you prefer
   }
 });

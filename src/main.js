@@ -1,21 +1,11 @@
-import './main.css';
-import { initCookieConsent } from './js/cookie-consent';
-import '@js/cookie-consent.js';
+import './style.css';
+import './components/Header.js';
+import './components/Footer.js';
 
-// Initialize cookie consent when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    initCookieConsent();
-    
-    // Set hero section background image using a reference that remains accessible on the site
-    const heroSection = document.getElementById('home');
-    if (heroSection) {
-      heroSection.style.backgroundImage = "url('assets/hero-desktop.jpg')";
-    }
-});
-
-// Reviews
+// Cookie Banner and Reviews
 document.addEventListener('DOMContentLoaded', function() {
-  fetch('./reviews.json') // updated relative URL for static sites
+  // Reviews fetching code
+  fetch('reviews.json')
     .then(response => response.json())
     .then(data => {
       const reviewContainer = document.getElementById('review-container');
@@ -24,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         reviewElement.className = 'p-6 transition-all duration-300 bg-white shadow-lg review-item rounded-xl hover:shadow-xl hover:-translate-y-1';
         reviewElement.innerHTML = `
           <div class="flex items-center mb-4">
-            <span class="text-yellow-400 text-2xl">${'★'.repeat(review.rating)}</span>
+            <span class="text-2xl text-yellow-400">${'★'.repeat(review.rating)}</span>
           </div>
           <p class="mb-4">"${review.text}"</p>
           <p class="font-semibold">- ${review.name}</p>
@@ -33,12 +23,24 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     })
     .catch(error => console.error('Error loading reviews:', error));
-});
 
-// NEW: Example enhancement for "Get In Touch" smooth scroll (if needed)
-document.addEventListener('click', function(e) {
-  if (e.target.closest('.btn-get-in-touch')) {
-    e.preventDefault();
-    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+  // Cookie banner functionality
+  const cookieBanner = document.getElementById('cookie-banner');
+  const acceptButton = document.getElementById('accept-cookies');
+  const declineButton = document.getElementById('decline-cookies');
+
+  if (!localStorage.getItem('cookiesAccepted')) {
+    setTimeout(() => {
+      cookieBanner.classList.remove('translate-y-full');
+    }, 1000);
   }
+
+  acceptButton.addEventListener('click', () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    cookieBanner.classList.add('translate-y-full');
+  });
+
+  declineButton.addEventListener('click', () => {
+    cookieBanner.classList.add('translate-y-full');
+  });
 });
