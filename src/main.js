@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(error => {
         console.error('Error loading reviews:', error);
         if (reviewContainer) {
-          reviewContainer.innerHTML = '<div class="text-center p-4"><p>See what our happy customers have to say about us on our social media!</p></div>';
+          reviewContainer.innerHTML = '<div class="text-center p-4"><p>Coming soon!</p></div>';
         }
       });
   };
