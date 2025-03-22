@@ -144,8 +144,17 @@ document.addEventListener('DOMContentLoaded', function() {
           // Determine what to show at the top (image or placeholder)
           let imageSection = '';
           if (review.image_url) {
-            // Update the path to use the reviews directory in the root
-            imageSection = `<img src="reviews/${review.image_url}" alt="Review from ${safeName}" class="review-image" onerror="this.onerror=null;this.src='reviews/default-review.jpg';">`;
+            // Improved image handling with better error handling and debug info
+            const imageUrl = `reviews/${review.image_url}`;
+            
+            imageSection = `
+              <div class="review-image-container">
+                <img src="${imageUrl}" 
+                     alt="Review from ${safeName}" 
+                     class="review-image" 
+                     onerror="this.onerror=null; this.src='reviews/default-review.jpg'; console.log('Failed to load image: ${imageUrl}');">
+              </div>
+            `;
           } else {
             imageSection = `
               <div class="review-image-placeholder">

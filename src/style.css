@@ -576,3 +576,29 @@ h2.gradient-text {
     transform: translateX(-10px);
   }
 }
+
+/* Review Image Container for better error handling */
+.review-image-container {
+  width: 100%;
+  height: 200px;
+  background-color: #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.review-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.review-image:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 640px) {
+  .review-image-container {
+    height: 150px;
+  }
+}
