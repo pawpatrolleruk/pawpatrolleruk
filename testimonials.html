@@ -187,7 +187,7 @@
         });
         
         // Load reviews with star rating system
-        fetch('assets/data/reviews.json')
+        fetch('data/reviews.json') // Updated path to use public directory
           .then(response => response.json())
           .then(data => {
             if (!Array.isArray(data)) {
@@ -214,7 +214,7 @@
               // Determine what to show at the top (image or placeholder)
               let imageSection = '';
               if (review.image_url) {
-                imageSection = `<img src="assets/reviews/${review.image_url}" alt="Review from ${safeName}" class="review-image">`;
+                imageSection = `<img src="reviews/${review.image_url}" alt="Review from ${safeName}" class="review-image" onerror="this.onerror=null;this.src='reviews/default-review.jpg';">`;
               } else {
                 imageSection = `
                   <div class="review-image-placeholder">

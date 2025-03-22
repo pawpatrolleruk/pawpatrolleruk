@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const reviewContainer = document.getElementById('review-container');
     if (!reviewContainer) return;
     
-    fetch('assets/data/reviews.json')
+    fetch('data/reviews.json')
       .then(response => {
         if (!response.ok) throw new Error('Network response was not ok');
         return response.json();
@@ -144,8 +144,8 @@ document.addEventListener('DOMContentLoaded', function() {
           // Determine what to show at the top (image or placeholder)
           let imageSection = '';
           if (review.image_url) {
-            // Ensure the path is correctly pointing to assets/reviews/
-            imageSection = `<img src="assets/reviews/${review.image_url}" alt="Review from ${safeName}" class="review-image" onerror="this.onerror=null;this.src='assets/reviews/default-review.jpg';">`;
+            // Update the path to use the reviews directory in the root
+            imageSection = `<img src="reviews/${review.image_url}" alt="Review from ${safeName}" class="review-image" onerror="this.onerror=null;this.src='reviews/default-review.jpg';">`;
           } else {
             imageSection = `
               <div class="review-image-placeholder">
@@ -183,7 +183,12 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(error => {
         console.error('Error loading reviews:', error);
         if (reviewContainer) {
-          reviewContainer.innerHTML = '<div class="text-center p-4"><p>Coming soon!</p></div>';
+          reviewContainer.innerHTML = `
+            <div class="text-center p-4">
+              <p>Unable to load reviews. Please try again later.</p>
+              <p class="text-xs text-gray-500 mt-2">${error.message}</p>
+            </div>
+          `;
         }
       });
   };

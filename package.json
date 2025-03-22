@@ -9,6 +9,8 @@
   },
   "scripts": {
     "dev": "vite --host",
+    "copy-assets": "node copy-assets.js",
+    "prebuild": "npm run copy-assets",
     "build": "vite build",
     "preview": "vite preview",
     "clean": "rimraf node_modules package-lock.json dist",

@@ -790,47 +790,6 @@
     });
   });
   
-  // Safely load testimonials
-  document.addEventListener('DOMContentLoaded', function() {
-    const reviewContainer = document.getElementById('review-container');
-    if (!reviewContainer) return; // Guard clause for pages without reviews
-    
-    fetch('assets/data/reviews.json')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        if (!data || !Array.isArray(data)) {
-          throw new Error('Invalid data format');
-        }
-        
-        data.slice(0, 5).forEach(review => {
-          const reviewElement = document.createElement('div');
-          reviewElement.className = 'review-item bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1';
-          reviewElement.innerHTML = `
-            <div class="flex mb-4">
-              <p class="text-lg font-medium">${review.reviewer_name || 'Anonymous'}</p>
-              ${review.verified_booking ? '<span class="px-2 ml-2 text-xs text-white bg-green-500 rounded-full">Verified</span>' : ''}
-            </div>
-            <p class="mb-4">"${(review.review_text || '').replace(/</g, '&lt;').replace(/>/g, '&gt;')}"</p>
-          `;
-          reviewContainer.appendChild(reviewElement);
-        });
-      })
-      .catch(error => {
-        console.error('Error loading reviews:', error);
-        // Graceful fallback for reviews section
-        if (reviewContainer.parentElement) {
-          const fallbackMessage = document.createElement('div');
-          fallbackMessage.className = 'text-center';
-          fallbackMessage.innerHTML = '<p>Coming soon!</p>';
-          reviewContainer.appendChild(fallbackMessage);
-        }
-      });
-  });
 </script>
 
 </body>
