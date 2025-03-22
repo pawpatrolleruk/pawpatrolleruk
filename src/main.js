@@ -36,40 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize mobile navigation
   initMobileNavigation();
 
-  // Simple Mobile Navigation handler
-  const handleResponsiveNavigation = function() {
-    const desktopNav = document.getElementById('desktop-nav');
-    
-    if (window.innerWidth < 1024 && desktopNav) {
-      desktopNav.style.display = 'none';
-    } else if (desktopNav) {
-      desktopNav.style.display = '';
-    }
-  };
-
-  // Initialize responsive navigation
-  handleResponsiveNavigation();
-  window.addEventListener('resize', handleResponsiveNavigation);
-
-  // Simple dropdown toggle
-  const mobileMenuToggle = document.querySelector('.dropdown label');
-  const mobileMenuDropdown = document.querySelector('.dropdown-content');
-  
-  if (mobileMenuToggle && mobileMenuDropdown) {
-    // Simple toggle for dropdown
-    mobileMenuToggle.addEventListener('click', function() {
-      mobileMenuDropdown.classList.toggle('active');
-    });
-    
-    // Close dropdown when clicking a menu item
-    const menuItems = mobileMenuDropdown.querySelectorAll('a');
-    menuItems.forEach(item => {
-      item.addEventListener('click', function() {
-        mobileMenuDropdown.classList.remove('active');
-      });
-    });
-  }
-
   // Current year for footer
   const currentYear = new Date().getFullYear();
   document.querySelectorAll('#current-year').forEach(element => {

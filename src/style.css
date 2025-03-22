@@ -534,16 +534,6 @@ h2.gradient-text {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 0.5rem;
-  color: #666;
-  font-size: 0.875rem;
-  animation: pulse 2s infinite;
-}
-
-.scroll-indicator {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 1rem 0;
   color: #666;
   font-size: 0.875rem;
@@ -559,21 +549,6 @@ h2.gradient-text {
   }
   50% {
     transform: translateX(5px);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 0.5;
-    transform: translateX(-10px);
-  }
-  50% {
-    opacity: 1;
-    transform: translateX(10px);
-  }
-  100% {
-    opacity: 0.5;
-    transform: translateX(-10px);
   }
 }
 
