@@ -1,0 +1,2 @@
+# Redirect testimonials page to index.html#testimonials
+Redirect 301 /testimonials.html /index.html#testimonials

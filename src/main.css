@@ -1,3 +1,5 @@
-/* This file exists for backward compatibility */
+/* Import the main stylesheet */
 @import './style.css';
+
+/* This ensures backward compatibility with any references to main.css */
 

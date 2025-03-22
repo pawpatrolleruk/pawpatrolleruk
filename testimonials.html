@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - Paw Patroller UK</title>
+    
+    <!-- Essential SEO -->
+    <meta name="description" content="Read what our clients have to say about Paw Patroller UK's dog care services. Real testimonials from satisfied pet owners.">
+    <meta name="keywords" content="dog care testimonials, pet sitting reviews, dog walking service reviews">
+    
+    <!-- Essential Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/agent-orange" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/gracility" rel="stylesheet">
+  
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/style.css">
+    
+    <!-- Vite entry point -->
+    <script type="module" src="src/main.js"></script>
+  </head>
+  <body class="bg-brand-light">
+    
+    <header class="sticky top-0 z-50 transition-all duration-300 shadow-sm backdrop-blur-md bg-white/90 hover:bg-white">
+      <div class="container mx-auto">
+        <div class="navbar min-h-[4rem]">
+          <div class="navbar-start">
+            <!-- Mobile dropdown - new implementation -->
+            <div class="mobile-dropdown">
+              <button class="mobile-dropdown-button">
+                <span class="material-icons text-brand-purple">menu</span>
+              </button>
+              <div class="mobile-dropdown-content">
+                <ul class="menu p-2">
+                  <li class="py-1"><a href="index.html#home" class="block py-2">Home</a></li>
+                  <li class="py-1"><a href="index.html#about" class="block py-2">About Us</a></li>
+                  <li class="py-1"><a href="index.html#services" class="block py-2">Services</a></li>
+                  <li class="py-1"><a href="index.html#testimonials" class="block py-2">Testimonials</a></li>
+                  <li class="py-1"><a href="faq.html" class="block py-2">FAQs</a></li>
+                  <li class="py-1"><a href="index.html#contact" class="block py-2">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+            
+            <a href="index.html" class="text-xl font-semibold sm:text-2xl gradient-text" style="font-family: 'Agent Orange', sans-serif;">Paw Patroller UK</a>
+          </div>
+          
+          <!-- Desktop navigation -->
+          <div class="navbar-center">
+            <ul class="px-1 menu menu-horizontal font-fredoka">
+              <li><a href="index.html#home">Home</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="index.html#testimonials">Testimonials</a></li>
+              <li><a href="faq.html">FAQs</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div class="navbar-end">
+            <a href="tel:07300888847" class="btn btn-ghost btn-circle">
+              <span class="material-icons">phone</span>
+            </a>
+          </div>
+        </div>
+        <div class="my-0 divider"></div>
+        <div class="py-2 space-y-1 text-xs text-center sm:text-sm">
+          <p>Call Us: 073 0088 8847 | Email: pawpatrolleruk@gmail.com</p>
+          <p class="hidden xs:block">Instagram: Paw_Patroller_UK | Facebook: Paw Patroller UK</p>
+        </div>
+      </div>
+    </header>
+    
+    <main>
+      <section id="testimonials" class="py-24 bg-white">
+        <div class="container px-4 mx-auto">
+          <h2 class="mb-16 text-4xl text-center font-fredoka md:text-5xl gradient-text">What Our Clients Say</h2>
+          
+          <div class="review-carousel-container">
+            <!-- Horizontally Scrollable Review Carousel -->
+            <div id="all-reviews" class="review-carousel">
+              <!-- Testimonials loaded here via JavaScript -->
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+              <span class="material-icons mr-2">swipe</span>
+              <span>Swipe to see more reviews</span>
+            </div>
+            
+            <!-- Pagination Dots -->
+            <div class="pagination-dots" id="all-pagination-dots">
+              <!-- Pagination dots will be added dynamically -->
+            </div>
+            
+            <!-- Carousel Navigation -->
+            <div class="carousel-nav">
+              <button id="all-prev-button" class="carousel-button" disabled>
+                <span class="material-icons">arrow_back</span>
+              </button>
+              <button id="all-next-button" class="carousel-button">
+                <span class="material-icons">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+          
+          <div class="mt-8 text-center">
+            <a href="index.html" class="inline-block px-6 py-3 text-lg font-medium text-white transition-all duration-300 transform rounded-full bg-brand-purple hover:bg-brand-purple-dark hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand-purple focus:ring-opacity-50 group">
+              Back to Home
+              <span class="ml-2 transition-transform material-icons group-hover:-translate-x-1">arrow_back</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <footer class="py-8 text-white sm:py-12" style="background-color: #6a1b9a;">
+      <div class="container px-4 mx-auto">
+        <div class="grid grid-cols-1 gap-8 mb-8 sm:grid-cols-2 md:grid-cols-4">
+          <!-- Brand/Logo Section -->
+          <div class="col-span-1 sm:col-span-2 md:col-span-1">
+            <div class="mb-4">
+              <a href="index.html" class="inline-block mb-4 text-2xl font-semibold text-white" style="font-family: 'Agent Orange', sans-serif;">
+                Paw Patroller UK
+              </a>
+            </div>
+            <p class="mb-6 text-sm text-white opacity-90">
+              Professional dog walking and pet care services in the UK. Fully insured, DBS checked, and dedicated to your pet's happiness.
+            </p>
+            <!-- Social Links -->
+            <div class="flex space-x-4">
+              <a href="https://www.facebook.com/profile.php?id=61571211915327" target="_blank" rel="noopener noreferrer" class="p-2 text-white transition-all duration-300 rounded-full hover:bg-white/20">
+                <span class="material-icons">facebook</span>
+              </a>
+              <a href="https://www.instagram.com/Paw_Patroller_UK" target="_blank" rel="noopener noreferrer" class="p-2 text-white transition-all duration-300 rounded-full hover:bg-white/20">
+                <span class="material-icons">photo_camera</span>
+              </a>
+              <a href="https://wa.me/447300888847" target="_blank" rel="noopener noreferrer" class="p-2 text-white transition-all duration-300 rounded-full hover:bg-white/20">
+                <span class="material-icons">whatsapp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Footer sections - similar to index.html -->
+          <!-- ...existing code from index.html footer... -->
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="pt-4 mt-4 border-t sm:pt-6 sm:mt-6 border-white/20">
+          <div class="flex flex-col justify-between text-sm sm:flex-row">
+            <div class="mb-4 sm:mb-0">
+              <p class="text-white">&copy; <span id="current-year"></span> Paw Patroller UK. All Rights Reserved.</p>
+            </div>
+            <div class="flex flex-wrap gap-4">
+              <a href="privacy-policy.html" class="text-white hover:underline">Privacy Policy</a>
+              <a href="#" id="open-cookie-settings" class="text-white hover:underline">Cookie Settings</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Cookie banner similar to index.html -->
+    <div id="cookie-banner">
+      <div class="container px-2 mx-auto">
+        <h3 class="mb-2 text-base font-semibold sm:text-lg">We Value Your Privacy</h3>
+        <p class="mb-4 text-sm sm:text-base">This website uses minimal local storage to remember that you've seen this notice. We don't collect any analytics or marketing data. Third-party services like Google Fonts may set their own cookies. <a href="privacy-policy.html" class="underline text-brand-purple">Learn More</a>.</p>
+        <div class="flex flex-wrap gap-2">
+          <button id="accept-cookies" class="cookie-btn cookie-btn-primary">
+            Acknowledge
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const allReviewsContainer = document.getElementById('all-reviews');
+        if (!allReviewsContainer) return;
+        
+        // Set current year for copyright
+        document.querySelectorAll('#current-year').forEach(el => {
+          el.textContent = new Date().getFullYear();
+        });
+        
+        // Load reviews with star rating system
+        fetch('assets/data/reviews.json')
+          .then(response => response.json())
+          .then(data => {
+            if (!Array.isArray(data)) {
+              throw new Error('Invalid data format');
+            }
+            
+            data.forEach((review, index) => {
+              // Sanitize data
+              const safeText = (review.review_text || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+              const safeName = (review.reviewer_name || 'Anonymous').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+              
+              // Generate stars based on rating (default to 5 if not specified)
+              const rating = review.rating || 5;
+              let starsHTML = '';
+              for (let i = 1; i <= 5; i++) {
+                starsHTML += `<span class="star">${i <= rating ? '★' : '☆'}</span>`;
+              }
+              
+              // Create review element with new design
+              const reviewElement = document.createElement('div');
+              reviewElement.className = 'review-card';
+              reviewElement.setAttribute('data-index', index);
+              
+              // Determine what to show at the top (image or placeholder)
+              let imageSection = '';
+              if (review.image_url) {
+                imageSection = `<img src="assets/reviews/${review.image_url}" alt="Review from ${safeName}" class="review-image">`;
+              } else {
+                imageSection = `
+                  <div class="review-image-placeholder">
+                    <span class="material-icons">pets</span>
+                  </div>
+                `;
+              }
+              
+              reviewElement.innerHTML = `
+                ${imageSection}
+                <div class="review-stars">
+                  ${starsHTML}
+                </div>
+                <div class="review-content">
+                  <div class="review-header">
+                    <span class="review-name">${safeName}</span>
+                    ${review.verified_booking ? '<span class="review-badge">Verified</span>' : ''}
+                  </div>
+                  <p class="review-text">${safeText}</p>
+                </div>
+              `;
+              
+              allReviewsContainer.appendChild(reviewElement);
+            });
+            
+            // Set up pagination
+            setupAllPagination(data.length);
+            
+            // Initialize carousel
+            initAllCarouselNavigation();
+          })
+          .catch(error => {
+            console.error('Error loading reviews:', error);
+            allReviewsContainer.innerHTML = '<div class="col-span-full text-center p-8"><p>Sorry, we couldn\'t load our testimonials at the moment. Please check back later!</p></div>';
+          });
+          
+        // Set up pagination dots based on number of reviews
+        function setupAllPagination(totalReviews) {
+          const paginationContainer = document.getElementById('all-pagination-dots');
+          if (!paginationContainer) return;
+          
+          // Calculate how many pages we need based on viewport size
+          let itemsPerPage = 1; // Mobile default
+          if (window.innerWidth >= 768) itemsPerPage = 2; // Tablet
+          if (window.innerWidth >= 1024) itemsPerPage = 3; // Desktop
+          
+          const totalPages = Math.ceil(totalReviews / itemsPerPage);
+          
+          // Create pagination dots
+          paginationContainer.innerHTML = '';
+          for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('div');
+            dot.className = `pagination-dot ${i === 0 ? 'active' : ''}`;
+            dot.setAttribute('data-page', i);
+            dot.addEventListener('click', () => scrollToAllPage(i));
+            paginationContainer.appendChild(dot);
+          }
+        }
+        
+        // Scroll to specific page for all reviews
+        function scrollToAllPage(pageIndex) {
+          if (!allReviewsContainer) return;
+          
+          // Calculate width based on viewport
+          let itemsPerPage = 1; // Mobile default
+          if (window.innerWidth >= 768) itemsPerPage = 2; // Tablet
+          if (window.innerWidth >= 1024) itemsPerPage = 3; // Desktop
+          
+          // Find the card at the start of the requested page
+          const cardIndex = pageIndex * itemsPerPage;
+          const card = allReviewsContainer.querySelector(`[data-index="${cardIndex}"]`);
+          
+          if (card) {
+            // Scroll to the card
+            allReviewsContainer.scrollTo({
+              left: card.offsetLeft - allReviewsContainer.offsetLeft,
+              behavior: 'smooth'
+            });
+            
+            // Update the active dot
+            updateAllActiveDot(pageIndex);
+            
+            // Update navigation buttons
+            updateAllNavigationButtons(pageIndex);
+          }
+        }
+        
+        // Update active pagination dot
+        function updateAllActiveDot(activeIndex) {
+          const dots = document.querySelectorAll('#all-pagination-dots .pagination-dot');
+          dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === activeIndex);
+          });
+        }
+        
+        // Update navigation button states
+        function updateAllNavigationButtons(currentPageIndex) {
+          const prevButton = document.getElementById('all-prev-button');
+          const nextButton = document.getElementById('all-next-button');
+          const totalPages = document.querySelectorAll('#all-pagination-dots .pagination-dot').length;
+          
+          if (prevButton) {
+            prevButton.disabled = currentPageIndex === 0;
+          }
+          
+          if (nextButton) {
+            nextButton.disabled = currentPageIndex === totalPages - 1;
+          }
+        }
+        
+        // Initialize carousel navigation for all reviews
+        function initAllCarouselNavigation() {
+          const prevButton = document.getElementById('all-prev-button');
+          const nextButton = document.getElementById('all-next-button');
+          
+          if (!allReviewsContainer || !prevButton || !nextButton) return;
+          
+          // Handle previous button click
+          prevButton.addEventListener('click', () => {
+            const dots = document.querySelectorAll('#all-pagination-dots .pagination-dot');
+            const activeDotIndex = Array.from(dots).findIndex(dot => dot.classList.contains('active'));
+            
+            if (activeDotIndex > 0) {
+              scrollToAllPage(activeDotIndex - 1);
+            }
+          });
+          
+          // Handle next button click
+          nextButton.addEventListener('click', () => {
+            const dots = document.querySelectorAll('#all-pagination-dots .pagination-dot');
+            const activeDotIndex = Array.from(dots).findIndex(dot => dot.classList.contains('active'));
+            
+            if (activeDotIndex < dots.length - 1) {
+              scrollToAllPage(activeDotIndex + 1);
+            }
+          });
+          
+          // Handle scroll events to update the active dot
+          allReviewsContainer.addEventListener('scroll', () => {
+            // Use requestAnimationFrame to limit events
+            requestAnimationFrame(() => {
+              // Calculate which page we're on based on scroll position
+              const containerWidth = allReviewsContainer.offsetWidth;
+              const scrollPosition = allReviewsContainer.scrollLeft;
+              
+              let itemsPerPage = 1; // Mobile default
+              if (window.innerWidth >= 768) itemsPerPage = 2; // Tablet
+              if (window.innerWidth >= 1024) itemsPerPage = 3; // Desktop
+              
+              // Calculate card width (including gap)
+              const cardWidth = containerWidth / itemsPerPage;
+              
+              // Calculate which page we're on
+              const currentPage = Math.round(scrollPosition / cardWidth);
+              
+              updateAllActiveDot(currentPage);
+              updateAllNavigationButtons(currentPage);
+            });
+          });
+        }
+        
+        // Update on window resize
+        window.addEventListener('resize', () => {
+          // Recalculate pagination on resize
+          const totalReviews = document.querySelectorAll('#all-reviews .review-card').length;
+          setupAllPagination(totalReviews);
+          
+          // Reset to first page on resize
+          scrollToAllPage(0);
+        });
+        
+        // Cookie consent handling
+        const cookieBanner = document.getElementById('cookie-banner');
+        const acceptButton = document.getElementById('accept-cookies');
+        const cookieSettingsLink = document.getElementById('open-cookie-settings');
+        
+        if (!localStorage.getItem('cookieConsentAcknowledged') && cookieBanner) {
+          cookieBanner.style.display = 'block';
+        }
+        
+        if (acceptButton) {
+          acceptButton.addEventListener('click', function() {
+            localStorage.setItem('cookieConsentAcknowledged', 'true');
+            if (cookieBanner) cookieBanner.style.display = 'none';
+          });
+        }
+        
+        if (cookieSettingsLink) {
+          cookieSettingsLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (cookieBanner) cookieBanner.style.display = 'block';
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

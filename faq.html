@@ -33,7 +33,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
     <!-- Styles -->
-    <link rel="stylesheet" href="src/main.css">
+    <link rel="stylesheet" href="src/style.css">
     <link rel="stylesheet" href="css/cookie-consent.css">
     
     <!-- Vite entry point -->
@@ -149,6 +149,56 @@
     </style>
   </head>
 <body>
+<!-- Eine Navigation hinzufügen, da diese Seite keine hat -->
+<header class="sticky top-0 z-50 transition-all duration-300 shadow-sm backdrop-blur-md bg-white/90 hover:bg-white">
+  <div class="container mx-auto">
+    <div class="navbar min-h-[4rem]">
+      <div class="navbar-start">
+        <!-- Mobile dropdown - new implementation -->
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-button">
+            <span class="material-icons text-brand-purple">menu</span>
+          </button>
+          <div class="mobile-dropdown-content">
+            <ul class="menu p-2">
+              <li class="py-1"><a href="index.html#home" class="block py-2">Home</a></li>
+              <li class="py-1"><a href="index.html#about" class="block py-2">About Us</a></li>
+              <li class="py-1"><a href="index.html#services" class="block py-2">Services</a></li>
+              <li class="py-1"><a href="index.html#testimonials" class="block py-2">Testimonials</a></li>
+              <li class="py-1"><a href="faq.html" class="block py-2">FAQs</a></li>
+              <li class="py-1"><a href="index.html#contact" class="block py-2">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <a href="index.html" class="text-xl font-semibold sm:text-2xl gradient-text" style="font-family: 'Agent Orange', sans-serif;">Paw Patroller UK</a>
+      </div>
+      
+      <!-- Desktop navigation -->
+      <div class="navbar-center">
+        <ul class="px-1 menu menu-horizontal font-fredoka">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#testimonials">Testimonials</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="navbar-end">
+        <a href="tel:07300888847" class="btn btn-ghost btn-circle">
+          <span class="material-icons">phone</span>
+        </a>
+      </div>
+    </div>
+    <div class="my-0 divider"></div>
+    <div class="py-2 space-y-1 text-xs text-center sm:text-sm">
+      <p>Call Us: 073 0088 8847 | Email: pawpatrolleruk@gmail.com</p>
+      <p class="hidden xs:block">Instagram: Paw_Patroller_UK | Facebook: Paw Patroller UK</p>
+    </div>
+  </div>
+</header>
+
  <!-- FAQ Section -->
  <section id="faq" class="py-24 bg-brand-light">
     <div class="container px-4 mx-auto">
