@@ -230,7 +230,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Update active pagination dot
   function updateActiveDot(activeIndex) {
-    const dots = document.querySelectorAll('.pagination-dot');
+    const dots = document.querySelector('#pagination-dots')?.querySelectorAll('.pagination-dot');
+    if (!dots) return;
+    
     dots.forEach((dot, index) => {
       dot.classList.toggle('active', index === activeIndex);
     });
@@ -240,7 +242,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateNavigationButtons(currentPageIndex) {
     const prevButton = document.getElementById('prev-button');
     const nextButton = document.getElementById('next-button');
-    const totalPages = document.querySelectorAll('.pagination-dot').length;
+    const paginationDotsContainer = document.getElementById('pagination-dots');
+    const totalPages = paginationDotsContainer ? paginationDotsContainer.querySelectorAll('.pagination-dot').length : 0;
     
     if (prevButton) {
       prevButton.disabled = currentPageIndex === 0;
@@ -256,12 +259,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const reviewContainer = document.getElementById('review-container');
     const prevButton = document.getElementById('prev-button');
     const nextButton = document.getElementById('next-button');
+    const paginationDotsContainer = document.getElementById('pagination-dots');
     
-    if (!reviewContainer || !prevButton || !nextButton) return;
+    if (!reviewContainer || !prevButton || !nextButton || !paginationDotsContainer) return;
     
     // Handle previous button click
     prevButton.addEventListener('click', () => {
-      const dots = document.querySelectorAll('.pagination-dot');
+      const dots = paginationDotsContainer.querySelectorAll('.pagination-dot');
       const activeDotIndex = Array.from(dots).findIndex(dot => dot.classList.contains('active'));
       
       if (activeDotIndex > 0) {
@@ -271,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Handle next button click
     nextButton.addEventListener('click', () => {
-      const dots = document.querySelectorAll('.pagination-dot');
+      const dots = paginationDotsContainer.querySelectorAll('.pagination-dot');
       const activeDotIndex = Array.from(dots).findIndex(dot => dot.classList.contains('active'));
       
       if (activeDotIndex < dots.length - 1) {
