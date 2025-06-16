@@ -1,0 +1,215 @@
+/**
+ * Navigation styles
+ */
+
+/* Animation Keyframes for Navigation */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  0% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+@keyframes borderPulse {
+  0% { border-color: transparent; }
+  50% { border-color: var(--brand-purple); }
+  100% { border-color: transparent; }
+}
+
+/* Modern Mobile-First Navbar Implementation */
+.navbar {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-start {
+  @apply flex items-center gap-2;
+}
+
+.navbar-center {
+  display: none; /* Hidden by default on mobile */
+}
+
+.navbar-end {
+  @apply flex items-center justify-end gap-2;
+}
+
+.menu {
+  @apply flex p-0 m-0 list-none;
+}
+
+.menu-horizontal {
+  @apply flex-row;
+}
+
+.menu li {
+  @apply list-none relative;
+  position: relative;
+}
+
+/* Modern menu item styling with active indicator */
+.menu li a {
+  @apply block px-3 py-2 text-gray-700 transition-all duration-300 hover:text-brand-purple;
+  position: relative;
+}
+
+/* Animated underline effect for desktop menu */
+.menu li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background: linear-gradient(90deg, var(--brand-purple) 0%, #9c27b0 100%);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.menu li a:hover::after,
+.menu li a.active::after {
+  width: 80%;
+  opacity: 1;
+}
+
+/* Active state styling */
+.menu li a.active {
+  color: var(--brand-purple);
+  font-weight: 500;
+}
+
+/* Mobile Dropdown with enhanced styling */
+.mobile-dropdown {
+  position: static;
+}
+
+.mobile-dropdown-button {
+  @apply btn btn-ghost btn-circle;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.mobile-dropdown-button:hover {
+  transform: scale(1.1);
+}
+
+.mobile-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 90%;
+  max-width: 90vw;
+  margin: 0.5rem auto;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  z-index: 100;
+  transform-origin: top center;
+}
+
+/* Enhanced vertical menu styling */
+.mobile-dropdown-content .menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+}
+
+.mobile-dropdown-content .menu li {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.3s ease-out forwards, slideDown 0.3s ease-out forwards;
+}
+
+/* Staggered animation for menu items */
+.mobile-dropdown-content .menu li:nth-child(1) { animation-delay: 0.05s; }
+.mobile-dropdown-content .menu li:nth-child(2) { animation-delay: 0.1s; }
+.mobile-dropdown-content .menu li:nth-child(3) { animation-delay: 0.15s; }
+.mobile-dropdown-content .menu li:nth-child(4) { animation-delay: 0.2s; }
+.mobile-dropdown-content .menu li:nth-child(5) { animation-delay: 0.25s; }
+.mobile-dropdown-content .menu li:nth-child(6) { animation-delay: 0.3s; }
+
+.mobile-dropdown-content .menu li:last-child {
+  margin-bottom: 0;
+}
+
+.mobile-dropdown-content .menu li a {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.mobile-dropdown-content .menu li a:hover,
+.mobile-dropdown-content .menu li a:focus {
+  background-color: rgba(106, 27, 154, 0.1);
+  color: var(--brand-purple);
+  transform: translateX(5px);
+}
+
+.mobile-dropdown-content .menu li a.active {
+  background-color: rgba(106, 27, 154, 0.15);
+  color: var(--brand-purple);
+  font-weight: 600;
+  border-left: 3px solid var(--brand-purple);
+}
+
+.mobile-dropdown-content.open {
+  display: block;
+  animation: slideDown 0.3s ease-out, scaleUp 0.3s ease-out;
+}
+
+/* Desktop View Adjustments */
+@media (min-width: 1024px) {
+  .navbar-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile-dropdown {
+    display: none;
+  }
+
+  /* Enhanced desktop menu */
+  .menu-horizontal li {
+    margin: 0 0.25rem;
+  }
+
+  .menu-horizontal li a {
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .menu-horizontal li a:hover {
+    background-color: rgba(106, 27, 154, 0.05);
+    transform: translateY(-2px);
+  }
+}

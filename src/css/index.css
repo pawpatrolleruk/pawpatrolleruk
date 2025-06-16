@@ -1,0 +1,14 @@
+/**
+ * Main CSS entry point
+ * This file imports all the modular CSS files
+ */
+
+/* Base styles */
+@import './base.css';
+
+/* Component styles */
+@import './navigation.css';
+@import './testimonials.css';
+@import './components.css';
+
+/* Add any additional imports here */

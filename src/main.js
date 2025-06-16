@@ -1,335 +1,105 @@
 // Import styles
-import './style.css';
+import './css/index.css';
+
+// Import modules
+import './js/cookies/ui.js';
+import { initTestimonials } from './js/testimonials.js';
+import ComponentLoader from './js/component-loader.js';
+import themeSwitcher from './js/theme-switcher.js';
 
 // DOM ready event handler
-document.addEventListener('DOMContentLoaded', function() {
-  // Simple Mobile Dropdown Implementation
-  const initMobileNavigation = function() {
-    const mobileDropdownButton = document.querySelector('.mobile-dropdown-button');
-    const mobileDropdownContent = document.querySelector('.mobile-dropdown-content');
-    
-    if (mobileDropdownButton && mobileDropdownContent) {
-      // Toggle dropdown on button click
-      mobileDropdownButton.addEventListener('click', function(event) {
-        event.stopPropagation(); // Prevent event bubbling
-        mobileDropdownContent.classList.toggle('open');
-      });
-      
-      // Close dropdown when clicking elsewhere on the page
-      document.addEventListener('click', function(event) {
-        if (!mobileDropdownButton.contains(event.target) && 
-            !mobileDropdownContent.contains(event.target)) {
-          mobileDropdownContent.classList.remove('open');
-        }
-      });
-      
-      // Close dropdown when clicking on menu links
-      const menuLinks = mobileDropdownContent.querySelectorAll('a');
-      menuLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          mobileDropdownContent.classList.remove('open');
-        });
-      });
-    }
-  };
-  
-  // Initialize mobile navigation
-  initMobileNavigation();
+document.addEventListener('DOMContentLoaded', async function() {
+  // Load reusable components
+  await loadPageComponents();
 
-  // Current year for footer
+  // Setup theme toggle and footer interactions
+  setupThemeToggle();
+  setupFooterInteractions();
+
+  // Initialize testimonials carousel using the optimized module
+  initTestimonials();
+});
+
+/**
+ * Setup theme toggle functionality
+ */
+function setupThemeToggle() {
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  
+  if (themeToggleBtn) {
+    // Bind click event to toggle theme
+    themeToggleBtn.addEventListener('click', function() {
+      themeSwitcher.toggleTheme();
+    });
+  }
+
+  // Listen for theme changes to update icons
+  window.addEventListener('themeChange', function(event) {
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    
+    if (lightIcon && darkIcon) {
+      if (event.detail.theme === 'dark') {
+        lightIcon.classList.add('hidden');
+        darkIcon.classList.remove('hidden');
+      } else {
+        lightIcon.classList.remove('hidden');
+        darkIcon.classList.add('hidden');
+      }
+    }
+  });
+}
+
+/**
+ * Setup footer interactions
+ */
+function setupFooterInteractions() {
+  // Set current year for all elements with #current-year
   const currentYear = new Date().getFullYear();
   document.querySelectorAll('#current-year').forEach(element => {
     if (element) element.textContent = currentYear;
   });
 
-  // Cookie consent handling
-  const cookieBanner = document.getElementById('cookie-banner');
-  const acceptButton = document.getElementById('accept-cookies');
+  // Handle cookie settings link
   const cookieSettingsLink = document.getElementById('open-cookie-settings');
-  
-  // Show banner if consent not already given
-  if (!localStorage.getItem('cookieConsentAcknowledged') && cookieBanner) {
-    cookieBanner.style.display = 'block';
-  }
-  
-  // Handle accept button click
-  if (acceptButton) {
-    acceptButton.addEventListener('click', function() {
-      localStorage.setItem('cookieConsentAcknowledged', 'true');
-      if (cookieBanner) cookieBanner.style.display = 'none';
-    });
-  }
-  
-  // Handle settings link click
   if (cookieSettingsLink) {
     cookieSettingsLink.addEventListener('click', function(e) {
       e.preventDefault();
-      if (cookieBanner) cookieBanner.style.display = 'block';
+      // Show cookie banner
+      const cookieBanner = document.getElementById('cookie-banner');
+      if (cookieBanner) {
+        cookieBanner.style.display = 'block';
+      }
     });
   }
+}
 
-  // Testimonials loader with star rating system and pagination
-  const loadTestimonials = function() {
-    const reviewContainer = document.getElementById('review-container');
-    if (!reviewContainer) return;
-    
-    fetch('data/reviews.json')
-      .then(response => {
-        if (!response.ok) throw new Error('Network response was not ok');
-        return response.json();
-      })
-      .then(data => {
-        if (!data || !Array.isArray(data)) {
-          throw new Error('Invalid data format');
-        }
-        
-        // Clear any existing content
-        reviewContainer.innerHTML = '';
-        
-        // Show ALL reviews on index page instead of just a subset
-        const reviewsToShow = data;
-        
-        // Add testimonials with star ratings
-        reviewsToShow.forEach((review, index) => {
-          // Sanitize data
-          const safeText = (review.review_text || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-          const safeName = (review.reviewer_name || 'Anonymous').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-          
-          // Generate stars based on rating (default to 5 if not specified)
-          const rating = review.rating || 5;
-          let starsHTML = '';
-          for (let i = 1; i <= 5; i++) {
-            starsHTML += `<span class="star">${i <= rating ? '★' : '☆'}</span>`;
-          }
-          
-          // Create review element with new design
-          const reviewElement = document.createElement('div');
-          reviewElement.className = 'review-card';
-          reviewElement.setAttribute('data-index', index);
-          
-          // Determine what to show at the top (image or placeholder)
-          let imageSection = '';
-          if (review.image_url) {
-            // Improved image handling with better error handling and debug info
-            const imageUrl = `reviews/${review.image_url}`;
-            
-            imageSection = `
-              <div class="review-image-container">
-                <img src="${imageUrl}" 
-                     alt="Review from ${safeName}" 
-                     class="review-image" 
-                     onerror="this.onerror=null; this.src='reviews/default-review.jpg'; console.log('Failed to load image: ${imageUrl}');">
-              </div>
-            `;
-          } else {
-            imageSection = `
-              <div class="review-image-placeholder">
-                <span class="material-icons">pets</span>
-              </div>
-            `;
-          }
-          
-          // Display full review text (no truncation)
-          const reviewText = safeText;
-          
-          reviewElement.innerHTML = `
-            ${imageSection}
-            <div class="review-stars">
-              ${starsHTML}
-            </div>
-            <div class="review-content">
-              <div class="review-header">
-                <span class="review-name">${safeName}</span>
-                ${review.verified_booking ? '<span class="review-badge">Verified</span>' : ''}
-              </div>
-              <p class="review-text">${reviewText}</p>
-            </div>
-          `;
-          
-          reviewContainer.appendChild(reviewElement);
-        });
-        
-        // Set up pagination dots
-        setupPagination(reviewsToShow.length);
-        
-        // Initialize carousel navigation
-        initCarouselNavigation();
-      })
-      .catch(error => {
-        console.error('Error loading reviews:', error);
-        if (reviewContainer) {
-          reviewContainer.innerHTML = `
-            <div class="text-center p-4">
-              <p>Unable to load reviews. Please try again later.</p>
-              <p class="text-xs text-gray-500 mt-2">${error.message}</p>
-            </div>
-          `;
-        }
-      });
+/**
+ * Load all page components
+ */
+async function loadPageComponents() {
+  // Define component mappings (component path -> target selector)
+  const componentMap = {
+    // Only load components if their target containers exist
+    ...(document.querySelector('#navbar-container') && {
+      '/src/components/navbar.html': '#navbar-container'
+    }),
+    ...(document.querySelector('#footer-container') && {
+      '/src/components/footer.html': '#footer-container'
+    }),
+    ...(document.querySelector('#floating-buttons-container') && {
+      '/src/components/floating-buttons.html': '#floating-buttons-container'
+    }),
+    ...(document.querySelector('#cookie-banner-container') && {
+      '/src/components/cookie-banner.html': '#cookie-banner-container'
+    })
   };
 
-  // Set up pagination dots based on number of reviews
-  function setupPagination(totalReviews) {
-    const paginationContainer = document.getElementById('pagination-dots');
-    if (!paginationContainer) return;
-    
-    // Calculate how many pages we need based on viewport size
-    let itemsPerPage = 1; // Mobile default
-    if (window.innerWidth >= 768) itemsPerPage = 2; // Tablet
-    if (window.innerWidth >= 1024) itemsPerPage = 3; // Desktop
-    
-    const totalPages = Math.ceil(totalReviews / itemsPerPage);
-    
-    // Create pagination dots
-    paginationContainer.innerHTML = '';
-    for (let i = 0; i < totalPages; i++) {
-      const dot = document.createElement('div');
-      dot.className = `pagination-dot ${i === 0 ? 'active' : ''}`;
-      dot.setAttribute('data-page', i);
-      dot.addEventListener('click', () => scrollToPage(i));
-      paginationContainer.appendChild(dot);
-    }
+  // Initialize components
+  try {
+    await ComponentLoader.initComponents(componentMap);
+    console.log('Components loaded successfully');
+  } catch (error) {
+    console.error('Error loading components:', error);
   }
-
-  // Improved scroll to page function with better cross-browser support
-  function scrollToPage(pageIndex) {
-    const reviewContainer = document.getElementById('review-container');
-    if (!reviewContainer) return;
-    
-    // Calculate width based on viewport
-    let itemsPerPage = 1; // Mobile default
-    if (window.innerWidth >= 768) itemsPerPage = 2; // Tablet
-    if (window.innerWidth >= 1024) itemsPerPage = 3; // Desktop
-    
-    // Find the card at the start of the requested page
-    const cardIndex = pageIndex * itemsPerPage;
-    const cards = reviewContainer.querySelectorAll('.review-card');
-    
-    if (cardIndex < cards.length) {
-      const card = cards[cardIndex];
-      
-      // Calculate the scroll position
-      const scrollLeft = card.offsetLeft - reviewContainer.offsetLeft;
-      
-      // Use scrollTo with smooth behavior for modern browsers
-      try {
-        reviewContainer.scrollTo({
-          left: scrollLeft,
-          behavior: 'smooth'
-        });
-      } catch (error) {
-        // Fallback for older browsers
-        reviewContainer.scrollLeft = scrollLeft;
-      }
-      
-      // Update UI indicators
-      updateActiveDot(pageIndex);
-      updateNavigationButtons(pageIndex);
-    }
-  }
-
-  // Update active pagination dot
-  function updateActiveDot(activeIndex) {
-    const dots = document.querySelector('#pagination-dots')?.querySelectorAll('.pagination-dot');
-    if (!dots) return;
-    
-    dots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === activeIndex);
-    });
-  }
-
-  // Update navigation button states
-  function updateNavigationButtons(currentPageIndex) {
-    const prevButton = document.getElementById('prev-button');
-    const nextButton = document.getElementById('next-button');
-    const paginationDotsContainer = document.getElementById('pagination-dots');
-    const totalPages = paginationDotsContainer ? paginationDotsContainer.querySelectorAll('.pagination-dot').length : 0;
-    
-    if (prevButton) {
-      prevButton.disabled = currentPageIndex === 0;
-    }
-    
-    if (nextButton) {
-      nextButton.disabled = currentPageIndex === totalPages - 1;
-    }
-  }
-
-  // Initialize carousel navigation
-  function initCarouselNavigation() {
-    const reviewContainer = document.getElementById('review-container');
-    const prevButton = document.getElementById('prev-button');
-    const nextButton = document.getElementById('next-button');
-    const paginationDotsContainer = document.getElementById('pagination-dots');
-    
-    if (!reviewContainer || !prevButton || !nextButton || !paginationDotsContainer) return;
-    
-    // Handle previous button click
-    prevButton.addEventListener('click', () => {
-      const dots = paginationDotsContainer.querySelectorAll('.pagination-dot');
-      const activeDotIndex = Array.from(dots).findIndex(dot => dot.classList.contains('active'));
-      
-      if (activeDotIndex > 0) {
-        scrollToPage(activeDotIndex - 1);
-      }
-    });
-    
-    // Handle next button click
-    nextButton.addEventListener('click', () => {
-      const dots = paginationDotsContainer.querySelectorAll('.pagination-dot');
-      const activeDotIndex = Array.from(dots).findIndex(dot => dot.classList.contains('active'));
-      
-      if (activeDotIndex < dots.length - 1) {
-        scrollToPage(activeDotIndex + 1);
-      }
-    });
-    
-    // Improved scroll handling with better cross-browser support
-    reviewContainer.addEventListener('scroll', () => {
-      // Use requestAnimationFrame to limit events
-      requestAnimationFrame(() => {
-        // Calculate which page we're on based on scroll position
-        const containerWidth = reviewContainer.offsetWidth;
-        const scrollPosition = reviewContainer.scrollLeft;
-        const reviewCards = reviewContainer.querySelectorAll('.review-card');
-        
-        if (reviewCards.length === 0) return;
-        
-        // Calculate visible card
-        let itemsPerPage = 1; // Mobile default
-        if (window.innerWidth >= 768) itemsPerPage = 2; // Tablet
-        if (window.innerWidth >= 1024) itemsPerPage = 3; // Desktop
-        
-        // Calculate the width of a single card (including gap)
-        const cardWidth = (containerWidth / itemsPerPage);
-        
-        // Calculate current page based on scroll position
-        const currentPage = Math.round(scrollPosition / cardWidth);
-        
-        // Ensure the current page is within valid bounds
-        const boundedCurrentPage = Math.max(0, Math.min(currentPage, Math.ceil(reviewCards.length / itemsPerPage) - 1));
-        
-        updateActiveDot(boundedCurrentPage);
-        updateNavigationButtons(boundedCurrentPage);
-      });
-    });
-    
-    // Ensure buttons are enabled/disabled correctly on initialization
-    updateNavigationButtons(0);
-    
-    // Update on window resize with debouncing
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        const totalReviews = document.querySelectorAll('.review-card').length;
-        setupPagination(totalReviews);
-        
-        // Reset to first page on resize
-        scrollToPage(0);
-      }, 250); // 250ms debounce
-    });
-  }
-
-  // Load testimonials if on a page that needs them
-  loadTestimonials();
-});
+}

@@ -1,0 +1,176 @@
+/**
+ * Component styles
+ */
+
+/* Hero section */
+.hero {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Badge styles */
+.badge-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  min-height: 60px;
+}
+
+.badge-card img {
+  transition: transform 0.3s ease;
+}
+
+.badge-card:hover img {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 480px) {
+  .badge-card {
+    min-width: 120px;
+    min-height: 50px;
+  }
+}
+
+/* Cookie consent styles */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 1000;
+  display: none; /* Hidden by default, shown via JS */
+  transition: var(--theme-transition);
+}
+
+.dark .cookie-banner {
+  background: var(--bg-color-secondary);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cookie-preferences {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  display: none; /* Hidden by default, shown via JS */
+}
+
+.cookie-preferences-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  transition: var(--theme-transition);
+}
+
+.dark .cookie-preferences-content {
+  background: var(--bg-color-secondary);
+  color: var(--text-color);
+}
+
+.cookie-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.cookie-btn-primary {
+  background: var(--brand-purple, #6a1b9a);
+  color: white;
+}
+
+.dark .cookie-btn-primary {
+  background: var(--brand-purple-dark, #4a148c);
+  color: white;
+}
+
+.cookie-btn-secondary {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.dark .cookie-btn-secondary {
+  background: #333;
+  color: #f0f0f0;
+}
+
+.cookie-btn-outline {
+  background: transparent;
+  border: 1px solid var(--brand-purple, #6a1b9a);
+  color: var(--brand-purple, #6a1b9a);
+}
+
+.dark .cookie-btn-outline {
+  border: 1px solid var(--brand-peach, #ffccbc);
+  color: var(--brand-peach, #ffccbc);
+}
+
+/* Improved cookie banner for mobile */
+@media screen and (max-width: 480px) {
+  .cookie-banner {
+    padding: 1rem 0.5rem;
+  }
+
+  .cookie-banner h3 {
+    font-size: 1rem;
+  }
+
+  .cookie-banner p {
+    font-size: 0.875rem;
+  }
+}
+
+/* Fix for service cards on small screens */
+.card {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  transition: var(--theme-transition);
+}
+
+.dark .card {
+  background-color: var(--bg-color-secondary);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+/* Make details summary more touch-friendly */
+details summary {
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: var(--theme-transition);
+}
+
+.dark details summary {
+  color: var(--text-color);
+}
+
+/* Dark mode specific styles */
+.dark .bg-white {
+  background-color: var(--bg-color) !important;
+}
+
+.dark .text-gray-700 {
+  color: var(--text-color) !important;
+}
+
+.dark .border-gray-200 {
+  border-color: var(--border-color) !important;
+}

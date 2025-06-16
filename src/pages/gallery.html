@@ -1,43 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery - Paw Patroller UK</title>
-  <link rel="stylesheet" href="/src/main.css">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="View our gallery of happy pets enjoying our professional dog walking and pet care services.">
+  <meta name="keywords" content="dog walking gallery, pet care photos, dog photos">
+
+  <!-- Essential Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/agent-orange" rel="stylesheet">
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/style.css">
+
+  <!-- Vite entry point for component loading -->
+  <script type="module" src="/src/main.js"></script>
 </head>
 <body class="bg-brand-light">
-  <header class="sticky top-0 z-50 transition-all duration-300 shadow-sm bg-white/90 backdrop-blur-md hover:bg-white">
-    <div class="container mx-auto">
-      <div class="navbar min-h-[4rem]">
-        <div class="navbar-start">
-          <a href="/" class="text-2xl font-semibold font-fredoka gradient-text">Paw Patroller UK
+  <!-- Navbar Container -->
+  <div id="navbar-container"></div>
+
+  <main class="container mx-auto py-12">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-brand-purple bg-brand-purple/10 rounded-full uppercase mb-4">Our Pets</span>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-fredoka gradient-text mb-6">Pet Gallery</h1>
+      <p class="text-gray-600 text-lg leading-relaxed">A collection of our furry friends enjoying their walks and playtime.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Gallery images with improved styling -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+        <img src="/assets/images/placeholder-dog1.jpg" alt="Happy dog on a walk" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="font-medium text-brand-purple">Buddy's Adventure</h3>
+          <p class="text-sm text-gray-600">Morning walk in the park</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+        <img src="/assets/images/placeholder-dog2.jpg" alt="Dog playing with a ball" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="font-medium text-brand-purple">Max's Playtime</h3>
+          <p class="text-sm text-gray-600">Afternoon fun at the field</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+        <img src="/assets/images/placeholder-dog3.jpg" alt="Dog enjoying nature" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="font-medium text-brand-purple">Luna's Exploration</h3>
+          <p class="text-sm text-gray-600">Discovering new trails</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+        <img src="/assets/images/placeholder-dog4.jpg" alt="Dog resting after walk" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="font-medium text-brand-purple">Charlie's Rest</h3>
+          <p class="text-sm text-gray-600">Relaxing after a long walk</p>
         </div>
       </div>
     </div>
-  </header>
-  <main class="container mx-auto py-8">
-    <h1 class="text-4xl font-bold mb-4">Gallery</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      <!-- Add your gallery images here -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="path/to/image1.jpg" alt="Image 1" class="w-full h-auto">
-      </div>
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="path/to/image2.jpg" alt="Image 2" class="w-full h-auto">
-      </div>
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="path/to/image3.jpg" alt="Image 3" class="w-full h-auto">
-      </div>
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="path/to/image4.jpg" alt="Image 4" class="w-full h-auto">
-      </div>
+
+    <div class="mt-12 text-center">
+      <a href="index.html" class="inline-block px-6 py-3 text-lg font-medium text-white transition-all duration-300 transform rounded-full bg-brand-purple hover:bg-brand-purple-dark hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand-purple focus:ring-opacity-50 group">
+        <span class="flex items-center">
+          <span class="material-icons mr-2">arrow_back</span>
+          Back to Home
+        </span>
+      </a>
     </div>
   </main>
-  <footer class="bg-white py-4">
-    <div class="container mx-auto text-center">
-      <p class="text-sm text-gray-600">&copy; 2023 Paw Patroller UK. All rights reserved.</p>
-    </div>
-  </footer>
+
+  <!-- Footer Container -->
+  <div id="footer-container"></div>
+
+  <!-- Floating Buttons Container -->
+  <div id="floating-buttons-container"></div>
+
+  <!-- Cookie Banner Container -->
+  <div id="cookie-banner-container"></div>
 </body>
 </html>

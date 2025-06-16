@@ -1,29 +1,37 @@
-{
-  "reviews": [
-    {
-      "name": "Sarah J.",
-      "rating": 5,
-      "text": "Absolutely fantastic service! My dog always comes back happy and tired, which is exactly what I want. The videos and photos they send during walks are a lovely touch."
-    },
-    {
-      "name": "Michael T.",
-      "rating": 5,
-      "text": "Having recently moved to the area, I was worried about finding someone reliable to take care of my dog. Paw Patroller UK has been a godsend!"
-    },
-    {
-      "name": "Emma L.",
-      "rating": 5,
-      "text": "I love the live streaming walk option! Being able to see my dog having fun while I'm at work really brightens my day."
-    },
-    {
-      "name": "David P.",
-      "rating": 4,
-      "text": "Very professional service. My dog is always excited to see them arrive. Would definitely recommend!"
-    },
-    {
-      "name": "Lucy R.",
-      "rating": 5,
-      "text": "Trustworthy, reliable and genuinely care about the pets they look after. Worth every penny!"
-    }
-  ]
-}
+[
+  {
+    "reviewer_name": "Sarah J.",
+    "review_text": "Absolutely fantastic service! My dog always comes back happy and tired, which is exactly what I want. The videos and photos they send during walks are a lovely touch.",
+    "verified_booking": true,
+    "rating": 5,
+    "image_url": "sarah.jpg"
+  },
+  {
+    "reviewer_name": "Michael T.",
+    "review_text": "Having recently moved to the area, I was worried about finding someone reliable to take care of my dog. Paw Patroller UK has been a godsend!",
+    "verified_booking": true,
+    "rating": 5,
+    "image_url": "michael.jpg"
+  },
+  {
+    "reviewer_name": "Emma L.",
+    "review_text": "I love the live streaming walk option! Being able to see my dog having fun while I'm at work really brightens my day.",
+    "verified_booking": true,
+    "rating": 5,
+    "image_url": "emma.jpg"
+  },
+  {
+    "reviewer_name": "David P.",
+    "review_text": "Very professional service. My dog is always excited to see them arrive. Would definitely recommend!",
+    "verified_booking": true,
+    "rating": 4,
+    "image_url": "david.jpg"
+  },
+  {
+    "reviewer_name": "Lucy R.",
+    "review_text": "Trustworthy, reliable and genuinely care about the pets they look after. Worth every penny!",
+    "verified_booking": true,
+    "rating": 5,
+    "image_url": "lucy.jpg"
+  }
+]

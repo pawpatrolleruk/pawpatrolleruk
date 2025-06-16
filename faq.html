@@ -2,260 +2,402 @@
 <html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8">
-    <!-- Added for IE compatibility -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paw Patroller UK</title>
-    
-    <!-- SEO improvements -->
-    <meta name="description" content="Experience personalized dog care services with Paw Patroller UK. From dog walking and pet visits to live streaming virtual walks, we care for your pet with passion.">
-    <meta name="keywords" content="dog care, dog walking, pet sitting, pet visits, virtual walks, dog training">
+    <title>Frequently Asked Questions | Paw Patroller UK</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Find answers to common questions about our dog walking, pet sitting, and pet care services at Paw Patroller UK.">
+    <meta name="keywords" content="dog walking FAQ, pet sitting questions, pet care services, dog walker questions, pet care FAQ">
+    <meta name="author" content="Paw Patroller UK">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://patpatrolleruk.com/">
-    
+    <link rel="canonical" href="https://pawpatrolleruk.com/faq.html">
+
     <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Paw Patroller UK - Premium Dog Care Services">
-    <meta property="og:description" content="Experience personalized dog care services with Paw Patroller UK. From dog walking and pet visits to live streaming virtual walks, we care for your pet with passion.">
-    <meta property="og:image" content="assets/hero-desktop.jpg">
-    <meta property="og:url" content="https://patpatrolleruk.com/">
     <meta property="og:type" content="website">
-    
+    <meta property="og:url" content="https://pawpatrolleruk.com/faq.html">
+    <meta property="og:title" content="Frequently Asked Questions | Paw Patroller UK">
+    <meta property="og:description" content="Find answers to common questions about our dog walking, pet sitting, and pet care services.">
+    <meta property="og:image" content="https://pawpatrolleruk.com/assets/hero-desktop.jpg">
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Paw Patroller UK - Premium Dog Care Services">
-    <meta name="twitter:description" content="Experience personalized dog care services with Paw Patroller UK.">
-    <meta name="twitter:image" content="assets/hero-desktop.jpg">
-    
-    <!-- Google Fonts: Fredoka for friendly accents, Poppins for headlines, Roboto for body text -->
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  
+    <meta name="twitter:url" content="https://pawpatrolleruk.com/faq.html">
+    <meta name="twitter:title" content="Frequently Asked Questions | Paw Patroller UK">
+    <meta name="twitter:description" content="Find answers to common questions about our dog walking, pet sitting, and pet care services.">
+    <meta name="twitter:image" content="https://pawpatrolleruk.com/assets/hero-desktop.jpg">
+
+    <!-- Vite entry point -->
+    <script type="module" src="/src/main.js"></script>
+
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
+
     <!-- Styles -->
     <link rel="stylesheet" href="src/style.css">
-    <link rel="stylesheet" href="css/cookie-consent.css">
-    
-    <!-- Vite entry point -->
-    <script type="module" src="src/main.js"></script>
-    <style>
-      /* Removed stray "}" */
-
-      /* Added vendor-prefixed keyframes for compatibility */
-      @-webkit-keyframes slide-up {
-        from {
-          -webkit-transform: translateY(100%);
-        }
-        to {
-          -webkit-transform: translateY(0);
-        }
-      }
-      
-      @keyframes slide-up {
-        from {
-          transform: translateY(100%);
-        }
-        to {
-          transform: translateY(0);
-        }
-      }
-      
-      #cookie-preferences {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 1050;
-      }
-      
-      #cookie-preferences h2 {
-        font-size: 18px;
-      }
-      
-      #preferences-form label {
-        display: flex;
-        align-items: center;
-      }
-      
-      #preferences-form input[type="checkbox"] {
-        margin-right: .5rem;
-      }
-      
-      body {
-        font-family: 'Roboto', sans-serif;
-      }
-      
-      h1 {
-        font-family: 'Poppins', sans-serif;
-      }
-      
-      h2 {
-        font-family: 'Poppins', sans-serif;
-      }
-      
-      p {
-        font-family: 'Roboto', sans-serif;
-      }
-    </style>
   </head>
-<body>
-<!-- Eine Navigation hinzufügen, da diese Seite keine hat -->
-<header class="sticky top-0 z-50 transition-all duration-300 shadow-sm backdrop-blur-md bg-white/90 hover:bg-white">
-  <div class="container mx-auto">
-    <div class="navbar min-h-[4rem]">
-      <div class="navbar-start">
-        <!-- Mobile dropdown - new implementation -->
-        <div class="mobile-dropdown">
-          <button class="mobile-dropdown-button">
-            <span class="material-icons text-brand-purple">menu</span>
-          </button>
-          <div class="mobile-dropdown-content">
-            <ul class="menu p-2">
-              <li class="py-1"><a href="index.html#home" class="block py-2">Home</a></li>
-              <li class="py-1"><a href="index.html#about" class="block py-2">About Us</a></li>
-              <li class="py-1"><a href="index.html#services" class="block py-2">Services</a></li>
-              <li class="py-1"><a href="index.html#testimonials" class="block py-2">Testimonials</a></li>
-              <li class="py-1"><a href="faq.html" class="block py-2">FAQs</a></li>
-              <li class="py-1"><a href="index.html#contact" class="block py-2">Contact</a></li>
-            </ul>
+
+  <body class="bg-brand-light dark:bg-gray-900">
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- FAQ Header -->
+      <section class="py-16 bg-gradient-to-r from-brand-purple/5 to-brand-peach/10 dark:from-brand-purple/20 dark:to-brand-purple-dark/30">
+        <div class="container px-4 mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-8">
+            <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-brand-purple dark:text-brand-peach bg-brand-purple/10 dark:bg-brand-purple/20 rounded-full uppercase mb-4">Help Center</span>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-fredoka gradient-text mb-6">Frequently Asked Questions</h1>
+            <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">Find answers to common questions about our pet care services. If you can't find what you're looking for, please don't hesitate to contact us.</p>
           </div>
         </div>
-        
-        <a href="index.html" class="text-xl font-semibold sm:text-2xl gradient-text" style="font-family: 'Agent Orange', sans-serif;">Paw Patroller UK</a>
-      </div>
-      
-      <!-- Desktop navigation -->
-      <div class="navbar-center">
-        <ul class="px-1 menu menu-horizontal font-fredoka">
-          <li><a href="index.html#home">Home</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#testimonials">Testimonials</a></li>
-          <li><a href="faq.html">FAQs</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </div>
-      
-      <div class="navbar-end">
-        <a href="tel:07300888847" class="btn btn-ghost btn-circle">
-          <span class="material-icons">phone</span>
-        </a>
-      </div>
-    </div>
-    <div class="my-0 divider"></div>
-    <div class="py-2 space-y-1 text-xs text-center sm:text-sm">
-      <p>Call Us: 073 0088 8847 | Email: pawpatrolleruk@gmail.com</p>
-      <p class="hidden xs:block">Instagram: Paw_Patroller_UK | Facebook: Paw Patroller UK</p>
-    </div>
-  </div>
-</header>
+      </section>
 
- <!-- FAQ Section -->
- <section id="faq" class="py-24 bg-brand-light">
-    <div class="container px-4 mx-auto">
-      <h2 class="mb-16 text-4xl text-center font-fredoka md:text-5xl gradient-text">Frequently Asked Questions</h2>
-      <div class="max-w-3xl mx-auto space-y-8">
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
+      <!-- FAQ Content -->
+      <section class="py-16 bg-white dark:bg-gray-800">
+        <div class="container px-4 mx-auto">
+          <div class="max-w-3xl mx-auto">
+            <!-- FAQ Categories -->
+            <div class="mb-12 flex flex-wrap justify-center gap-4">
+              <button class="faq-category-btn active" data-category="all">All Questions</button>
+              <button class="faq-category-btn" data-category="services">Services</button>
+              <button class="faq-category-btn" data-category="booking">Booking</button>
+              <button class="faq-category-btn" data-category="payment">Payment</button>
+              <button class="faq-category-btn" data-category="safety">Safety</button>
+            </div>
 
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">What areas do you cover?</summary>
-          <p class="mt-4">We are based in Putney and we cover Putney, Richmond, Barnes and Wandsworth areas. If you're not sure, give us a call and we will explore options for you.</p>
-        </details>
+            <!-- FAQ Items -->
+            <div class="space-y-6">
+              <!-- Services FAQs -->
+              <div class="faq-item" data-category="services">
+                <button class="faq-question">
+                  <span class="faq-question-text">What areas do you cover?</span>
+                  <span class="material-icons faq-icon">add</span>
+                </button>
+                <div class="faq-answer">
+                  <p class="mt-4">We are based in Putney and we cover Putney, Richmond, Barnes and Wandsworth areas. If you're not sure, give us a call and we will explore options for you.</p>
+                </div>
+              </div>
 
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
+              <div class="faq-item" data-category="services">
+                <button class="faq-question">
+                  <span class="faq-question-text">Where do you walk?</span>
+                  <span class="material-icons faq-icon">add</span>
+                </button>
+                <div class="faq-answer">
+                  <p class="mt-4">We aim to diversify our walking routes, utilizing beautiful locations such as Richmond Park, Bushy Park, Putney Heath, and Wimbledon Common, along with their woodlands, fields, brooks, and ponds, as well as local parks. We strive to minimize the time dogs spend in the car.</p>
+                </div>
+              </div>
 
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Where do you walk?</summary>
-          <p class="mt-4">We aim to diversify our walking routes, utilizing beautiful locations such as Richmond Park, Bushy Park, Putney Heath, and Wimbledon Common, along with their woodlands, fields, brooks, and ponds, as well as local parks. We strive to minimize the time dogs spend in the car.</p>
-        </details>
+              <div class="faq-item" data-category="services">
+                <button class="faq-question">
+                  <span class="faq-question-text">How long are the walks?</span>
+                  <span class="material-icons faq-icon">add</span>
+                </button>
+                <div class="faq-answer">
+                  <p class="mt-4">Each walk lasts a minimum of 30 minutes or 1 hour, but frequently longer, depending on the walk you book. Please note that travel time is not included in the walking duration.</p>
+                </div>
+              </div>
 
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
+              <div class="faq-item" data-category="services">
+                <button class="faq-question">
+                  <span class="faq-question-text">How many dogs can you walk at once?</span>
+                  <span class="material-icons faq-icon">add</span>
+                </button>
+                <div class="faq-answer">
+                  <p class="mt-4">We walk in small, well-managed groups to ensure personalized attention and care.</p>
+                </div>
+              </div>
 
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">How long are the walks?</summary>
-          <p class="mt-4">Each walk lasts a minimum of 30 minutes or 1 hour, but frequently longer, depending on the walk you book. Please note that travel time is not included in the walking duration.</p>
-        </details>
+              <!-- Safety FAQs -->
+              <div class="faq-item" data-category="safety">
+                <button class="faq-question">
+                  <span class="faq-question-text">Do all employees have a current police check?</span>
+                  <span class="material-icons faq-icon">add</span>
+                </button>
+                <div class="faq-answer">
+                  <p class="mt-4">Yes, all of our employees who are responsible for both your dogs and homes have undergone a DBS check.</p>
+                </div>
+              </div>
 
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
+              <div class="faq-item" data-category="safety">
+                <button class="faq-question">
+                  <span class="faq-question-text">Are you insured?</span>
+                  <span class="material-icons faq-icon">add</span>
+                </button>
+                <div class="faq-answer">
+                  <p class="mt-4">Yes, we carry specialised business insurance.</p>
+                </div>
+              </div>
 
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">How many dogs can you walk at once?</summary>
-          <p class="mt-4">We walk in small, well-managed groups to ensure personalized attention and care.</p>
-        </details>
+              <div class="faq-item" data-category="services">
+                <button class="faq-question">
+                  <span class="faq-question-text">Do you have any testimonials?</span>
+                  <span class="material-icons faq-icon">add</span>
+                </button>
+                <div class="faq-answer">
+                  <p class="mt-4">Absolutely! Testimonials from our satisfied clients are available on our website.</p>
+                </div>
+              </div>
 
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
+              <div class="faq-item" data-category="services">
+                <button class="faq-question">
+                  <span class="faq-question-text">Can you provide references?</span>
+                  <span class="material-icons faq-icon">add</span>
+                </button>
+                <div class="faq-answer">
+                  <p class="mt-4">References can be provided upon request.</p>
+                </div>
+              </div>
 
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Do all employees have a current police check?</summary>
-          <p class="mt-4">Yes, all of our employees who are responsible for both your dogs and homes have undergone a DBS check.</p>
-        </details>
+              <!-- Payment FAQs -->
+              <div class="faq-item" data-category="payment">
+                <button class="faq-question">
+                  <span class="faq-question-text">How much do you charge?</span>
+                  <span class="material-icons faq-icon">add</span>
+                </button>
+                <div class="faq-answer">
+                  <p class="mt-4">Please refer to our price list for detailed information.</p>
+                </div>
+              </div>
 
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
+              <div class="faq-item" data-category="services">
+                <button class="faq-question">
+                  <span class="faq-question-text">Do you pick up and drop off my dog?</span>
+                  <span class="material-icons faq-icon">add</span>
+                </button>
+                <div class="faq-answer">
+                  <p class="mt-4">Yes, we offer pick-up and drop-off services for your dog from your home.</p>
+                </div>
+              </div>
 
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Are you insured?</summary>
-          <p class="mt-4">Yes, we carry specialised business insurance.</p>
-        </details>
+              <div class="faq-item" data-category="payment">
+                <button class="faq-question">
+                  <span class="faq-question-text">What payment methods do you accept?</span>
+                  <span class="material-icons faq-icon">add</span>
+                </button>
+                <div class="faq-answer">
+                  <p class="mt-4">We accept cash, bank transfers, and payments via PayPal.</p>
+                </div>
+              </div>
 
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
+              <div class="faq-item" data-category="payment">
+                <button class="faq-question">
+                  <span class="faq-question-text">When is payment due? Do you require a deposit?</span>
+                  <span class="material-icons faq-icon">add</span>
+                </button>
+                <div class="faq-answer">
+                  <p class="mt-4">We will provide a quote for the service before beginning pet sitting, and payment is due in full within 24 hours after the service is completed. No deposit is required.</p>
+                </div>
+              </div>
 
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Do you have any testimonials?</summary>
-          <p class="mt-4">Absolutely! Testimonials from our satisfied clients are available on our website.</p>
-        </details>
+              <!-- Booking FAQs -->
+              <div class="faq-item" data-category="booking">
+                <button class="faq-question">
+                  <span class="faq-question-text">What happens if my return home gets delayed?</span>
+                  <span class="material-icons faq-icon">add</span>
+                </button>
+                <div class="faq-answer">
+                  <p class="mt-4">If your return home is delayed, simply message us, and we will continue to care for your animals until you arrive.</p>
+                </div>
+              </div>
 
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
+              <div class="faq-item" data-category="booking">
+                <button class="faq-question">
+                  <span class="faq-question-text">How many days in advance do I need to contact you?</span>
+                  <span class="material-icons faq-icon">add</span>
+                </button>
+                <div class="faq-answer">
+                  <p class="mt-4">While a day or two notice is preferred, we are flexible with sudden changes and can accommodate urgent requests. Just send us a message, and we can begin care as early as that day if needed.</p>
+                </div>
+              </div>
 
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Can you provide references?</summary>
-          <p class="mt-4">References can be provided upon request.</p>
-        </details>
+              <div class="faq-item" data-category="services">
+                <button class="faq-question">
+                  <span class="faq-question-text">What types of animals do you care for?</span>
+                  <span class="material-icons faq-icon">add</span>
+                </button>
+                <div class="faq-answer">
+                  <p class="mt-4">We are happy to care for dogs, cats, birds of all types, reptiles, and pocket pets such as guinea pigs and rats. However, we do not provide pet sitting services for horses, cows, or other large farm animals.</p>
+                </div>
+              </div>
 
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
+              <div class="faq-item" data-category="booking">
+                <button class="faq-question">
+                  <span class="faq-question-text">How do I become a client?</span>
+                  <span class="material-icons faq-icon">add</span>
+                </button>
+                <div class="faq-answer">
+                  <p class="mt-4">To become a client, please call 073 0088 8847 or email pawpatrolleruk@gmail.com. We will arrange a convenient time to visit you.</p>
+                </div>
+              </div>
+            </div>
 
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">How much do you charge?</summary>
-          <p class="mt-4">Please refer to our price list for detailed information.</p>
-        </details>
+            <!-- Contact Section -->
+            <div class="mt-16 p-8 bg-brand-light dark:bg-gray-700 rounded-xl text-center">
+              <h3 class="text-2xl font-fredoka text-brand-purple dark:text-brand-peach mb-4">Still Have Questions?</h3>
+              <p class="mb-6 dark:text-gray-200">We're here to help! Contact us directly and we'll be happy to assist you.</p>
+              <a href="index.html#contact" class="inline-flex items-center px-6 py-3 text-base font-medium text-white transition-all duration-300 transform rounded-full bg-brand-purple hover:bg-brand-purple-dark dark:bg-brand-purple-dark dark:hover:bg-brand-purple hover:shadow-lg hover:-translate-y-1">
+                <span class="material-icons mr-2">contact_support</span>
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
 
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">Do you pick up and drop off my dog?</summary>
-          <p class="mt-4">Yes, we offer pick-up and drop-off services for your dog from your home.</p>
-        </details>
+    <!-- Floating Buttons Container -->
+    <div id="floating-buttons-container"></div>
 
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
+    <!-- Cookie Banner Container -->
+    <div id="cookie-banner-container"></div>
 
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">What payment methods do you accept?</summary>
-          <p class="mt-4">We accept cash, bank transfers, and payments via PayPal.</p>
-        </details>
+    <!-- FAQ JavaScript -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // FAQ Accordion functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
 
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
+        faqQuestions.forEach(question => {
+          question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const icon = this.querySelector('.faq-icon');
 
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">When is payment due? Do you require a deposit?</summary>
-          <p class="mt-4">We will provide a quote for the service before beginning pet sitting, and payment is due in full within 24 hours after the service is completed. No deposit is required.</p>
-        </details>
+            // Toggle current FAQ item
+            this.classList.toggle('active');
 
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
+            if (this.classList.contains('active')) {
+              answer.style.maxHeight = answer.scrollHeight + 'px';
+              icon.textContent = 'remove';
+            } else {
+              answer.style.maxHeight = '0';
+              icon.textContent = 'add';
+            }
+          });
+        });
 
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">What happens if my return home gets delayed?</summary>
-          <p class="mt-4">If your return home is delayed, simply message us, and we will continue to care for your animals until you arrive.</p>
-        </details>
+        // FAQ Category filtering
+        const categoryButtons = document.querySelectorAll('.faq-category-btn');
+        const faqItems = document.querySelectorAll('.faq-item');
 
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
+        categoryButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const category = this.dataset.category;
 
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">How many days in advance do I need to contact you?</summary>
-          <p class="mt-4">While a day or two notice is preferred, we are flexible with sudden changes and can accommodate urgent requests. Just send us a message, and we can begin care as early as that day if needed.</p>
-        </details>
+            // Update active button
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
 
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
+            // Filter FAQ items
+            faqItems.forEach(item => {
+              if (category === 'all' || item.dataset.category === category) {
+                item.style.display = 'block';
+              } else {
+                item.style.display = 'none';
+              }
+            });
+          });
+        });
+      });
+    </script>
 
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">What types of animals do you care for?</summary>
-          <p class="mt-4">We are happy to care for dogs, cats, birds of all types, reptiles, and pocket pets such as guinea pigs and rats. However, we do not provide pet sitting services for horses, cows, or other large farm animals.</p>
-        </details>
+    <style>
+      /* FAQ Styles */
+      .faq-category-btn {
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: all 0.3s;
+        background-color: #f5f5f5;
+        color: #6a1b9a;
+      }
 
-        <details class="p-6 transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-lg group">
+      .dark .faq-category-btn {
+        background-color: #333;
+        color: #ffccbc;
+      }
 
-          <summary class="text-xl transition-colors cursor-pointer font-fredoka group-hover:text-brand-purple">How do I become a client?</summary>
-          <p class="mt-4">To become a client, please call 073 0088 8847 or email pawpatrolleruk@gmail.com. We will arrange a convenient time to visit you.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-</body>
+      .faq-category-btn.active {
+        background-color: #6a1b9a;
+        color: white;
+      }
+
+      .dark .faq-category-btn.active {
+        background-color: #4a148c;
+        color: white;
+      }
+
+      .faq-item {
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+
+      .dark .faq-item {
+        border-color: #444;
+      }
+
+      .faq-question {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-align: left;
+      }
+
+      .dark .faq-question {
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+      }
+
+      .faq-question:hover {
+        background-color: #f9fafb;
+      }
+
+      .dark .faq-question:hover {
+        background-color: #2a2a2a;
+      }
+
+      .faq-question.active {
+        background-color: #f9fafb;
+      }
+
+      .dark .faq-question.active {
+        background-color: #2a2a2a;
+      }
+
+      .faq-question-text {
+        font-weight: 500;
+        font-size: 1.125rem;
+      }
+
+      .faq-answer {
+        padding: 0 1.5rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        background-color: #f9fafb;
+      }
+
+      .dark .faq-answer {
+        background-color: #2a2a2a;
+        color: #e0e0e0;
+      }
+
+      .faq-answer p {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+    </style>
+  </body>
 </html>

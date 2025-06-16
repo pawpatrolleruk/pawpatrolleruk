@@ -1,4 +1,4 @@
-class CookieManager {
+export class CookieManager {
     constructor() {
         this.consentKey = 'cookieConsent';
         this.cookieTypes = {
@@ -42,9 +42,19 @@ class CookieManager {
     applyConsent() {
         // Disable analytics if not consented
         if (!this.hasConsent('analytics')) {
-            window['ga-disable-GA_MEASUREMENT_ID'] = true;
+            // Disable Google Analytics tracking
+            // This will work with any GA4 property ID that might be configured
+            window['ga-disable-G-MEASUREMENT_ID'] = true;
+
+            // For Universal Analytics (older version)
+            window['ga-disable-UA-TRACKING_ID'] = true;
+
+            // Set a flag that can be checked by analytics scripts
+            window.analyticsDisabled = true;
+        } else {
+            window.analyticsDisabled = false;
         }
-        
+
         // Dispatch event for other scripts to handle
         window.dispatchEvent(new CustomEvent('cookieConsentUpdate', {
             detail: this.getConsent()

@@ -1,0 +1,86 @@
+<!-- Floating Contact Buttons Component -->
+<div class="fixed bottom-4 right-4 z-40 flex flex-col items-end space-y-3">
+  <!-- Main Contact Button -->
+  <div class="group relative">
+    <!-- Contact Button -->
+    <button id="contact-button" class="flex items-center justify-center w-14 h-14 rounded-full bg-brand-purple dark:bg-brand-purple-dark text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 focus:outline-none">
+      <span class="material-icons">contact_support</span>
+    </button>
+
+    <!-- Popup Menu -->
+    <div id="contact-popup" class="hidden absolute bottom-16 right-0 bg-white dark:bg-gray-800 rounded-lg shadow-xl p-4 w-64 transform transition-all duration-300">
+      <h4 class="text-lg font-fredoka text-brand-purple dark:text-brand-peach mb-3">Contact Us</h4>
+      <div class="space-y-3">
+        <a href="tel:07300888847" class="flex items-center text-gray-700 dark:text-gray-200 hover:text-brand-purple dark:hover:text-brand-peach transition-all duration-300">
+          <div class="w-8 h-8 rounded-full bg-brand-purple/10 dark:bg-brand-purple/20 flex items-center justify-center mr-3">
+            <span class="material-icons text-sm text-brand-purple dark:text-brand-peach">phone</span>
+          </div>
+          <span>073 0088 8847</span>
+        </a>
+        <a href="mailto:pawpatrolleruk@gmail.com" class="flex items-center text-gray-700 dark:text-gray-200 hover:text-brand-purple dark:hover:text-brand-peach transition-all duration-300">
+          <div class="w-8 h-8 rounded-full bg-brand-purple/10 dark:bg-brand-purple/20 flex items-center justify-center mr-3">
+            <span class="material-icons text-sm text-brand-purple dark:text-brand-peach">email</span>
+          </div>
+          <span>Email Us</span>
+        </a>
+        <a href="https://wa.me/447300888847" class="flex items-center text-gray-700 dark:text-gray-200 hover:text-brand-purple dark:hover:text-brand-peach transition-all duration-300">
+          <div class="w-8 h-8 rounded-full bg-[#25D366] flex items-center justify-center mr-3">
+            <span class="material-icons text-sm text-white">whatsapp</span>
+          </div>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-gray-700 text-brand-purple dark:text-brand-peach shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 focus:outline-none opacity-0 invisible">
+    <span class="material-icons">arrow_upward</span>
+  </button>
+</div>
+
+<!-- JavaScript for the floating buttons -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Contact popup functionality
+    const contactButton = document.getElementById('contact-button');
+    const contactPopup = document.getElementById('contact-popup');
+
+    if (contactButton && contactPopup) {
+      contactButton.addEventListener('click', function() {
+        contactPopup.classList.toggle('hidden');
+      });
+
+      // Close popup when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!contactButton.contains(event.target) && !contactPopup.contains(event.target)) {
+          contactPopup.classList.add('hidden');
+        }
+      });
+    }
+
+    // Back to top functionality
+    const backToTopButton = document.getElementById('back-to-top');
+
+    if (backToTopButton) {
+      // Show button when scrolled down
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          backToTopButton.classList.remove('opacity-0', 'invisible');
+          backToTopButton.classList.add('opacity-100', 'visible');
+        } else {
+          backToTopButton.classList.add('opacity-0', 'invisible');
+          backToTopButton.classList.remove('opacity-100', 'visible');
+        }
+      });
+
+      // Scroll to top when clicked
+      backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+  });
+</script>

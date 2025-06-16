@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./*.{html,js}",
     "./src/**/*.{js,ts,jsx,tsx,css}"
@@ -35,13 +36,33 @@ export default {
         'bounce-subtle': {
           '0%, 100%': { transform: 'translateY(-2%)' },
           '50%': { transform: 'translateY(0)' }
+        },
+        'float-slow': {
+          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+          '50%': { transform: 'translateY(-15px) rotate(5deg)' }
+        },
+        'float-medium': {
+          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+          '50%': { transform: 'translateY(-10px) rotate(-5deg)' }
+        },
+        'float-fast': {
+          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+          '50%': { transform: 'translateY(-20px) rotate(8deg)' }
+        },
+        'pulse-subtle': {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0.7 }
         }
       },
       animation: {
-        'fade-in-up': 'fade-in-up 0.5s ease-out',
-        'fade-in': 'fade-in 0.3s ease-out',
+        'fade-in-up': 'fade-in-up 0.8s ease-out',
+        'fade-in': 'fade-in 0.5s ease-out',
         'slide-in': 'slide-in 0.5s ease-out',
-        'bounce-subtle': 'bounce-subtle 2s infinite'
+        'bounce-subtle': 'bounce-subtle 2s infinite',
+        'float-slow': 'float-slow 8s ease-in-out infinite',
+        'float-medium': 'float-medium 6s ease-in-out infinite',
+        'float-fast': 'float-fast 4s ease-in-out infinite',
+        'pulse-subtle': 'pulse-subtle 2s ease-in-out infinite'
       }
     },
     container: {

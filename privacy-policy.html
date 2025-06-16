@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Paw Patroller UK</title>
-    
+
     <!-- Essential SEO -->
     <meta name="description" content="Privacy Policy for Paw Patroller UK. Learn how we handle your data and protect your privacy.">
-    
+
     <!-- Essential Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/agent-orange" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/gracility" rel="stylesheet">
-    
+
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="src/style.css">
-    
+
+    <!-- Vite entry point -->
+    <script type="module" src="src/main.js"></script>
+
     <style>
       body {
         font-family: 'Poppins', sans-serif;
@@ -28,11 +31,11 @@
         margin: 0;
         padding: 0;
       }
-      
+
       h1, h2, h3 {
         font-family: 'Poppins', sans-serif;
       }
-      
+
       .privacy-container {
         max-width: 800px;
         margin: 0 auto;
@@ -41,7 +44,7 @@
         border-radius: 0.5rem;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
       }
-      
+
       /* Improved responsive container */
       @media screen and (max-width: 640px) {
         .privacy-container {
@@ -49,63 +52,63 @@
           margin: 0 0.5rem;
         }
       }
-      
+
       .section {
         margin-bottom: 2.5rem;
         padding-bottom: 1.5rem;
         border-bottom: 1px solid #eee;
       }
-      
+
       /* Improved spacing on mobile */
       @media screen and (max-width: 640px) {
         .section {
           margin-bottom: 1.5rem;
           padding-bottom: 1rem;
         }
-        
+
         .section h2 {
           font-size: 1.25rem;
         }
-        
+
         .section h3 {
           font-size: 1.1rem;
         }
       }
-      
+
       .section:last-child {
         border-bottom: none;
       }
-      
+
       .section h2 {
         color: #6a1b9a;
         margin-bottom: 1rem;
         font-weight: 600;
       }
-      
+
       .section h3 {
         color: #6a1b9a;
         margin: 1.5rem 0 0.75rem;
         font-weight: 500;
       }
-      
+
       .section ul {
         padding-left: 1.5rem;
         margin-bottom: 1rem;
       }
-      
+
       .section ul li {
         margin-bottom: 0.5rem;
       }
-      
+
       .section a {
         color: #6a1b9a;
         text-decoration: none;
       }
-      
+
       .section a:hover {
         text-decoration: underline;
       }
-      
+
       .back-link {
         display: inline-flex;
         align-items: center;
@@ -117,12 +120,12 @@
         border-radius: 9999px;
         transition: all 0.3s ease;
       }
-      
+
       .back-link:hover {
         background-color: rgba(106, 27, 154, 0.1);
         transform: translateY(-2px);
       }
-      
+
       /* Cookie consent styles */
       #cookie-banner {
         position: fixed;
@@ -135,22 +138,22 @@
         z-index: 1000;
         display: none; /* Hidden by default, shown via JS */
       }
-      
+
       @media screen and (max-width: 480px) {
         #cookie-banner h3 {
           font-size: 1rem;
         }
-        
+
         #cookie-banner p {
           font-size: 0.875rem;
         }
-        
+
         .cookie-btn {
           padding: 0.5rem 0.75rem;
           font-size: 0.875rem;
         }
       }
-      
+
       #cookie-preferences {
         position: fixed;
         top: 0;
@@ -164,7 +167,7 @@
         z-index: 1100;
         display: none; /* Hidden by default, shown via JS */
       }
-      
+
       #cookie-preferences-content {
         background: white;
         padding: 2rem;
@@ -174,7 +177,7 @@
         max-height: 90vh;
         overflow-y: auto;
       }
-      
+
       .cookie-btn {
         padding: 0.5rem 1rem;
         border-radius: 0.25rem;
@@ -183,17 +186,17 @@
         font-weight: 500;
         transition: all 0.3s ease;
       }
-      
+
       .cookie-btn-primary {
         background-color: #6a1b9a !important;
         color: white !important;
       }
-      
+
       .cookie-btn-secondary {
         background-color: #f0f0f0 !important;
         color: #333333 !important;
       }
-      
+
       .cookie-btn-outline {
         background-color: transparent !important;
         border: 1px solid #6a1b9a !important;
@@ -201,68 +204,22 @@
       }
     </style>
   </head>
-  
+
   <body class="bg-brand-light">
-    <!-- Improved mobile header -->
-    <header class="sticky top-0 z-50 transition-all duration-300 shadow-sm backdrop-blur-md bg-white/90 hover:bg-white">
-      <div class="container mx-auto">
-        <div class="navbar min-h-[4rem]">
-          <div class="navbar-start">
-            <!-- Mobile dropdown - new implementation -->
-            <div class="mobile-dropdown">
-              <button class="mobile-dropdown-button">
-                <span class="material-icons text-brand-purple">menu</span>
-              </button>
-              <div class="mobile-dropdown-content">
-                <ul class="menu p-2">
-                  <li class="py-1"><a href="index.html#home" class="block py-2">Home</a></li>
-                  <li class="py-1"><a href="index.html#about" class="block py-2">About Us</a></li>
-                  <li class="py-1"><a href="index.html#services" class="block py-2">Services</a></li>
-                  <li class="py-1"><a href="index.html#testimonials" class="block py-2">Testimonials</a></li>
-                  <li class="py-1"><a href="faq.html" class="block py-2">FAQs</a></li>
-                  <li class="py-1"><a href="index.html#contact" class="block py-2">Contact</a></li>
-                </ul>
-              </div>
-            </div>
-            
-            <a href="index.html" class="text-xl font-semibold sm:text-2xl gradient-text" style="font-family: 'Agent Orange', sans-serif;">Paw Patroller UK</a>
-          </div>
-          
-          <!-- Desktop navigation -->
-          <div class="navbar-center">
-            <ul class="px-1 menu menu-horizontal font-fredoka">
-              <li><a href="index.html#home">Home</a></li>
-              <li><a href="index.html#services">Services</a></li>
-              <li><a href="index.html#testimonials">Testimonials</a></li>
-              <li><a href="faq.html">FAQs</a></li>
-              <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-          </div>
-          
-          <div class="navbar-end">
-            <a href="tel:07300888847" class="btn btn-ghost btn-circle">
-              <span class="material-icons">phone</span>
-            </a>
-          </div>
-        </div>
-        <div class="my-0 divider"></div>
-        <div class="py-2 space-y-1 text-xs text-center sm:text-sm">
-          <p>Call Us: 073 0088 8847 | Email: pawpatrolleruk@gmail.com</p>
-        </div>
-      </div>
-    </header>
-    
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+
     <main class="py-8 sm:py-12 md:py-16">
       <div class="privacy-container">
         <h1 class="mb-4 text-2xl font-bold text-center sm:mb-8 sm:text-3xl md:text-4xl" style="color: #6a1b9a;">Privacy Policy</h1>
         <p class="mb-6 text-sm text-center text-gray-600 sm:mb-8 sm:text-base">Last Updated: <span id="last-updated"></span></p>
-        
+
         <div class="section">
           <h2>Introduction</h2>
           <p>Paw Patroller UK ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you visit our website, which is hosted on GitHub Pages as a static site.</p>
           <p>Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.</p>
         </div>
-        
+
         <div class="section">
           <h2>About Our Website</h2>
           <p>Our website is a static site hosted on GitHub Pages. This means:</p>
@@ -272,11 +229,11 @@
             <li>We do not process or store your data directly on our systems</li>
           </ul>
         </div>
-        
+
         <div class="section">
           <h2>Information Collection</h2>
           <p>As a static website, we collect very limited information:</p>
-          
+
           <h3 class="mt-4 mb-2 text-lg">Contact Information</h3>
           <p>When you contact us through phone, email, or social media links provided on our website, you may voluntarily provide information such as:</p>
           <ul>
@@ -286,7 +243,7 @@
             <li>Information about your pet</li>
           </ul>
           <p>This information is not collected through our website but directly through the communication channels you choose (email, phone, WhatsApp, etc.).</p>
-          
+
           <h3 class="mt-4 mb-2 text-lg">GitHub Pages Hosting</h3>
           <p>Our website is hosted on GitHub Pages, which may collect certain information such as:</p>
           <ul>
@@ -296,11 +253,11 @@
             <li>Pages visited</li>
           </ul>
           <p>This information is collected and processed by GitHub, not by us. For more information, please refer to <a href="https://docs.github.com/en/github/site-policy/github-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub's Privacy Statement</a>.</p>
-          
+
           <h3 class="mt-4 mb-2 text-lg">Local Storage</h3>
           <p>Our website uses browser local storage to remember your cookie preferences. This information is stored on your device and is not transmitted to our servers.</p>
         </div>
-        
+
         <div class="section">
           <h2>Third-Party Services</h2>
           <p>Our static website uses the following third-party services that may collect data:</p>
@@ -311,13 +268,13 @@
             <li><strong>WhatsApp</strong>: We provide a WhatsApp button for communication. Using this feature subjects you to <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">WhatsApp's Privacy Policy</a>.</li>
           </ul>
         </div>
-        
+
         <div class="section">
           <h2>Cookie Policy</h2>
           <p>Our website is a static site hosted on GitHub Pages and does not use traditional cookies for analytics or marketing purposes. We only use browser local storage to remember your cookie banner preferences. This information is stored entirely on your device and is not transmitted to any servers.</p>
           <p>The only cookies that might be set are those from third-party services we use to deliver fonts and icons, as mentioned in the "Third-Party Services" section.</p>
         </div>
-        
+
         <div class="section">
           <h2>How We Use Information</h2>
           <p>Any contact information voluntarily provided to us is used solely for:</p>
@@ -328,12 +285,12 @@
           </ul>
           <p>We do not sell, rent, or trade your personal information with third parties.</p>
         </div>
-        
+
         <div class="section">
           <h2>Data Security</h2>
           <p>As a static website, we do not collect or store your data on our servers. However, information you share with us through other channels (e.g., email or phone) is protected with appropriate technical and organizational measures.</p>
         </div>
-        
+
         <div class="section">
           <h2>Your Rights Under GDPR</h2>
           <p>If you are in the European Economic Area, you have rights regarding your personal data, including:</p>
@@ -347,167 +304,47 @@
           </ul>
           <p>To exercise these rights regarding information you've shared with us, please contact us using the details provided below.</p>
         </div>
-        
+
         <div class="section">
           <h2>Children's Privacy</h2>
           <p>Our website is not intended for children under 16 years of age. We do not knowingly collect personal information from children under 16.</p>
         </div>
-        
+
         <div class="section">
           <h2>Changes to This Privacy Policy</h2>
           <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
         </div>
-        
+
         <div class="section">
           <h2>Contact Us</h2>
           <p>If you have any questions about this Privacy Policy, please contact us at:</p>
           <p>Email: pawpatrolleruk@gmail.com</p>
           <p>Phone: 073 0088 8847</p>
         </div>
-        
+
         <a href="index.html" class="back-link">
-          <span class="mr-2 material-icons" style="vertical-align: middle;">arrow_back</span> 
+          <span class="mr-2 material-icons" style="vertical-align: middle;">arrow_back</span>
           Back to Homepage
         </a>
       </div>
     </main>
-    
-    <!-- Improved responsive footer - same as index.html -->
-    <footer class="py-8 text-white sm:py-12" style="background-color: #6a1b9a;">
-      <div class="container px-4 mx-auto">
-        <div class="grid grid-cols-1 gap-8 mb-8 sm:grid-cols-2 md:grid-cols-4">
-          <!-- Brand/Logo Section -->
-          <div class="col-span-1 md:col-span-1">
-            <div class="mb-4">
-              <a href="index.html" class="inline-block mb-4 text-2xl font-semibold text-white" style="font-family: 'Agent Orange', sans-serif;">
-                Paw Patroller UK
-              </a>
-            </div>
-            <p class="mb-6 text-sm text-white opacity-90">
-              Professional dog walking and pet care services in the UK. Fully insured, DBS checked, and dedicated to your pet's happiness.
-            </p>
-            <!-- Social Links -->
-            <div class="flex space-x-4">
-              <a href="https://www.facebook.com/profile.php?id=61571211915327" target="_blank" rel="noopener noreferrer" class="p-2 text-white transition-all duration-300 rounded-full hover:bg-white/20">
-                <span class="material-icons">facebook</span>
-              </a>
-              <a href="https://www.instagram.com/Paw_Patroller_UK" target="_blank" rel="noopener noreferrer" class="p-2 text-white transition-all duration-300 rounded-full hover:bg-white/20">
-                <span class="material-icons">photo_camera</span>
-              </a>
-              <a href="https://wa.me/447300888847" target="_blank" rel="noopener noreferrer" class="p-2 text-white transition-all duration-300 rounded-full hover:bg-white/20">
-                <span class="material-icons">whatsapp</span>
-              </a>
-            </div>
-          </div>
 
-          <!-- Quick Links -->
-          <div class="md:ml-8">
-            <h3 class="mb-4 text-lg font-semibold text-white">Quick Links</h3>
-            <ul class="space-y-2 text-sm">
-              <li><a href="index.html#home" class="inline-block py-1 text-white hover:underline">Home</a></li>
-              <li><a href="index.html#about" class="inline-block py-1 text-white hover:underline">About Us</a></li>
-              <li><a href="index.html#services" class="inline-block py-1 text-white hover:underline">Services</a></li>
-              <li><a href="index.html#testimonials" class="inline-block py-1 text-white hover:underline">Testimonials</a></li>
-              <li><a href="index.html#contact" class="inline-block py-1 text-white hover:underline">Contact</a></li>
-            </ul>
-          </div>
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
 
-          <!-- Services -->
-          <div>
-            <h3 class="mb-4 text-lg font-semibold text-white">Our Services</h3>
-            <ul class="space-y-2 text-sm">
-              <li><a href="index.html#services" class="inline-block py-1 text-white hover:underline">Dog Walking</a></li>
-              <li><a href="index.html#services" class="inline-block py-1 text-white hover:underline">Pet Visits</a></li>
-              <li><a href="index.html#services" class="inline-block py-1 text-white hover:underline">Live Streaming Walks</a></li>
-              <li><a href="index.html#services" class="inline-block py-1 text-white hover:underline">Dog Training</a></li>
-            </ul>
-          </div>
+    <!-- Floating Buttons Container -->
+    <div id="floating-buttons-container"></div>
 
-          <!-- Contact Info -->
-          <div>
-            <h3 class="mb-4 text-lg font-semibold text-white">Contact Us</h3>
-            <ul class="space-y-3 text-sm text-white">
-              <li class="flex">
-                <span class="mr-3 material-icons">phone</span>
-                <a href="tel:07300888847" class="text-white">073 0088 8847</a>
-              </li>
-              <li class="flex">
-                <span class="mr-3 material-icons">email</span>
-                <a href="mailto:pawpatrolleruk@gmail.com" class="text-white">pawpatrolleruk@gmail.com</a>
-              </li>
-              <li class="flex">
-                <span class="mr-3 material-icons">schedule</span>
-                <span>Mon-Fri: 9:00 AM - 7:00 PM</span>
-              </li>
-              <li class="flex">
-                <span class="mr-3 material-icons">info</span>
-                <span>Weekend services available</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Bottom Footer -->
-        <div class="pt-6 mt-6 border-t border-white/20">
-          <div class="flex flex-col justify-between text-sm sm:flex-row">
-            <div class="mb-4 sm:mb-0">
-              <p class="text-white">&copy; <span id="current-year"></span> Paw Patroller UK. All Rights Reserved.</p>
-            </div>
-            <div class="flex flex-wrap gap-4">
-              <a href="privacy-policy.html" class="text-white hover:underline">Privacy Policy</a>
-              <a href="#" id="open-cookie-settings" class="text-white hover:underline">Cookie Settings</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Improved cookie banner - same as index.html -->
-    <div id="cookie-banner">
-      <div class="container px-2 mx-auto">
-        <h3 class="mb-2 text-lg font-semibold">We Value Your Privacy</h3>
-        <p class="mb-4">This website uses minimal local storage to remember that you've seen this notice. We don't collect any analytics or marketing data. Third-party services like Google Fonts may set their own cookies. <a href="privacy-policy.html" class="underline text-brand-purple">Learn More</a>.</p>
-        <div class="flex flex-wrap gap-2">
-          <button id="accept-cookies" class="cookie-btn cookie-btn-primary">
-            Acknowledge
-          </button>
-        </div>
-      </div>
-    </div>
+    <!-- Cookie Banner Container -->
+    <div id="cookie-banner-container"></div>
 
     <script>
       // Set the last updated date
-      document.getElementById('last-updated').textContent = new Date().toLocaleDateString('en-GB', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
-      });
-      
-      // Set current year for copyright
-      document.getElementById('current-year').textContent = new Date().getFullYear();
-      
-      // Simplified cookie consent
       document.addEventListener('DOMContentLoaded', function() {
-        const cookieBanner = document.getElementById('cookie-banner');
-        
-        // Check if user has already acknowledged the banner
-        const cookieConsent = localStorage.getItem('cookieConsentAcknowledged');
-        
-        // Show the banner if not yet acknowledged
-        if (!cookieConsent) {
-          cookieBanner.style.display = 'block';
-        }
-        
-        // Handle acknowledgement
-        document.getElementById('accept-cookies')?.addEventListener('click', function() {
-          localStorage.setItem('cookieConsentAcknowledged', 'true');
-          cookieBanner.style.display = 'none';
-        });
-        
-        // Open banner from footer link
-        document.getElementById('open-cookie-settings')?.addEventListener('click', function(e) {
-          e.preventDefault();
-          cookieBanner.style.display = 'block';
+        document.getElementById('last-updated').textContent = new Date().toLocaleDateString('en-GB', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
         });
       });
     </script>

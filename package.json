@@ -14,14 +14,20 @@
     "build": "vite build",
     "preview": "vite preview",
     "clean": "rimraf node_modules package-lock.json dist",
-    "audit": "npm audit --production"
+    "audit": "npm audit --production",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
     "rimraf": "^5.0.1",
     "tailwindcss": "^3.3.5",
-    "vite": "4.5.2"
+    "vite": "4.5.2",
+    "vitest": "^0.34.6",
+    "jsdom": "^22.1.0",
+    "@vitest/coverage-v8": "^0.34.6"
   },
   "dependencies": {
     "@material-icons/font": "^1.0.36"

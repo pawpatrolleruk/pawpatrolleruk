@@ -1,45 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Policy | Paw Patroller UK</title>
-    <link rel="stylesheet" href="src/main.css">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Learn about how Paw Patroller UK uses cookies and how you can manage your preferences.">
+    <meta name="keywords" content="cookie policy, privacy, data protection, paw patroller">
+
+    <!-- Essential Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/agent-orange" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/style.css">
+
+    <!-- Vite entry point for component loading -->
+    <script type="module" src="src/main.js"></script>
   </head>
   <body class="bg-brand-light">
-    <header class="py-4 text-center text-white bg-brand-purple">
-      <h1>Cookie Policy</h1>
-    </header>
-    <main class="container p-4 mx-auto">
-      <section>
-        <h2 class="mb-2 text-2xl font-semibold">Introduction</h2>
-        <p class="mb-4">
-          This website uses cookies strictly for the purpose of essential functions and to enhance your browsing experience.
-        </p>
-      </section>
-      <section>
-        <h2 class="mb-2 text-2xl font-semibold">Types of Cookies</h2>
-        <p class="mb-2"><strong>Necessary Cookies:</strong> These cookies enable core functionality, such as security, network management, and accessibility. They are always active.</p>
-        <p class="mb-4">
-          <strong>Non-Essential Cookies:</strong> These include Analytics and Marketing cookies. They will only be activated after you provide explicit consent.
-        </p>
-      </section>
-      <section>
-        <h2 class="mb-2 text-2xl font-semibold">Your Choices</h2>
-        <p class="mb-4">
-          At the bottom of every page, the cookie banner allows you to either accept all cookies, reject non-essential cookies, or manage your cookie preferences. You can change your preferences at any time by clicking on "Manage Preferences."
-        </p>
-      </section>
-      <section>
-        <h2 class="mb-2 text-2xl font-semibold">More Information</h2>
-        <p>
-          For further details on how we handle your data, please contact us at 
-          <a href="mailto:pawpatrolleruk@gmail.com" class="underline text-brand-purple">pawpatrolleruk@gmail.com</a>.
-        </p>
-      </section>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <main class="container p-4 mx-auto py-12">
+      <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-md p-6 sm:p-8 md:p-10">
+        <div class="text-center mb-10">
+          <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-brand-purple bg-brand-purple/10 rounded-full uppercase mb-4">Policy</span>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-fredoka gradient-text mb-6">Cookie Policy</h1>
+          <p class="text-gray-600 text-lg leading-relaxed">How we use cookies and respect your privacy</p>
+        </div>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-brand-purple mb-4">Introduction</h2>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <p class="mb-4 text-gray-700">
+              This website uses cookies strictly for the purpose of essential functions and to enhance your browsing experience.
+            </p>
+          </div>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-brand-purple mb-4">Types of Cookies</h2>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <p class="mb-4 text-gray-700"><strong class="text-brand-purple">Necessary Cookies:</strong> These cookies enable core functionality, such as security, network management, and accessibility. They are always active.</p>
+            <p class="mb-4 text-gray-700">
+              <strong class="text-brand-purple">Non-Essential Cookies:</strong> These include Analytics and Marketing cookies. They will only be activated after you provide explicit consent.
+            </p>
+          </div>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-brand-purple mb-4">Your Choices</h2>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <p class="mb-4 text-gray-700">
+              At the bottom of every page, the cookie banner allows you to either accept all cookies, reject non-essential cookies, or manage your cookie preferences. You can change your preferences at any time by clicking on "Manage Preferences."
+            </p>
+          </div>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-brand-purple mb-4">More Information</h2>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <p class="text-gray-700">
+              For further details on how we handle your data, please contact us at
+              <a href="mailto:pawpatrolleruk@gmail.com" class="text-brand-purple hover:underline transition-all duration-300">pawpatrolleruk@gmail.com</a>.
+            </p>
+          </div>
+        </section>
+
+        <div class="mt-10 text-center">
+          <a href="index.html" class="inline-block px-6 py-3 text-lg font-medium text-white transition-all duration-300 transform rounded-full bg-brand-purple hover:bg-brand-purple-dark hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand-purple focus:ring-opacity-50 group">
+            <span class="flex items-center">
+              <span class="material-icons mr-2">arrow_back</span>
+              Back to Home
+            </span>
+          </a>
+        </div>
+      </div>
     </main>
-    <footer class="py-4 text-center text-white bg-brand-purple">
-      <p>&copy; 2023 Paw Patroller UK. All rights reserved.</p>
-    </footer>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- Floating Buttons Container -->
+    <div id="floating-buttons-container"></div>
+
+    <!-- Cookie Banner Container -->
+    <div id="cookie-banner-container"></div>
   </body>
 </html>

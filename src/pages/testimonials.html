@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../main.css">
   </head>
   <body class="bg-brand-light">
-    
+
     <header class="sticky top-0 z-50 transition-all duration-300 shadow-sm bg-white/90 backdrop-blur-md">
       <div class="container mx-auto">
         <div class="navbar min-h-[4rem]">
@@ -47,7 +47,7 @@
         </div>
       </div>
     </header>
-    
+
     <main>
       <section id="testimonials" class="py-24 bg-white">
         <div class="container px-4 mx-auto">
@@ -64,7 +64,7 @@
         </div>
       </section>
     </main>
-    
+
     <footer class="py-8 text-white bg-brand-purple">
       <div class="container px-4 mx-auto">
         <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -77,22 +77,22 @@
         </div>
       </div>
     </footer>
-    
+
     <script>
   document.addEventListener('DOMContentLoaded', function() {
-    fetch('/reviews.json')
+    fetch('/data/reviews.json')
       .then(response => response.json())
       .then(data => {
-        const reviewContainer = document.getElementById('review-container');
-        data.reviews.forEach(review => {
+        const reviewContainer = document.getElementById('all-reviews');
+        data.forEach(review => {
           const reviewElement = document.createElement('div');
           reviewElement.className = 'review-item bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1';
           reviewElement.innerHTML = `
             <div class="flex items-center mb-4">
               <span class="text-2xl text-yellow-400">${'★'.repeat(review.rating)}</span>
             </div>
-            <p class="mb-4">"${review.text}"</p>
-            <p class="font-semibold">- ${review.name}</p>
+            <p class="mb-4">"${review.review_text}"</p>
+            <p class="font-semibold">- ${review.reviewer_name}</p>
           `;
           reviewContainer.appendChild(reviewElement);
         });
