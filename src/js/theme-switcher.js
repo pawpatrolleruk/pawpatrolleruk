@@ -23,25 +23,26 @@ class ThemeSwitcher {
    */
   init() {
     // Get stored theme preference
-    const storedTheme = localStorage.getItem(this.STORAGE_KEY);
+    // const storedTheme = localStorage.getItem(this.STORAGE_KEY);
     
-    if (storedTheme) {
-      // Apply stored theme preference
-      if (storedTheme === this.DARK_THEME) {
-        this.enableDarkMode();
-      } else if (storedTheme === this.LIGHT_THEME) {
-        this.enableLightMode();
-      } else {
-        // System preference
-        this.applySystemTheme();
-      }
-    } else {
-      // No stored preference, use system preference
-      this.applySystemTheme();
-    }
+    // if (storedTheme) {
+    //   // Apply stored theme preference
+    //   if (storedTheme === this.DARK_THEME) {
+    //     this.enableDarkMode();
+    //   } else if (storedTheme === this.LIGHT_THEME) {
+    //     this.enableLightMode();
+    //   } else {
+    //     // System preference
+    //     // this.applySystemTheme();
+    //   }
+    // } else {
+    //   // No stored preference, use system preference
+    //   // this.applySystemTheme();
+    // }
+    this.enableLightMode(); // Default to light mode
     
     // Listen for system theme changes
-    this.setupSystemThemeListener();
+    // this.setupSystemThemeListener();
   }
   
   /**

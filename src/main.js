@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async function() {
  */
 function setupThemeToggle() {
   const themeToggleBtn = document.getElementById('theme-toggle');
-  
+
   if (themeToggleBtn) {
     // Bind click event to toggle theme
     themeToggleBtn.addEventListener('click', function() {
@@ -33,11 +33,27 @@ function setupThemeToggle() {
     });
   }
 
+  // Update icons based on current theme when page loads
+  const currentTheme = themeSwitcher.getCurrentTheme();
+  const lightIcon = document.getElementById('theme-toggle-light-icon');
+  const darkIcon = document.getElementById('theme-toggle-dark-icon');
+
+  if (lightIcon && darkIcon) {
+    if (currentTheme === 'dark' || 
+        (currentTheme === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      lightIcon.classList.add('hidden');
+      darkIcon.classList.remove('hidden');
+    } else {
+      lightIcon.classList.remove('hidden');
+      darkIcon.classList.add('hidden');
+    }
+  }
+
   // Listen for theme changes to update icons
   window.addEventListener('themeChange', function(event) {
     const lightIcon = document.getElementById('theme-toggle-light-icon');
     const darkIcon = document.getElementById('theme-toggle-dark-icon');
-    
+
     if (lightIcon && darkIcon) {
       if (event.detail.theme === 'dark') {
         lightIcon.classList.add('hidden');

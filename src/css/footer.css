@@ -1,0 +1,114 @@
+/**
+ * Footer styles for Paw Patroller UK
+ */
+
+/* Footer container */
+footer {
+  background: linear-gradient(to right, var(--brand-purple-dark), var(--brand-purple));
+  color: white;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+/* Wave decoration */
+footer .absolute {
+  position: absolute;
+}
+
+footer .transform {
+  transform: translateY(-100%);
+}
+
+footer svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer sections */
+footer h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer li {
+  margin-bottom: 0.75rem;
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: white;
+}
+
+footer a:hover[class*="translate"] {
+  transform: translateX(0.25rem);
+}
+
+footer .material-icons {
+  margin-right: 0.5rem;
+  font-size: 0.75rem;
+}
+
+/* Social links */
+footer [class*="space-x"] {
+  display: flex;
+  gap: 0.75rem;
+}
+
+footer [class*="rounded-full"] {
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+footer [class*="rounded-full"]:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+footer a:hover[class*="-translate-y"] {
+  transform: translateY(-0.25rem);
+}
+
+/* Contact info */
+footer [class*="items-start"] {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+footer [class*="text-white/60"] {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+footer [class*="text-white"] {
+  color: white;
+}
+
+footer a:hover[class*="text-brand-peach"] {
+  color: var(--brand-peach);
+}
+
+/* Bottom footer */
+footer [class*="border-t"] {
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode adjustments */
+.dark footer {
+  background: linear-gradient(to right, var(--brand-purple-dark), var(--brand-purple));
+}
