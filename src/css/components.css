@@ -191,16 +191,6 @@ details summary {
 }
 
 /* Floating buttons styles */
-#contact-popup {
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  transform-origin: bottom right;
-}
-
-#contact-popup.hidden {
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(10px) scale(0.95);
-}
 
 /* WhatsApp button pulse animation */
 @keyframes whatsapp-pulse {
@@ -283,16 +273,6 @@ details summary {
   .floating-button-group button {
     min-height: 56px;
     min-width: 56px;
-  }
-
-  /* Better contact popup for mobile */
-  #contact-popup {
-    position: fixed !important;
-    bottom: 80px !important;
-    right: 1rem !important;
-    left: 1rem !important;
-    width: auto !important;
-    max-width: none !important;
   }
 }
 

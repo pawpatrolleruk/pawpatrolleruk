@@ -19,12 +19,14 @@ const CONFIG = {
     source: {
       images: path.join(__dirname, 'assets', 'reviews'),
       data: path.join(__dirname, 'assets', 'data'),
-      badges: path.join(__dirname, 'assets', 'badges')
+      badges: path.join(__dirname, 'assets', 'badges'),
+      components: path.join(__dirname, 'src', 'components')
     },
     destination: {
       images: path.join(__dirname, 'public', 'reviews'),
       data: path.join(__dirname, 'public', 'data'),
-      badges: path.join(__dirname, 'public', 'badges')
+      badges: path.join(__dirname, 'public', 'badges'),
+      components: path.join(__dirname, 'public', 'src', 'components')
     }
   },
   defaultImage: {
@@ -242,6 +244,13 @@ async function copyAllAssets() {
     copyFiles(
       CONFIG.directories.source.badges, 
       CONFIG.directories.destination.badges
+    );
+    
+    // Copy component files
+    console.log('Copying component files...');
+    copyFiles(
+      CONFIG.directories.source.components, 
+      CONFIG.directories.destination.components
     );
     
     const endTime = Date.now();
