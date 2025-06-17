@@ -47,10 +47,16 @@ export default defineConfig({
         manualChunks: {
           vendor: ['./src/js/cookies/index.js', './src/js/cookies/ui.js'],
           testimonials: ['./src/js/testimonials.js']
-        },
-        // Configure asset file names
+        },        // Configure asset file names
         assetFileNames: (assetInfo) => {
           let extType = assetInfo.name.split('.').at(1);
+          
+          // Preserve badges directory structure
+          if (assetInfo.name.includes('badge') || 
+              ['dbs-checked', 'oplex-first-aid', 'protectivity-insurance'].some(badge => assetInfo.name.includes(badge))) {
+            return `assets/badges/[name][extname]`;
+          }
+          
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
             extType = 'img';
           } else if (/woff|woff2|eot|ttf|otf/i.test(extType)) {
