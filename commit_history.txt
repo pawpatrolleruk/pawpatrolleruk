@@ -1,0 +1,521 @@
+commit f665a37ec0192aaa277879424fe0247ffd4f774b
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Tue Jun 17 20:43:35 2025 +0200
+
+    refactor: update footer contact label and enhance navbar structure for improved accessibility
+
+commit 652340b8f6f29877bcac99d4ac909aae43c92f0d
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Tue Jun 17 20:32:05 2025 +0200
+
+    Refactor mobile navigation: remove deprecated CSS, add debug and test HTML files
+    
+    - Removed deprecated mobile navigation CSS from mobile-nav-fix.css, transitioning to a checkbox-based navigation approach.
+    - Added debug-mobile-nav.html for testing mobile navigation components with console logging.
+    - Created mobile-nav-test.html and simple-test.html for testing mobile dropdown functionality with basic styles and scripts.
+    - Added a backup of the deprecated CSS as mobile-nav-fix-backup.css for future reference.
+    - Cleaned up main.js by removing unnecessary whitespace and comments.
+
+commit 7fc029aa62757bd9440105e4c60cb2f9e10c9821
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Tue Jun 17 19:50:06 2025 +0200
+
+    Refactor cookie consent implementation
+    
+    - Removed old cookie consent styles and JavaScript functionality from custom-styles.css, index.html, cookie-consent.js, and cookieManager.js.
+    - Introduced a new cookie consent UI with options to accept all, reject all, or manage preferences.
+    - Updated privacy policy to reflect changes in cookie usage and consent management.
+    - Enhanced cookie consent management with versioning and re-prompting logic.
+    - Improved UI interactions and event handling for cookie consent.
+    - Added tests for the new cookie consent functionality and ensured localStorage integration works as expected.
+
+commit a19441127bb5bd7e4a7b835287ec328bd7a41025
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Tue Jun 17 19:17:07 2025 +0200
+
+    Refactor code structure and remove redundant sections for improved readability and maintainability
+
+commit 372aeae78b7f51cba7b8a2ab445d2220d8e0523c
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Tue Jun 17 03:00:07 2025 +0200
+
+    feat: Enhance mobile navigation with improved dropdown functionality and styling
+
+commit 00ab992966bda9d11294e1ed446f8af5d471b3e9
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Tue Jun 17 02:53:15 2025 +0200
+
+    Implement code changes to enhance functionality and improve performance
+
+commit 64a7d749e5d80d1e884aa88e2824c9f14543eb18
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Tue Jun 17 02:48:43 2025 +0200
+
+    feat: Implement reusable components for Paw Patroller UK website
+    
+    - Added floating buttons component with WhatsApp contact and back-to-top functionality.
+    - Introduced GDPR-compliant cookie banner component.
+    - Created a comprehensive footer component with social links, certifications, and contact information.
+    - Developed a modern navbar component with mobile dropdown support and active link detection.
+    - Included README documentation for components usage and structure.
+    - Added favicon as an SVG for better scalability and design consistency.
+    - Removed deprecated styles for contact popup in CSS.
+
+commit 0ec17b6a8edf3af4942049e6e637a9af55dbc3e6
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Tue Jun 17 02:42:27 2025 +0200
+
+    Enhance floating buttons and accessibility features
+    
+    - Updated floating buttons component with improved styles and animations.
+    - Added pulse animation to WhatsApp button for better visibility.
+    - Enhanced contact popup with smooth open/close animations and accessibility attributes.
+    - Improved mobile responsiveness for floating buttons and contact popup.
+    - Updated footer and navbar components to use SVG icons instead of material icons for better scalability.
+    - Enhanced mobile dropdown navigation with keyboard accessibility support.
+    - Improved touch target sizes and spacing for mobile devices.
+    - Added focus indicators for keyboard navigation and improved touch feedback.
+
+commit 974cfdc2074ef84cf46ec39f800fba68945a7252
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Tue Jun 17 02:24:37 2025 +0200
+
+    feat: Enhance cookie banner functionality and styling
+    
+    - Updated cookie banner styles for improved visibility and interaction.
+    - Added responsive design to footer with CSS Grid and Flexbox.
+    - Enhanced testimonials carousel with better navigation and touch support.
+    - Improved error handling and logging in testimonials loading process.
+    - Implemented cookie consent management with localStorage.
+    - Added temporary scripts for testing cookie consent clearing.
+
+commit 205022eae74c948e2614d65d9b4ee99298bcb92a
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Tue Jun 17 01:59:05 2025 +0200
+
+    Enhance UI: Update hero section title, add new puppy care features, and improve footer with certifications
+
+commit 2a03a1929ae78c730f3a0c449ee705c0f1e71124
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Tue Jun 17 01:26:49 2025 +0200
+
+    Add footer styles for Paw Patroller UK
+    
+    - Implemented footer container styles with gradient background and padding.
+    - Styled footer sections including headings, lists, and links for better readability.
+    - Added hover effects for links and social icons to enhance user interaction.
+    - Included responsive design elements for dark mode compatibility.
+
+commit f986adcfc9f1a74f5a7ce62e693ee527a6e5ed07
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Mon Jun 16 20:10:06 2025 +0200
+
+    Refactor: Stop tracking node_modules and other generated files
+
+commit 196eeee80aec2234a6af1a8b6358717c42c09f85
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sat Apr 5 03:27:29 2025 +0200
+
+    services added
+
+commit 961513d62fa4914434cf5beb9273e761b92576f2
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sat Apr 5 01:00:51 2025 +0200
+
+    updated hero
+
+commit 109eda4683d7dfaf15f8ac0fc995a33a33e5ae76
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sat Apr 5 00:48:36 2025 +0200
+
+    add melissa back
+
+commit f0399ae56cbf989cb790b900003f81ac76c7f017
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sat Apr 5 00:48:17 2025 +0200
+
+    remove melissa
+
+commit 02be3b6860d9f1df6af96ca56f0c3fbe713e495d
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sat Apr 5 00:42:34 2025 +0200
+
+    Added dog training
+
+commit 743f2d35370e5c989f21c33d41d12a00606fb21a
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sat Mar 22 21:19:18 2025 +0100
+
+    cleanup1
+
+commit f65a3a908642bc217db68bc00d128ee8659fd95f
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sat Mar 22 21:07:53 2025 +0100
+
+    fix?
+
+commit c7d7fbd110cb9e9073858b8aa9c61c34b34b6ff8
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sat Mar 22 20:58:51 2025 +0100
+
+    Maybe now
+
+commit 1577046f20b77176a9889024e1ca188e17aad69b
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sat Mar 22 20:49:30 2025 +0100
+
+    Hopefully fix npm
+
+commit 60af691e52a09d20b6b67d06f8f97b03a9d50588
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sat Mar 22 20:45:57 2025 +0100
+
+    Final touches
+
+commit 9d141463af655c3104ccf20ce395b8857d0e523e
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Feb 27 22:21:25 2025 +0100
+
+    Fix facebook link
+
+commit 0267b8cd022999e7edc04f0f949fb341506b61c7
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Feb 27 22:15:34 2025 +0100
+
+    Coming soon testiomals
+
+commit ff2c8a38affed12b163bf99b8463d54d63f12058
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Feb 27 22:14:53 2025 +0100
+
+    Fix coming soon
+
+commit 5b5a9af0dfeea54e6b25b636331d9bf025609184
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Feb 27 22:12:55 2025 +0100
+
+    Fix navbar
+
+commit e1d965fa871340758d1f83c591f558a851dfea3a
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Feb 27 22:07:51 2025 +0100
+
+    New Site css
+
+commit de48ad2528491b426467285143a0c82936dc6670
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Feb 27 21:31:49 2025 +0100
+
+    Updated Website
+
+commit f726984dd90b2f7792ad2e95e4934b4d45a677f5
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Mon Feb 17 21:22:33 2025 +0100
+
+    Remove 30min walk
+
+commit 82877c2bcf2abdc5bafadb529ed441f6601eca7d
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Mon Feb 17 20:35:34 2025 +0100
+
+    Apple device fix
+
+commit 00d5409e6c464c271d6d0dad60417997351b0c79
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Feb 13 22:21:31 2025 +0100
+
+    Pawpatrolleruk.com adjusted
+
+commit 20de1ea5d1a6755dde93efdc0cb97fc7cbe42dc0
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Feb 13 22:02:25 2025 +0100
+
+    Static file vvite
+
+commit 4f70d1af041a90a57911be5d3151c35af440340c
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Feb 13 21:54:17 2025 +0100
+
+    Update Base
+
+commit 5e2a6b15c6db2bd4b9c1fb8205464ed12dc4e94b
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Feb 13 21:50:40 2025 +0100
+
+    Adding pictures manually
+
+commit 00517353681f7618e65028759a4d74fab5a51c60
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Feb 13 21:47:15 2025 +0100
+
+    New asset try
+
+commit 5b44313eaafe8dc0eab15551afb38902b2a720fb
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Feb 13 21:29:16 2025 +0100
+
+    New package.json
+
+commit a94fc5d0603791d4748abbf9970f6bc73754541e
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Feb 13 21:27:21 2025 +0100
+
+    Update2
+
+commit 24a7b5c0edaf5eaa9854069d7ca088296f7e9ea7
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Feb 13 21:25:32 2025 +0100
+
+    Update Vite config
+
+commit 144a7d1836cc7f8332a411bf2ceb441250aee063
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Feb 13 21:20:26 2025 +0100
+
+    Update the site and upload pictures
+
+commit 77a3ca3d5ab53c831d02972a21c0f887f3072c9b
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sat Feb 8 14:54:57 2025 +0100
+
+    Push Testiomals
+
+commit 5a361c51b965bc379322472526a6d0fdf2918f7d
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sat Feb 8 14:39:30 2025 +0100
+
+    Test of new Testiomals page
+
+commit 10240e91f54349fc1664748ddffcf617baae9b4f
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sat Feb 8 12:16:34 2025 +0100
+
+    Update deploy.yml
+
+commit 557b0548119a147a26bc5c1340fe3a3bf9af7c1e
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sat Feb 8 12:14:43 2025 +0100
+
+    Update deploy.yml
+
+commit bfd97201efef6954f6a9f82605400fa244f1c65e
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sat Feb 8 12:12:08 2025 +0100
+
+    Update deploy.yml
+
+commit b3f18256f2ac3b5bc7fb90c7b8d199453adf60eb
+Author: pawpatrolleruk <orchesterlover1@gmail.com>
+Date:   Fri Feb 7 20:34:27 2025 +0100
+
+    Write Perms
+
+commit b936a3ba9fda3ef0fa6bcd4bc412a3d7cd93715a
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Feb 7 20:17:10 2025 +0100
+
+    Push automatic build 3
+
+commit 632b963ac00176aa55c260a4925d26afa71faa1e
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Feb 7 20:13:44 2025 +0100
+
+    Push automatic build 2
+
+commit 171ff6508ca457e14936059d06450c4a70320156
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Feb 7 20:08:57 2025 +0100
+
+    Push automatic build
+
+commit 5066badf154b70b4991ecaba4097c1702b766133
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Feb 7 17:10:24 2025 +0100
+
+    Commit before deployment
+
+commit 832d10e372fd7358df7aa5727fbe0f5b21403296
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Feb 7 17:07:49 2025 +0100
+
+    config change
+
+commit d2e76ea1f44a4bdeed9fd7965fc3040f6b4ea923
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Feb 7 17:03:22 2025 +0100
+
+    Make gh pages ready
+
+commit 90e20581bde9637afd7111fcdeaa785c3569c09b
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Feb 7 17:02:42 2025 +0100
+
+    Make gh pages ready
+
+commit 066fb39f7373a4bcd05b888f8dbfb1719a9d379a
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Feb 7 16:18:22 2025 +0100
+
+    Make gh pages ready
+
+commit 3ca71e3caa4f50f1ca18c161e6bafb2f485dc043
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Tue Jan 28 07:31:53 2025 +0100
+
+    Update deploy.yml
+
+commit 53a91a54b845e1ee381119c695a8daac66bae71e
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Tue Jan 28 07:28:14 2025 +0100
+
+    Update deploy.yml
+
+commit d5998d53063720f7159ffb88edb93a1de25c7d34
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sat Jan 25 01:02:45 2025 +0100
+
+    Create CNAME
+
+commit fd249334afbf2dc72c05a494bae4d097ba842538
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sat Jan 25 00:57:21 2025 +0100
+
+    Deploy
+
+commit 47a8db2f020d345b347d27a59e317bc7cf646c76
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Jan 24 23:40:23 2025 +0100
+
+    Clean up
+
+commit 8b8e161cc0accd04877261ed624cf474942da271
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Jan 24 19:37:31 2025 +0100
+
+    Deploy
+
+commit a55d3d3b2ee44d12a84e8815b7163b269f1c13e4
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Jan 24 18:02:29 2025 +0100
+
+    Backup before deleting
+
+commit 270eded85652ef319564ea3faeb86b02348a9552
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Tue Jan 21 20:55:19 2025 +0100
+
+    New Index pushed
+
+commit 67dd4dc80dd8ba098e362b0185080e6435ecc35e
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Nov 21 23:52:03 2024 +0100
+
+    Aktualisieren von style.css
+
+commit 466334a6bad59fac54ddf68c8c347e077dc33865
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Nov 21 22:49:25 2024 +0100
+
+    Update to company text
+
+commit 597060b495dcae014af161c37f7e89bcb3609240
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Sun Nov 17 22:26:45 2024 +0100
+
+    Aktualisieren von index.html
+
+commit 4ed335f3b3243f0ff7ceeb41207ec360a748e800
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Oct 25 21:04:34 2024 +0200
+
+    Add files via upload
+
+commit e79fe5d3e94185f9252b11e13612fd8cee1c5fe8
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Oct 25 20:59:21 2024 +0200
+
+    Update index.html
+
+commit 77b5639b820ac35a8ff134c9c1939f0da9b93dca
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Oct 25 20:58:53 2024 +0200
+
+    Add files via upload
+
+commit d16b81b012c9a5e185f1af38438706f735fd27b3
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Oct 25 20:33:52 2024 +0200
+
+    Update index.html
+
+commit 5593e74ec2f982c435d0e209d0d6d0da31a24439
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Oct 25 20:28:09 2024 +0200
+
+    Change Favicon
+
+commit 72f943c60591a460ee4cb4be530947a2b9c15e76
+Author: pawpatrolleruk <orchesterlover1@gmail.com>
+Date:   Fri Oct 25 20:19:28 2024 +0200
+
+    Update CNAME
+
+commit 6b7f051377b1748be7fe93a2af3ce9c9a58b1ff6
+Author: pawpatrolleruk <orchesterlover1@gmail.com>
+Date:   Fri Oct 25 20:18:34 2024 +0200
+
+    Update CNAME
+
+commit 82e2665f8579a9c63bdf82a98732e7f0950fe4c3
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Oct 25 16:26:53 2024 +0200
+
+    Add Apple Icon
+
+commit 421528be4877eed1d3ce349a6686e2124656fc42
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Oct 25 16:25:04 2024 +0200
+
+    Add files via upload
+
+commit bf9b07bedf335b96098bdf7e9115a6cf60df8ca7
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Fri Oct 25 00:01:27 2024 +0200
+
+    Aktualisieren von index
+
+commit d61f8fdba4752f75e34ac19cf0557cdb75f7cb3d
+Author: Ferdmusic <80982592+ferdmusic@users.noreply.github.com>
+Date:   Thu Oct 24 23:58:12 2024 +0200
+
+    Change number
+
+commit 017cd7312ab473d1a0c2e5c8c51e6cf6574c60d5
+Author: pawpatrolleruk <orchesterlover1@gmail.com>
+Date:   Thu Oct 17 20:52:52 2024 +0200
+
+    Create CNAME
+
+commit 359276b58b282a89360cada699af25c5b0f88615
+Author: pawpatrolleruk <orchesterlover1@gmail.com>
+Date:   Thu Oct 17 20:45:43 2024 +0200
+
+    Rename index2.html to index.html
+
+commit 928dd4e248eeadd58dc54929fa83443e5993e952
+Author: pawpatrolleruk <orchesterlover1@gmail.com>
+Date:   Thu Oct 17 20:45:28 2024 +0200
+
+    Rename index.html to index-structure-2.html
+
+commit b08710cd23ca8a29a6974d7252c0d738b87bd484
+Author: pawpatrolleruk <orchesterlover1@gmail.com>
+Date:   Thu Oct 17 20:44:46 2024 +0200
+
+    Add files via upload
+
+commit 29226011486706e9150aaa911d2f20fede2dcba7
+Author: pawpatrolleruk <orchesterlover1@gmail.com>
+Date:   Thu Oct 17 20:39:37 2024 +0200
+
+    Initialize
