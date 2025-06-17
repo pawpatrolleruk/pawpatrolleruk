@@ -5,17 +5,23 @@
       <div class="navbar-start">
         <!-- Mobile dropdown with enhanced animation -->
         <div class="mobile-dropdown">
-          <button class="mobile-dropdown-button flex items-center justify-center">
+          <button class="mobile-dropdown-button flex items-center justify-center" 
+                  aria-expanded="false" 
+                  aria-controls="mobile-menu" 
+                  aria-label="Toggle navigation menu">
             <span class="material-icons text-brand-purple dark:text-brand-peach">menu</span>
           </button>
-          <div class="mobile-dropdown-content dark:bg-gray-800 dark:text-white">
-            <ul class="menu p-2">
-              <li class="py-1"><a href="index.html#home" class="block py-2 flex items-center dark:hover:bg-gray-700"><span class="material-icons mr-2 text-sm">home</span>Home</a></li>
-              <li class="py-1"><a href="index.html#about" class="block py-2 flex items-center dark:hover:bg-gray-700"><span class="material-icons mr-2 text-sm">info</span>About Us</a></li>
-              <li class="py-1"><a href="index.html#services" class="block py-2 flex items-center dark:hover:bg-gray-700"><span class="material-icons mr-2 text-sm">pets</span>Services</a></li>
-              <li class="py-1"><a href="index.html#testimonials" class="block py-2 flex items-center dark:hover:bg-gray-700"><span class="material-icons mr-2 text-sm">format_quote</span>Testimonials</a></li>
-              <li class="py-1"><a href="faq.html" class="block py-2 flex items-center dark:hover:bg-gray-700"><span class="material-icons mr-2 text-sm">help_outline</span>FAQs</a></li>
-              <li class="py-1"><a href="index.html#contact" class="block py-2 flex items-center dark:hover:bg-gray-700"><span class="material-icons mr-2 text-sm">mail_outline</span>Contact</a></li>
+          <div class="mobile-dropdown-content dark:bg-gray-800 dark:text-white" 
+               id="mobile-menu" 
+               role="menu" 
+               aria-label="Main navigation">
+            <ul class="menu p-2" role="none">
+              <li class="py-1" role="none"><a href="index.html#home" class="block py-2 flex items-center dark:hover:bg-gray-700" role="menuitem"><span class="material-icons mr-2 text-sm" aria-hidden="true">home</span>Home</a></li>
+              <li class="py-1" role="none"><a href="index.html#about" class="block py-2 flex items-center dark:hover:bg-gray-700" role="menuitem"><span class="material-icons mr-2 text-sm" aria-hidden="true">info</span>About Us</a></li>
+              <li class="py-1" role="none"><a href="index.html#services" class="block py-2 flex items-center dark:hover:bg-gray-700" role="menuitem"><span class="material-icons mr-2 text-sm" aria-hidden="true">pets</span>Services</a></li>
+              <li class="py-1" role="none"><a href="index.html#testimonials" class="block py-2 flex items-center dark:hover:bg-gray-700" role="menuitem"><span class="material-icons mr-2 text-sm" aria-hidden="true">format_quote</span>Testimonials</a></li>
+              <li class="py-1" role="none"><a href="faq.html" class="block py-2 flex items-center dark:hover:bg-gray-700" role="menuitem"><span class="material-icons mr-2 text-sm" aria-hidden="true">help_outline</span>FAQs</a></li>
+              <li class="py-1" role="none"><a href="index.html#contact" class="block py-2 flex items-center dark:hover:bg-gray-700" role="menuitem"><span class="material-icons mr-2 text-sm" aria-hidden="true">mail_outline</span>Contact</a></li>
             </ul>
           </div>
         </div>
@@ -52,10 +58,14 @@
 
         <!-- Social media links for desktop -->
         <a href="https://www.instagram.com/Paw_Patroller_UK" target="_blank" rel="noopener noreferrer" class="hidden sm:flex btn btn-ghost btn-circle hover:bg-brand-purple/10 dark:hover:bg-brand-purple/20 hover:scale-110 transition-all duration-300 group">
-          <span class="material-icons text-brand-purple dark:text-brand-peach group-hover:animate-pulse">photo_camera</span>
+          <svg class="w-5 h-5 text-brand-purple dark:text-brand-peach group-hover:animate-pulse fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
         </a>
         <a href="https://www.facebook.com/profile.php?id=61571211915327" target="_blank" rel="noopener noreferrer" class="hidden sm:flex btn btn-ghost btn-circle hover:bg-brand-purple/10 dark:hover:bg-brand-purple/20 hover:scale-110 transition-all duration-300 group">
-          <span class="material-icons text-brand-purple dark:text-brand-peach group-hover:animate-pulse">facebook</span>
+          <svg class="w-5 h-5 text-brand-purple dark:text-brand-peach group-hover:animate-pulse fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
         </a>
       </div>
     </div>
@@ -69,9 +79,19 @@
         <a href="mailto:pawpatrolleruk@gmail.com" class="flex items-center hover:text-brand-purple dark:hover:text-brand-peach"><span class="material-icons text-xs sm:text-sm mr-1">email</span>pawpatrolleruk@gmail.com</a>
       </p>
       <p class="hidden xs:flex items-center justify-center gap-2">
-        <a href="https://www.instagram.com/Paw_Patroller_UK" target="_blank" rel="noopener noreferrer" class="flex items-center hover:text-brand-purple dark:hover:text-brand-peach"><span class="material-icons text-xs sm:text-sm mr-1">photo_camera</span>Paw_Patroller_UK</a>
+        <a href="https://www.instagram.com/Paw_Patroller_UK" target="_blank" rel="noopener noreferrer" class="flex items-center hover:text-brand-purple dark:hover:text-brand-peach">
+          <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-1 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          Paw_Patroller_UK
+        </a>
         <span>|</span>
-        <a href="https://www.facebook.com/profile.php?id=61571211915327" target="_blank" rel="noopener noreferrer" class="flex items-center hover:text-brand-purple dark:hover:text-brand-peach"><span class="material-icons text-xs sm:text-sm mr-1">facebook</span>Paw Patroller UK</a>
+        <a href="https://www.facebook.com/profile.php?id=61571211915327" target="_blank" rel="noopener noreferrer" class="flex items-center hover:text-brand-purple dark:hover:text-brand-peach">
+          <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-1 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          Paw Patroller UK
+        </a>
       </p>
     </div>
   </div>
@@ -87,13 +107,22 @@
     if (mobileDropdownButton && mobileDropdownContent) {
       mobileDropdownButton.addEventListener('click', function(event) {
         event.stopPropagation();
-        mobileDropdownContent.classList.toggle('open');
+        const isExpanded = mobileDropdownContent.classList.contains('open');
+        
+        if (isExpanded) {
+          mobileDropdownContent.classList.remove('open');
+          mobileDropdownButton.setAttribute('aria-expanded', 'false');
+        } else {
+          mobileDropdownContent.classList.add('open');
+          mobileDropdownButton.setAttribute('aria-expanded', 'true');
+        }
       });
 
       // Close dropdown when clicking outside
       document.addEventListener('click', function(event) {
         if (!mobileDropdownButton.contains(event.target) && !mobileDropdownContent.contains(event.target)) {
           mobileDropdownContent.classList.remove('open');
+          mobileDropdownButton.setAttribute('aria-expanded', 'false');
         }
       });
 
@@ -102,7 +131,16 @@
       mobileLinks.forEach(link => {
         link.addEventListener('click', function() {
           mobileDropdownContent.classList.remove('open');
+          mobileDropdownButton.setAttribute('aria-expanded', 'false');
         });
+      });
+
+      // Keyboard navigation support
+      mobileDropdownButton.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          mobileDropdownButton.click();
+        }
       });
     }
 

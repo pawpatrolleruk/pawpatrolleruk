@@ -189,3 +189,171 @@ details summary {
 .dark .border-gray-200 {
   border-color: var(--border-color) !important;
 }
+
+/* Floating buttons styles */
+#contact-popup {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: bottom right;
+}
+
+#contact-popup.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+}
+
+/* WhatsApp button pulse animation */
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-pulse {
+  animation: whatsapp-pulse 2s infinite;
+}
+
+/* Floating button hover effects */
+.floating-button-group {
+  perspective: 1000px;
+}
+
+.floating-button-group button,
+.floating-button-group a {
+  transform-style: preserve-3d;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-button-group button:hover,
+.floating-button-group a:hover {
+  transform: translateY(-2px) rotateY(5deg);
+}
+
+/* Mobile Accessibility Enhancements */
+@media screen and (max-width: 768px) {
+  /* Ensure all clickable elements meet minimum touch target size */
+  .btn,
+  button,
+  a[href],
+  input,
+  textarea,
+  select {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem;
+  }
+
+  /* Improve mobile navigation */
+  .mobile-dropdown-button {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 0.75rem;
+  }
+
+  /* Better mobile menu spacing */
+  .mobile-dropdown-content .menu li a {
+    padding: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  /* Improve form controls on mobile */
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 1rem;
+  }
+
+  /* Better spacing for mobile cards */
+  .card {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  /* Improve floating buttons for mobile */
+  .floating-button-group a,
+  .floating-button-group button {
+    min-height: 56px;
+    min-width: 56px;
+  }
+
+  /* Better contact popup for mobile */
+  #contact-popup {
+    position: fixed !important;
+    bottom: 80px !important;
+    right: 1rem !important;
+    left: 1rem !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn,
+  button {
+    border: 2px solid currentColor;
+  }
+
+  .text-brand-purple {
+    color: #000 !important;
+  }
+
+  .bg-brand-purple {
+    background-color: #000 !important;
+    color: #fff !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-pulse,
+  .animate-bounce,
+  .whatsapp-pulse {
+    animation: none !important;
+  }
+}
+
+/* Focus improvements for keyboard navigation */
+.btn:focus,
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid var(--brand-purple);
+  outline-offset: 2px;
+}
+
+/* Skip link for screen readers */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--brand-purple);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
