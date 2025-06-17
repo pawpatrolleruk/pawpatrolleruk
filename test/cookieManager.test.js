@@ -1,25 +1,24 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { CookieManager, saveCookiePreference, getCookiePreference, clearCookiePreference } from '../src/js/cookieManager';
+import { 
+  getConsent, 
+  setConsent, 
+  hasConsent, 
+  acceptAllCookies, 
+  rejectOptionalCookies, 
+  revokeConsent, 
+  needsRePrompt 
+} from '../src/js/cookies/index.js';
 
-describe('CookieManager', () => {
-  let cookieManager;
-
+describe('Cookie Manager', () => {
   beforeEach(() => {
     // Clear localStorage before each test
     localStorage.clear();
-    // Create a new instance of CookieManager
-    cookieManager = new CookieManager();
-  });
-
-  it('should initialize with correct default values', () => {
-    expect(cookieManager.consentKey).toBe('cookieConsent');
-    expect(cookieManager.cookieTypes.necessary.required).toBe(true);
-    expect(cookieManager.cookieTypes.analytics.required).toBe(false);
-    expect(cookieManager.cookieTypes.marketing.required).toBe(false);
+    // Mock window.dispatchEvent
+    vi.spyOn(window, 'dispatchEvent').mockImplementation(() => true);
   });
 
   it('should return null when no consent is stored', () => {
-    expect(cookieManager.getConsent()).toBeNull();
+    expect(getConsent()).toBeNull();
   });
 
   it('should store and retrieve consent correctly', () => {
@@ -28,14 +27,15 @@ describe('CookieManager', () => {
       marketing: false
     };
 
-    cookieManager.setConsent(preferences);
+    setConsent(preferences);
     
-    const consent = cookieManager.getConsent();
+    const consent = getConsent();
     expect(consent).not.toBeNull();
     expect(consent.analytics).toBe(true);
     expect(consent.marketing).toBe(false);
     expect(consent.necessary).toBe(true); // Always required
     expect(consent.timestamp).toBeDefined();
+    expect(consent.version).toBeDefined();
   });
 
   it('should check consent status correctly', () => {
@@ -44,12 +44,30 @@ describe('CookieManager', () => {
       marketing: false
     };
 
-    cookieManager.setConsent(preferences);
+    setConsent(preferences);
     
-    expect(cookieManager.hasConsent('analytics')).toBe(true);
-    expect(cookieManager.hasConsent('marketing')).toBe(false);
-    expect(cookieManager.hasConsent('necessary')).toBe(true);
-    expect(cookieManager.hasConsent('nonexistent')).toBe(false);
+    expect(hasConsent('analytics')).toBe(true);
+    expect(hasConsent('marketing')).toBe(false);
+    expect(hasConsent('necessary')).toBe(true);
+    expect(hasConsent('nonexistent')).toBe(false);
+  });
+
+  it('should reject all sets analytics & marketing to false and keeps necessary true', () => {
+    rejectOptionalCookies();
+    
+    const consent = getConsent();
+    expect(consent.analytics).toBe(false);
+    expect(consent.marketing).toBe(false);
+    expect(consent.necessary).toBe(true);
+  });
+
+  it('should accept all cookies', () => {
+    acceptAllCookies();
+    
+    const consent = getConsent();
+    expect(consent.analytics).toBe(true);
+    expect(consent.marketing).toBe(true);
+    expect(consent.necessary).toBe(true);
   });
 
   it('should dispatch event when applying consent', () => {
@@ -58,7 +76,7 @@ describe('CookieManager', () => {
       marketing: true
     };
 
-    cookieManager.setConsent(preferences);
+    setConsent(preferences);
     
     expect(window.dispatchEvent).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -78,44 +96,36 @@ describe('CookieManager', () => {
       marketing: true
     };
 
-    cookieManager.setConsent(preferences);
-    cookieManager.revokeConsent();
+    setConsent(preferences);
+    revokeConsent();
     
-    expect(cookieManager.getConsent()).toBeNull();
-    expect(location.reload).toHaveBeenCalled();
+    expect(getConsent()).toBeNull();
+    expect(window.dispatchEvent).toHaveBeenCalledWith(
+      expect.objectContaining({
+        type: 'cookieConsentUpdate',
+        detail: null
+      })
+    );
+  });
+
+  it('consent version is stored and read; when CONSENT_VERSION increments needsRePrompt() returns true', () => {
+    // Test with no consent
+    expect(needsRePrompt()).toBe(true);
+    
+    // Set consent with current version
+    setConsent({ analytics: true, marketing: false });
+    expect(needsRePrompt()).toBe(false);
+    
+    // Simulate old version by manually setting outdated consent
+    const oldConsent = {
+      analytics: true,
+      marketing: false,
+      necessary: true,
+      timestamp: new Date().toISOString(),
+      version: 0 // Old version
+    };
+    localStorage.setItem('cookieConsent', JSON.stringify(oldConsent));
+    expect(needsRePrompt()).toBe(true);
   });
 });
 
-describe('Cookie Preference Utilities', () => {
-  beforeEach(() => {
-    localStorage.clear();
-  });
-
-  it('should save and retrieve cookie preferences', () => {
-    const preferences = { 
-      analytics: true, 
-      marketing: false 
-    };
-    
-    saveCookiePreference(preferences);
-    const retrieved = getCookiePreference();
-    
-    expect(retrieved).toEqual(preferences);
-  });
-
-  it('should return null when no preferences are stored', () => {
-    expect(getCookiePreference()).toBeNull();
-  });
-
-  it('should clear cookie preferences', () => {
-    const preferences = { 
-      analytics: true, 
-      marketing: false 
-    };
-    
-    saveCookiePreference(preferences);
-    clearCookiePreference();
-    
-    expect(getCookiePreference()).toBeNull();
-  });
-});

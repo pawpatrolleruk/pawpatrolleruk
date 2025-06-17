@@ -12,5 +12,6 @@
 @import './testimonials.css';
 @import './components.css';
 @import './footer.css';
+@import '../../css/cookie-consent.css'; /* Cookie consent styles */
 
 /* Add any additional imports here */

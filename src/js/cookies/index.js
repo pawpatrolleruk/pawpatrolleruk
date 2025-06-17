@@ -5,6 +5,9 @@
  * It replaces the previous duplicate implementations across the codebase.
  */
 
+// Consent version for tracking changes
+const CONSENT_VERSION = 1;
+
 // Cookie types and their metadata
 const COOKIE_TYPES = {
   necessary: {
@@ -47,6 +50,18 @@ export function hasConsent(type) {
 }
 
 /**
+ * Check if user needs to be re-prompted for consent
+ * @returns {boolean} Whether consent needs to be re-prompted
+ */
+export function needsRePrompt() {
+  const consent = getConsent();
+  if (!consent) return true;
+  
+  // Check if version has changed
+  return !consent.version || consent.version < CONSENT_VERSION;
+}
+
+/**
  * Save consent preferences
  * @param {Object} preferences - Object with boolean values for each cookie type
  */
@@ -55,7 +70,8 @@ export function setConsent(preferences) {
   const consentData = {
     ...preferences,
     necessary: true,
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    version: CONSENT_VERSION
   };
   
   localStorage.setItem(CONSENT_KEY, JSON.stringify(consentData));
@@ -102,11 +118,15 @@ export function rejectOptionalCookies() {
 }
 
 /**
- * Revoke all consent and reload the page
+ * Revoke all consent and notify UI
  */
 export function revokeConsent() {
   localStorage.removeItem(CONSENT_KEY);
-  location.reload();
+  
+  // Notify other parts of the application
+  window.dispatchEvent(new CustomEvent('cookieConsentUpdate', {
+    detail: null
+  }));
 }
 
 /**
@@ -125,5 +145,6 @@ export default {
   acceptAllCookies,
   rejectOptionalCookies,
   revokeConsent,
-  getCookieTypes
+  getCookieTypes,
+  needsRePrompt
 };

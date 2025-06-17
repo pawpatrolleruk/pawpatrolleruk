@@ -2,10 +2,64 @@
 <div id="cookie-banner" class="cookie-banner dark:bg-gray-800 dark:text-white">
   <div class="container px-2 mx-auto">
     <h3 class="mb-2 text-base font-semibold sm:text-lg">We Value Your Privacy</h3>
-    <p class="mb-4 text-sm sm:text-base">This website uses minimal local storage to remember that you've seen this notice. We don't collect any analytics or marketing data. Third-party services like Google Fonts may set their own cookies. <a href="privacy-policy.html" class="underline text-brand-purple dark:text-brand-peach hover:text-brand-purple-dark dark:hover:text-brand-peach-dark">Learn More</a>.</p>
+    <p class="mb-4 text-sm sm:text-base">This website uses cookies to enhance your experience. You can choose to accept all, reject optional cookies, or manage your preferences. We respect your privacy choices. <a href="privacy-policy.html" class="underline text-brand-purple dark:text-brand-peach hover:text-brand-purple-dark dark:hover:text-brand-peach-dark">Privacy Policy</a> | <a href="cookie-policy.html" class="underline text-brand-purple dark:text-brand-peach hover:text-brand-purple-dark dark:hover:text-brand-peach-dark">Cookie Policy</a>.</p>
     <div class="flex flex-wrap gap-2">
       <button id="accept-cookies" class="cookie-btn cookie-btn-primary dark:bg-brand-purple-dark hover:bg-brand-purple-dark dark:hover:bg-brand-purple-light">
-        Acknowledge
+        Accept All
+      </button>
+      <button id="reject-cookies" class="cookie-btn cookie-btn-secondary">
+        Reject All
+      </button>
+      <button id="manage-cookies" class="cookie-btn cookie-btn-outline">
+        Manage Preferences
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie Preferences Modal -->
+<div id="cookie-preferences" class="cookie-preferences-modal" style="display: none;">
+  <div class="cookie-preferences-content">
+    <div class="cookie-preferences-header">
+      <h3>Cookie Preferences</h3>
+      <button id="close-preferences" class="close-btn" aria-label="Close">&times;</button>
+    </div>
+    <div class="cookie-preferences-body">
+      <p class="mb-4">Customize your cookie preferences below. Necessary cookies are required for the website to function properly.</p>
+      
+      <div class="cookie-type">
+        <div class="cookie-type-header">
+          <h4>Necessary Cookies</h4>
+          <span class="cookie-status">Always Active</span>
+        </div>
+        <p class="cookie-description">These cookies are essential for the website to function and cannot be disabled.</p>
+      </div>
+
+      <div class="cookie-type">
+        <div class="cookie-type-header">
+          <h4>Analytics Cookies</h4>
+          <label class="cookie-toggle">
+            <input type="checkbox" data-cookie-type="analytics" id="analytics-toggle">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <p class="cookie-description">Help us understand how visitors interact with our website by collecting anonymous information.</p>
+      </div>
+
+      <div class="cookie-type">
+        <div class="cookie-type-header">
+          <h4>Marketing Cookies</h4>
+          <label class="cookie-toggle">
+            <input type="checkbox" data-cookie-type="marketing" id="marketing-toggle">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <p class="cookie-description">Used to track visitors across websites to display relevant advertisements.</p>
+      </div>
+    </div>
+    <div class="cookie-preferences-footer">
+      <button id="save-preferences" class="cookie-btn cookie-btn-primary">
+        Save Preferences
       </button>
     </div>
   </div>

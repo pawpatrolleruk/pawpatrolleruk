@@ -31,12 +31,21 @@ class CookieConsentUI {
   init() {
     if (this.initialized) return;
     
+    console.log('Cookie UI init called');
     this.bindElements();
-    if (!this.banner) return; // Exit if banner element doesn't exist
+    if (!this.banner) {
+      console.error('Cookie banner element not found, exiting initialization');
+      return; // Exit if banner element doesn't exist
+    }
     
+    console.log('Cookie banner found, binding events and updating UI');
     this.bindEvents();
     this.updateUI();
     this.initialized = true;
+    
+    // Emit custom event for other modules to hook into
+    window.dispatchEvent(new CustomEvent('cookieUIReady', { detail: this }));
+    console.log('Cookie UI initialization complete');
   }
   
   /**
@@ -44,17 +53,26 @@ class CookieConsentUI {
    */
   bindElements() {
     // Main elements
-    this.banner = document.getElementById('cookie-banner');
-    this.preferencesModal = document.getElementById('cookie-preferences');
+    this.banner = document.querySelector('#cookie-banner');
+    this.preferencesModal = document.querySelector('#cookie-preferences');
     this.checkboxes = document.querySelectorAll('[data-cookie-type]');
     
     // Button elements
-    this.acceptButton = document.getElementById('accept-cookies');
-    this.rejectButton = document.getElementById('reject-cookies');
-    this.manageButton = document.getElementById('manage-cookies');
-    this.saveButton = document.getElementById('save-preferences');
-    this.closeButton = document.getElementById('close-preferences');
-    this.settingsLink = document.getElementById('open-cookie-settings');
+    this.acceptButton = document.querySelector('#accept-cookies');
+    this.rejectButton = document.querySelector('#reject-cookies');
+    this.manageButton = document.querySelector('#manage-cookies');
+    this.saveButton = document.querySelector('#save-preferences');
+    this.closeButton = document.querySelector('#close-preferences');
+    this.settingsLink = document.querySelector('#open-cookie-settings');
+    
+    // Log warnings for missing elements
+    if (!this.banner) console.warn('Cookie banner element (#cookie-banner) not found');
+    if (!this.preferencesModal) console.warn('Cookie preferences modal (#cookie-preferences) not found');
+    if (!this.acceptButton) console.warn('Accept button (#accept-cookies) not found');
+    if (!this.rejectButton) console.warn('Reject button (#reject-cookies) not found');
+    if (!this.manageButton) console.warn('Manage button (#manage-cookies) not found');
+    if (!this.saveButton) console.warn('Save button (#save-preferences) not found');
+    if (!this.closeButton) console.warn('Close button (#close-preferences) not found');
   }
   
   /**
@@ -80,11 +98,14 @@ class CookieConsentUI {
    */
   updateUI() {
     const consent = getConsent();
+    console.log('Updating UI, current consent:', consent);
     
     // Show/hide banner based on consent
     if (!consent && this.banner) {
+      console.log('No consent found, showing banner');
       this.showBanner();
     } else if (this.banner) {
+      console.log('Consent found, hiding banner');
       this.hideBanner();
     }
   }
@@ -95,6 +116,10 @@ class CookieConsentUI {
   showBanner() {
     if (this.banner) {
       this.banner.style.display = 'block';
+      // Use setTimeout to ensure the display change is applied before adding the class
+      setTimeout(() => {
+        this.banner.classList.add('visible');
+      }, 10);
     }
   }
   
@@ -103,7 +128,11 @@ class CookieConsentUI {
    */
   hideBanner() {
     if (this.banner) {
-      this.banner.style.display = 'none';
+      this.banner.classList.remove('visible');
+      // Wait for transition to complete before hiding
+      setTimeout(() => {
+        this.banner.style.display = 'none';
+      }, 300);
     }
   }
   
@@ -121,7 +150,8 @@ class CookieConsentUI {
     });
     
     // Show the modal
-    this.preferencesModal.style.display = 'flex';
+    this.preferencesModal.classList.add('visible');
+    this.preferencesModal.style.display = 'grid';
   }
   
   /**
@@ -129,6 +159,7 @@ class CookieConsentUI {
    */
   hidePreferences() {
     if (this.preferencesModal) {
+      this.preferencesModal.classList.remove('visible');
       this.preferencesModal.style.display = 'none';
     }
   }
