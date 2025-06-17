@@ -12,7 +12,6 @@ import themeSwitcher from './js/theme-switcher.js';
 document.addEventListener('DOMContentLoaded', async function() {
   // Load reusable components
   await loadPageComponents();
-
   // Setup theme toggle and footer interactions
   setupThemeToggle();
   setupFooterInteractions();
@@ -107,7 +106,9 @@ async function loadPageComponents() {
     ...(document.querySelector('#cookie-banner-container') && {
       '/src/components/cookie-banner.html': '#cookie-banner-container'
     })
-  };  // Initialize components
+  };  
+  
+  // Initialize components
   try {
     await ComponentLoader.initComponents(componentMap);
     console.log('Components loaded successfully');
@@ -126,5 +127,3 @@ async function loadPageComponents() {
     console.error('Error loading components:', error);
   }
 }
-
-

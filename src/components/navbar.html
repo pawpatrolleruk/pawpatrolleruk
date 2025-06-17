@@ -1,204 +1,312 @@
-<!-- Modern Navbar Component -->
-<header class="sticky top-0 z-50 transition-all duration-300 shadow-md backdrop-blur-md bg-white/95 hover:bg-white dark:bg-gray-900/95 dark:hover:bg-gray-900 dark:text-white">
-  <!-- Debug helper -->
-  <div class="mobile-nav-debug"></div>
-  
-  <div class="container mx-auto">
-    <div class="navbar min-h-[4.5rem]">
-      <div class="navbar-start">
-        <!-- Mobile dropdown with enhanced animation -->
-        <div class="mobile-dropdown lg:hidden">
-          <button class="mobile-dropdown-button flex items-center justify-center btn btn-ghost btn-circle" 
-                  aria-expanded="false" 
-                  aria-controls="mobile-menu" 
-                  aria-label="Toggle navigation menu">
-            <span class="material-icons text-brand-purple dark:text-brand-peach menu-icon">menu</span>
-          </button>
-          <div class="mobile-dropdown-content dark:bg-gray-800 dark:text-white" 
-               id="mobile-menu" 
-               role="menu" 
-               aria-label="Main navigation">
-            <ul class="menu p-2" role="none">
-              <li class="py-1" role="none"><a href="index.html#home" class="block py-2 flex items-center dark:hover:bg-gray-700" role="menuitem"><span class="material-icons mr-2 text-sm" aria-hidden="true">home</span>Home</a></li>
-              <li class="py-1" role="none"><a href="index.html#about" class="block py-2 flex items-center dark:hover:bg-gray-700" role="menuitem"><span class="material-icons mr-2 text-sm" aria-hidden="true">info</span>About Us</a></li>
-              <li class="py-1" role="none"><a href="index.html#services" class="block py-2 flex items-center dark:hover:bg-gray-700" role="menuitem"><span class="material-icons mr-2 text-sm" aria-hidden="true">pets</span>Services</a></li>
-              <li class="py-1" role="none"><a href="index.html#testimonials" class="block py-2 flex items-center dark:hover:bg-gray-700" role="menuitem"><span class="material-icons mr-2 text-sm" aria-hidden="true">format_quote</span>Testimonials</a></li>
-              <li class="py-1" role="none"><a href="faq.html" class="block py-2 flex items-center dark:hover:bg-gray-700" role="menuitem"><span class="material-icons mr-2 text-sm" aria-hidden="true">help_outline</span>FAQs</a></li>
-              <li class="py-1" role="none"><a href="index.html#contact" class="block py-2 flex items-center dark:hover:bg-gray-700" role="menuitem"><span class="material-icons mr-2 text-sm" aria-hidden="true">mail_outline</span>Contact</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Logo with subtle hover effect -->
-        <a href="index.html" class="text-xl font-semibold sm:text-2xl gradient-text transition-all duration-300 hover:scale-105" style="font-family: 'Agent Orange', sans-serif;">
-          Paw Patroller UK
-        </a>
-      </div>
-
-      <!-- Desktop navigation with modern styling -->
-      <div class="navbar-center hidden lg:flex">
-        <ul class="px-1 menu menu-horizontal font-fredoka dark:text-gray-200">
-          <li><a href="index.html#home" id="nav-home" class="dark:hover:bg-gray-700">Home</a></li>
-          <li><a href="index.html#about" id="nav-about" class="dark:hover:bg-gray-700">About Us</a></li>
-          <li><a href="index.html#services" id="nav-services" class="dark:hover:bg-gray-700">Services</a></li>
-          <li><a href="index.html#testimonials" id="nav-testimonials" class="dark:hover:bg-gray-700">Testimonials</a></li>
-          <li><a href="faq.html" id="nav-faq" class="dark:hover:bg-gray-700">FAQs</a></li>
-          <li><a href="index.html#contact" id="nav-contact" class="dark:hover:bg-gray-700">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="navbar-end">
-        <!-- Theme toggle button -->
-        <button id="theme-toggle" class="btn btn-ghost btn-circle hover:bg-brand-purple/10 dark:hover:bg-brand-purple/20 hover:scale-110 transition-all duration-300 group" style="display: none;">
-          <span id="theme-toggle-light-icon" class="material-icons text-brand-purple group-hover:animate-pulse dark:hidden">light_mode</span>
-          <span id="theme-toggle-dark-icon" class="material-icons text-brand-peach group-hover:animate-pulse hidden dark:block">dark_mode</span>
-        </button>
-
-        <!-- Call button with animation -->
-        <a href="tel:07300888847" class="btn btn-ghost btn-circle hover:bg-brand-purple/10 dark:hover:bg-brand-purple/20 hover:scale-110 transition-all duration-300 group">
-          <span class="material-icons text-brand-purple dark:text-brand-peach group-hover:animate-pulse">phone</span>
-        </a>
-
-        <!-- Social media links for desktop -->
-        <a href="https://www.instagram.com/Paw_Patroller_UK" target="_blank" rel="noopener noreferrer" class="hidden sm:flex btn btn-ghost btn-circle hover:bg-brand-purple/10 dark:hover:bg-brand-purple/20 hover:scale-110 transition-all duration-300 group">
-          <svg class="w-5 h-5 text-brand-purple dark:text-brand-peach group-hover:animate-pulse fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-          </svg>
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61571211915327" target="_blank" rel="noopener noreferrer" class="hidden sm:flex btn btn-ghost btn-circle hover:bg-brand-purple/10 dark:hover:bg-brand-purple/20 hover:scale-110 transition-all duration-300 group">
-          <svg class="w-5 h-5 text-brand-purple dark:text-brand-peach group-hover:animate-pulse fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-          </svg>
-        </a>
-      </div>
+<!-- Simple Navbar with Checkbox Toggle -->
+<nav class="navbar-component sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md dark:bg-gray-900/95 dark:text-white">
+  <div class="nav-container container mx-auto px-4">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="index.html" class="text-xl font-semibold sm:text-2xl gradient-text transition-all duration-300 hover:scale-105" style="font-family: 'Agent Orange', sans-serif;">
+        Paw Patroller UK
+      </a>
     </div>
 
-    <!-- Contact info bar with subtle styling -->
-    <div class="my-0 divider dark:bg-gray-700"></div>
-    <div class="py-2 space-y-1 text-xs text-center sm:text-sm text-gray-600 dark:text-gray-300">
-      <p class="flex items-center justify-center gap-1 sm:gap-2">
-        <a href="tel:07300888847" class="flex items-center hover:text-brand-purple dark:hover:text-brand-peach"><span class="material-icons text-xs sm:text-sm mr-1">phone</span>073 0088 8847</a>
-        <span class="hidden xs:inline">|</span>
-        <a href="mailto:pawpatrolleruk@gmail.com" class="flex items-center hover:text-brand-purple dark:hover:text-brand-peach"><span class="material-icons text-xs sm:text-sm mr-1">email</span>pawpatrolleruk@gmail.com</a>
-      </p>
-      <p class="hidden xs:flex items-center justify-center gap-2">
-        <a href="https://www.instagram.com/Paw_Patroller_UK" target="_blank" rel="noopener noreferrer" class="flex items-center hover:text-brand-purple dark:hover:text-brand-peach">
-          <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-1 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-          </svg>
-          Paw_Patroller_UK
+    <!-- Hidden checkbox for mobile toggle -->
+    <input type="checkbox" id="nav-toggle" />
+    
+    <!-- Hamburger menu -->
+    <label for="nav-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- Navigation Menu -->
+    <ul class="menu">
+      <li><a href="index.html#home" id="nav-home">Home</a></li>
+      <li><a href="index.html#about" id="nav-about">About Us</a></li>
+      <li><a href="index.html#services" id="nav-services">Services</a></li>
+      <li><a href="index.html#testimonials" id="nav-testimonials">Testimonials</a></li>
+      <li><a href="faq.html" id="nav-faq">FAQs</a></li>
+      <li><a href="index.html#contact" id="nav-contact">Contact</a></li>
+    </ul>
+
+    <!-- Action buttons -->
+    <div class="nav-actions">
+      <!-- Theme toggle button -->
+      <button id="theme-toggle" class="action-btn" style="display: none;">
+        <span id="theme-toggle-light-icon" class="material-icons dark:hidden">light_mode</span>
+        <span id="theme-toggle-dark-icon" class="material-icons hidden dark:block">dark_mode</span>
+      </button>
+
+      <!-- Call button -->
+      <a href="tel:07300888847" class="action-btn">
+        <span class="material-icons">phone</span>
+      </a>
+
+      <!-- Social media links for desktop -->
+      <a href="https://www.instagram.com/Paw_Patroller_UK" target="_blank" rel="noopener noreferrer" class="action-btn social-link">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61571211915327" target="_blank" rel="noopener noreferrer" class="action-btn social-link">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Contact info bar -->
+  <div class="contact-bar border-t border-gray-200 dark:border-gray-700">
+    <div class="container mx-auto px-4 py-2 text-xs text-center sm:text-sm text-gray-600 dark:text-gray-300">
+      <p class="flex items-center justify-center gap-2 flex-wrap">
+        <a href="tel:07300888847" class="flex items-center hover:text-brand-purple dark:hover:text-brand-peach">
+          <span class="material-icons text-xs mr-1">phone</span>073 0088 8847
         </a>
-        <span>|</span>
-        <a href="https://www.facebook.com/profile.php?id=61571211915327" target="_blank" rel="noopener noreferrer" class="flex items-center hover:text-brand-purple dark:hover:text-brand-peach">
-          <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-1 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-          </svg>
-          Paw Patroller UK
+        <span class="hidden sm:inline">|</span>
+        <a href="mailto:pawpatrolleruk@gmail.com" class="flex items-center hover:text-brand-purple dark:hover:text-brand-peach">
+          <span class="material-icons text-xs mr-1">email</span>pawpatrolleruk@gmail.com
         </a>
       </p>
     </div>
   </div>
-</header>
+</nav>
 
-<!-- Enhanced JavaScript for navbar functionality -->
-<script type="module">
-  document.addEventListener('DOMContentLoaded', function() {
-    // Mobile dropdown functionality with enhanced error handling
-    const mobileDropdownButton = document.querySelector('.mobile-dropdown-button');
-    const mobileDropdownContent = document.querySelector('.mobile-dropdown-content');
+<script>
+// Simple active link management
+document.addEventListener('DOMContentLoaded', function() {
+  function setActiveNavLink() {
+    const currentPath = window.location.pathname;
+    const currentHash = window.location.hash;
 
-    console.log('Mobile dropdown elements:', { button: mobileDropdownButton, content: mobileDropdownContent });
+    // Clear all active classes first
+    document.querySelectorAll('.menu li a').forEach(link => {
+      link.classList.remove('active');
+    });
 
-    if (mobileDropdownButton && mobileDropdownContent) {
-      mobileDropdownButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        
-        const isExpanded = mobileDropdownContent.classList.contains('open');
-        const menuIcon = mobileDropdownButton.querySelector('.menu-icon');
-        
-        console.log('Mobile dropdown clicked, currently expanded:', isExpanded);
-        
-        if (isExpanded) {
-          mobileDropdownContent.classList.remove('open');
-          mobileDropdownButton.setAttribute('aria-expanded', 'false');
-          if (menuIcon) menuIcon.textContent = 'menu';
-        } else {
-          mobileDropdownContent.classList.add('open');
-          mobileDropdownButton.setAttribute('aria-expanded', 'true');
-          if (menuIcon) menuIcon.textContent = 'close';
-        }
-      });
-
-      // Close dropdown when clicking outside
-      document.addEventListener('click', function(event) {
-        if (!mobileDropdownButton.contains(event.target) && !mobileDropdownContent.contains(event.target)) {
-          mobileDropdownContent.classList.remove('open');
-          mobileDropdownButton.setAttribute('aria-expanded', 'false');
-          const menuIcon = mobileDropdownButton.querySelector('.menu-icon');
-          if (menuIcon) menuIcon.textContent = 'menu';
-        }
-      });
-
-      // Close dropdown when clicking on a link
-      const mobileLinks = mobileDropdownContent.querySelectorAll('a');
-      mobileLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          mobileDropdownContent.classList.remove('open');
-          mobileDropdownButton.setAttribute('aria-expanded', 'false');
-          const menuIcon = mobileDropdownButton.querySelector('.menu-icon');
-          if (menuIcon) menuIcon.textContent = 'menu';
-        });
-      });
-
-      // Keyboard navigation support
-      mobileDropdownButton.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          mobileDropdownButton.click();
-        }
-      });
-    } else {
-      console.error('Mobile dropdown elements not found:', { button: mobileDropdownButton, content: mobileDropdownContent });
+    // Set active class based on current URL
+    if (currentPath.includes('faq.html')) {
+      document.getElementById('nav-faq')?.classList.add('active');
+    } else if (currentHash) {
+      // For hash-based navigation on index page
+      const hashId = currentHash.substring(1); // Remove the # character
+      document.getElementById(`nav-${hashId}`)?.classList.add('active');
+    } else if (currentPath === '/' || currentPath.includes('index.html')) {
+      // Default to home if on index page with no hash
+      document.getElementById('nav-home')?.classList.add('active');
     }
+  }
 
-    // Active link detection based on current page/section
-    function setActiveNavLink() {
-      const currentPath = window.location.pathname;
-      const currentHash = window.location.hash;
+  // Set active link on page load
+  setActiveNavLink();
 
-      // Clear all active classes first
-      document.querySelectorAll('.menu li a').forEach(link => {
-        link.classList.remove('active');
-      });
-
-      // Set active class based on current URL
-      if (currentPath.includes('faq.html')) {
-        document.getElementById('nav-faq')?.classList.add('active');
-      } else if (currentHash) {
-        // For hash-based navigation on index page
-        const hashId = currentHash.substring(1); // Remove the # character
-        document.getElementById(`nav-${hashId}`)?.classList.add('active');
-      } else if (currentPath === '/' || currentPath.includes('index.html')) {
-        // Default to home if on index page with no hash
-        document.getElementById('nav-home')?.classList.add('active');
-      }
-
-      // Also set active class in mobile menu
-      const activeLinkHref = document.querySelector('.menu li a.active')?.getAttribute('href');
-      if (activeLinkHref) {
-        document.querySelectorAll('.mobile-dropdown-content .menu li a').forEach(link => {
-          if (link.getAttribute('href') === activeLinkHref) {
-            link.classList.add('active');
-          }
-        });
-      }
-    }
-
-    // Set active link on page load
-    setActiveNavLink();
-
-    // Update active link when hash changes (for single-page navigation)
-    window.addEventListener('hashchange', setActiveNavLink);
-  });
+  // Update active link when hash changes (for single-page navigation)
+  window.addEventListener('hashchange', setActiveNavLink);
+});
 </script>
+
+<style>
+/* Checkbox-based Navigation Styles */
+.navbar-component {
+  font-family: 'Fredoka', sans-serif;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.logo a {
+  color: #6a1b9a;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.dark .logo a {
+  color: #fbbf24;
+}
+
+/* Hidden checkbox */
+#nav-toggle {
+  display: none;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+  background-color: rgba(106, 27, 154, 0.1);
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #6a1b9a;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.dark .hamburger span {
+  background: #fbbf24;
+}
+
+/* Hamburger animation */
+#nav-toggle:checked + .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+#nav-toggle:checked + .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+#nav-toggle:checked + .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dark .menu li a {
+  color: #d1d5db;
+}
+
+.menu li a:hover,
+.menu li a.active {
+  color: #6a1b9a;
+  background-color: rgba(106, 27, 154, 0.1);
+}
+
+.dark .menu li a:hover,
+.dark .menu li a.active {
+  color: #fbbf24;
+  background-color: rgba(251, 191, 36, 0.1);
+}
+
+/* Action buttons */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: #6a1b9a;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dark .action-btn {
+  color: #fbbf24;
+}
+
+.action-btn:hover {
+  background-color: rgba(106, 27, 154, 0.1);
+  transform: scale(1.1);
+}
+
+.dark .action-btn:hover {
+  background-color: rgba(251, 191, 36, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 1023px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .menu {
+    width: 100%;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    gap: 0;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu li a {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .dark .menu li a {
+    border-bottom-color: #374151;
+  }
+  #nav-toggle:checked ~ .menu {
+    max-height: 500px !important;
+    margin-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    background: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark #nav-toggle:checked ~ .menu {
+    background: #1f2937 !important;
+    border-top-color: #374151;
+  }
+
+  .nav-actions .social-link {
+    display: none;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0.75rem 0;
+  }
+  
+  .logo a {
+    font-size: 1.25rem;
+  }
+  
+  .action-btn {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+</style>

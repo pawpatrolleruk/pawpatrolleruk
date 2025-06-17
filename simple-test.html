@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Mobile Nav Test</title>
+    <style>
+        body { margin: 20px; font-family: Arial, sans-serif; }
+        .mobile-dropdown { background: orange; padding: 10px; margin: 10px 0; }
+        .mobile-dropdown-button { 
+            background: blue; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .mobile-dropdown-content { 
+            background: yellow; 
+            border: 3px solid green; 
+            padding: 15px; 
+            margin-top: 10px;
+            display: none;
+        }
+        .mobile-dropdown-content.open { 
+            display: block !important; 
+        }
+        .menu { list-style: none; padding: 0; }
+        .menu li { margin: 5px 0; }
+        .menu a { text-decoration: none; color: #333; padding: 5px; display: block; }
+    </style>
+</head>
+<body>
+    <h1>Simple Mobile Navigation Test</h1>
+    
+    <div class="mobile-dropdown">
+        <button class="mobile-dropdown-button">
+            <span class="menu-icon">menu</span> Click Me
+        </button>
+        <div class="mobile-dropdown-content">
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <p>If you see an orange box with a blue button above, click the button to test mobile navigation.</p>
+
+    <script>
+        console.log('Script running...');
+        
+        const button = document.querySelector('.mobile-dropdown-button');
+        const content = document.querySelector('.mobile-dropdown-content');
+        
+        console.log('Elements found:', { button, content });
+        
+        if (button && content) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Button clicked!');
+                
+                const isOpen = content.classList.contains('open');
+                const icon = button.querySelector('.menu-icon');
+                
+                if (isOpen) {
+                    content.classList.remove('open');
+                    if (icon) icon.textContent = 'menu';
+                    console.log('Menu closed');
+                } else {
+                    content.classList.add('open');
+                    if (icon) icon.textContent = 'close';
+                    console.log('Menu opened');
+                }
+            });
+            console.log('Event listener added');
+        } else {
+            console.error('Elements not found!');
+        }
+    </script>
+</body>
+</html>
