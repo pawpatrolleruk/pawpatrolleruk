@@ -180,15 +180,28 @@ function setupPagination(totalReviews) {
   const itemsPerPage = getItemsPerPage();
   const totalPages = Math.ceil(totalReviews / itemsPerPage);
   
+  // Only show pagination if we have more than one page
+  if (totalPages <= 1) {
+    paginationContainer.style.display = 'none';
+    return;
+  }
+  
+  paginationContainer.style.display = 'flex';
+  
   // Create pagination dots
   paginationContainer.innerHTML = '';
   for (let i = 0; i < totalPages; i++) {
     const dot = document.createElement('div');
     dot.className = `${CONFIG.classes.paginationDot} ${i === 0 ? CONFIG.classes.activeDot : ''}`;
     dot.setAttribute('data-page', i);
-    dot.addEventListener('click', () => scrollToPage(i));
+    dot.addEventListener('click', () => {
+      console.log('Pagination dot clicked:', i);
+      scrollToPage(i);
+    });
     paginationContainer.appendChild(dot);
   }
+  
+  console.log('Pagination setup complete with', totalPages, 'pages for', totalReviews, 'reviews');
 }
 
 /**
@@ -234,7 +247,7 @@ function initCarouselNavigation() {
     scrollByCards(1);
   });
   
-  // Simple scroll tracking for button states
+  // Simple scroll tracking for button states and pagination dots
   let scrollTimeout;
   container.addEventListener('scroll', () => {
     clearTimeout(scrollTimeout);
@@ -245,6 +258,9 @@ function initCarouselNavigation() {
       // Update button states
       prevButton.disabled = currentScroll <= 0;
       nextButton.disabled = currentScroll >= maxScroll - 10; // Small tolerance
+      
+      // Update pagination dots based on scroll position
+      updateActiveDotFromScroll(container);
       
       console.log('Scroll position:', currentScroll, 'Max scroll:', maxScroll);
     }, 100);
@@ -281,6 +297,19 @@ function initCarouselNavigation() {
     prevButton.disabled = true; // Start at beginning
     nextButton.disabled = maxScroll <= 0; // Disable if no scroll needed
   }, 100);
+  
+  // Handle window resize to recalculate pagination
+  const debouncedResize = debounce(() => {
+    const testimonials = Array.from(container.querySelectorAll(`.${CONFIG.classes.reviewCard}`));
+    if (testimonials.length > 0) {
+      setupPagination(testimonials.length);
+      // Reset to first page on resize
+      container.scrollTo({ left: 0, behavior: 'smooth' });
+      updateActiveDot(0);
+    }
+  }, CONFIG.debounceDelay);
+  
+  window.addEventListener('resize', debouncedResize);
 }
 
 /**
@@ -302,22 +331,25 @@ function scrollToPage(pageIndex) {
   }
 
   const itemsPerPage = getItemsPerPage();
+  const targetCardIndex = pageIndex * itemsPerPage;
   
-  // Calculate scroll position based on container width and page
-  const containerWidth = container.offsetWidth;
-  const scrollLeft = pageIndex * containerWidth;
+  // Make sure we don't scroll past the last card
+  const cardIndex = Math.min(targetCardIndex, cards.length - 1);
+  const targetCard = cards[cardIndex];
   
-  console.log('Scrolling to position:', scrollLeft, 'Container width:', containerWidth);
-  
-  // Use scrollTo with smooth behavior
-  container.scrollTo({
-    left: scrollLeft,
-    behavior: 'smooth'
-  });
-  
-  // Update UI indicators
-  updateActiveDot(pageIndex);
-  updateNavigationButtons(pageIndex);
+  if (targetCard) {
+    console.log('Scrolling to card index:', cardIndex, 'Card position:', targetCard.offsetLeft);
+    
+    // Scroll to the target card's position
+    container.scrollTo({
+      left: targetCard.offsetLeft - 24, // Subtract some margin
+      behavior: 'smooth'
+    });
+    
+    // Update UI indicators immediately
+    updateActiveDot(pageIndex);
+    updateNavigationButtons(pageIndex);
+  }
 }
 
 /**
@@ -355,11 +387,27 @@ function updateNavigationButtons(currentPageIndex) {
  * @param {HTMLElement} container - Container element
  */
 function updateActiveDotFromScroll(container) {
+  const cards = container.querySelectorAll(`.${CONFIG.classes.reviewCard}`);
+  if (!cards.length) return;
+  
+  const itemsPerPage = getItemsPerPage();
   const containerWidth = container.offsetWidth;
   const scrollPosition = container.scrollLeft;
   
-  // Calculate which page we're currently viewing
-  const currentPage = Math.round(scrollPosition / containerWidth);
+  // Calculate which page we're currently viewing based on scroll position
+  // We'll determine the page by finding which card is most visible
+  let currentPage = 0;
+  const scrollCenter = scrollPosition + containerWidth / 2;
+  
+  cards.forEach((card, index) => {
+    const cardLeft = card.offsetLeft;
+    const cardRight = cardLeft + card.offsetWidth;
+    const cardCenter = cardLeft + card.offsetWidth / 2;
+    
+    if (scrollCenter >= cardLeft && scrollCenter <= cardRight) {
+      currentPage = Math.floor(index / itemsPerPage);
+    }
+  });
   
   console.log('Scroll position:', scrollPosition, 'Container width:', containerWidth, 'Current page:', currentPage);
   
@@ -393,6 +441,24 @@ function handleError(error) {
       </div>
     `;
   }
+}
+
+/**
+ * Debounce utility function
+ * @param {Function} func - Function to debounce
+ * @param {number} wait - Wait time in milliseconds
+ * @returns {Function} Debounced function
+ */
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
 }
 
 export default {

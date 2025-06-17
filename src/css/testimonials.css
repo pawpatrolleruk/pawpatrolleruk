@@ -110,23 +110,7 @@
   border-radius: 8px;
 }
 
-.review-text::before {
-  content: '"';
-  font-size: 1.5rem;
-  color: #ccc;
-  position: absolute;
-  top: 0.25rem;
-  left: 0.5rem;
-}
 
-.review-text::after {
-  content: '"';
-  font-size: 1.5rem;
-  color: #ccc;
-  position: absolute;
-  bottom: -0.5rem;
-  right: 0.5rem;
-}
 
 @media screen and (max-width: 640px) {
   .review-image, .review-image-placeholder {
@@ -143,7 +127,12 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 0 1rem;
+  padding: 0 1rem 2rem 1rem; /* Added bottom padding for shadow space */
+}
+
+/* Social proof section with shadow space */
+.review-carousel-container .mt-12 {
+  padding-bottom: 1rem; /* Extra space for shadows */
 }
 
 /* Improved review carousel */
@@ -256,6 +245,12 @@
 .pagination-dot.active {
   background-color: var(--brand-purple);
   transform: scale(1.2);
+}
+
+/* Ensure social media links have proper shadow space */
+.review-carousel-container a[href*="facebook"],
+.review-carousel-container a[href*="instagram"] {
+  margin: 0.5rem; /* Add margin to prevent shadow clipping */
 }
 
 /* Review Image Container for better error handling */
