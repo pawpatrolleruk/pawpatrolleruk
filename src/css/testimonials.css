@@ -176,13 +176,13 @@
 
 @media (min-width: 768px) {
   .review-carousel .review-card {
-    flex: 0 0 calc(50% - 1.5rem);
+    flex: 0 0 calc(50% - 1rem);
   }
 }
 
 @media (min-width: 1024px) {
   .review-carousel .review-card {
-    flex: 0 0 calc(33.333% - 1.5rem);
+    flex: 0 0 calc(33.333% - 1rem);
   }
 }
 

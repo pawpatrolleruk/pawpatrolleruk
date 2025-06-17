@@ -75,16 +75,19 @@ function setupFooterInteractions() {
   document.querySelectorAll('#current-year').forEach(element => {
     if (element) element.textContent = currentYear;
   });
-
   // Handle cookie settings link
   const cookieSettingsLink = document.getElementById('open-cookie-settings');
   if (cookieSettingsLink) {
     cookieSettingsLink.addEventListener('click', function(e) {
       e.preventDefault();
-      // Show cookie banner
+      console.log('Cookie settings link clicked');
+      
+      // Clear existing consent and show cookie banner
+      localStorage.removeItem('cookieConsent');
       const cookieBanner = document.getElementById('cookie-banner');
       if (cookieBanner) {
         cookieBanner.style.display = 'block';
+        console.log('Cookie banner shown via settings link');
       }
     });
   }
@@ -110,12 +113,76 @@ async function loadPageComponents() {
       '/src/components/cookie-banner.html': '#cookie-banner-container'
     })
   };
-
   // Initialize components
   try {
     await ComponentLoader.initComponents(componentMap);
     console.log('Components loaded successfully');
+    
+    // Initialize cookie banner after components are loaded
+    initializeCookieBanner();
   } catch (error) {
     console.error('Error loading components:', error);
+  }
+}
+
+/**
+ * Initialize cookie banner functionality
+ */
+function initializeCookieBanner() {
+  console.log('Initializing cookie banner...');
+  
+  const cookieBanner = document.getElementById('cookie-banner');
+  const acceptCookiesBtn = document.getElementById('accept-cookies');
+  const openCookieSettingsBtn = document.getElementById('open-cookie-settings');
+
+  if (!cookieBanner) {
+    console.error('Cookie banner element not found');
+    return;
+  }
+
+  console.log('Cookie banner elements found');
+
+  // Check if user has already accepted cookies
+  const hasAcceptedCookies = localStorage.getItem('cookieConsent');
+  console.log('Cookie consent status:', hasAcceptedCookies);
+
+  if (!hasAcceptedCookies) {
+    // Show the cookie banner if consent hasn't been given
+    console.log('Showing cookie banner');
+    cookieBanner.style.display = 'block';
+  } else {
+    console.log('Cookie consent already given, hiding banner');
+    cookieBanner.style.display = 'none';
+  }
+
+  // Handle cookie acceptance
+  if (acceptCookiesBtn) {
+    console.log('Setting up accept button click handler');
+    acceptCookiesBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      console.log('Accept button clicked');
+      
+      // Save consent to localStorage
+      try {
+        localStorage.setItem('cookieConsent', JSON.stringify({
+          necessary: true,
+          timestamp: new Date().toISOString()
+        }));
+        console.log('Cookie consent saved to localStorage');
+      } catch (error) {
+        console.error('Error saving cookie consent:', error);
+      }
+
+      // Hide the banner
+      cookieBanner.style.display = 'none';
+      console.log('Cookie banner hidden');
+    });
+  } else {
+    console.error('Accept cookies button not found');
+  }
+
+  // Handle opening cookie settings (this is already handled in setupFooterInteractions)
+  if (openCookieSettingsBtn) {
+    console.log('Cookie settings button found');
   }
 }

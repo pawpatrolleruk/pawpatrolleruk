@@ -1,190 +1,192 @@
 <!-- Footer Component -->
-<footer class="pt-16 pb-8 text-white bg-gradient-to-r from-brand-purple-dark to-brand-purple">
-  <div class="container px-4 mx-auto">
-    <!-- Top Footer with Wave Separator -->
-    <div class="relative">
-      <!-- Wave Decoration -->
-      <div class="absolute top-0 left-0 right-0 transform -translate-y-full h-16 overflow-hidden">
-        <svg class="absolute bottom-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-          <path fill="#6a1b9a" fill-opacity="1" d="M0,224L60,213.3C120,203,240,181,360,181.3C480,181,600,203,720,213.3C840,224,960,224,1080,208C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-        </svg>
-      </div>
+<footer class="footer-main" role="contentinfo" aria-label="Site footer">
+  <div class="container">
+    <!-- Top Footer -->
+    <div class="footer-wave-container">
 
       <!-- Main Footer Content -->
-      <div class="grid grid-cols-1 gap-12 mb-12 sm:grid-cols-2 md:grid-cols-4">
+      <div class="footer-grid">
         <!-- Brand/Logo Section -->
-        <div class="col-span-1 sm:col-span-2 md:col-span-1">
-          <div class="mb-6">
-            <a href="index.html" class="inline-block text-3xl font-bold text-white" style="font-family: 'Agent Orange', sans-serif;">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <a href="index.html" class="footer-brand-link" aria-label="Paw Patroller UK - Home">
               Paw Patroller UK
             </a>
           </div>
-          <p class="mb-6 text-white/90 leading-relaxed">
+          <p class="footer-description">
             Professional dog walking and pet care services in the UK. Fully insured, DBS checked, and dedicated to your pet's happiness.
           </p>
           <!-- Social Links -->
-          <div class="flex space-x-3 mb-6">
-            <a href="https://www.facebook.com/profile.php?id=61571211915327" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-300 hover:-translate-y-1">
-              <span class="material-icons text-sm">facebook</span>
+          <nav class="footer-social" aria-label="Social media links">
+            <a href="https://www.facebook.com/profile.php?id=61571211915327" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Follow us on Facebook">
+              <span class="material-icons" aria-hidden="true">facebook</span>
             </a>
-            <a href="https://www.instagram.com/Paw_Patroller_UK" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-300 hover:-translate-y-1">
-              <span class="material-icons text-sm">photo_camera</span>
+            <a href="https://www.instagram.com/Paw_Patroller_UK" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Follow us on Instagram">
+              <span class="material-icons" aria-hidden="true">photo_camera</span>
             </a>
-            <a href="https://wa.me/447300888847" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-300 hover:-translate-y-1">
-              <span class="material-icons text-sm">whatsapp</span>
+            <a href="https://wa.me/447300888847" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Contact us on WhatsApp">
+              <span class="material-icons" aria-hidden="true">chat</span>
             </a>
-          </div>
+          </nav>
 
           <!-- Certifications -->
-          <div class="mt-auto pt-6 border-t border-white/20">
-            <h4 class="mb-4 text-lg font-semibold text-white">Our Certifications:</h4>
-            <div class="flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4 items-start">
-              <div class="flex items-center text-white/80 hover:text-white transition-colors duration-300">
-                <img src="/assets/badges/dbs-checked.png" alt="DBS Checked" class="w-8 h-8 mr-2 filter brightness-0 invert"><span class="text-sm">DBS Checked</span>
+          <div class="footer-certifications">
+            <h4 class="footer-cert-title">Our Certifications</h4>
+            <div class="footer-cert-list">
+              <div class="footer-cert-item">
+                <img src="/assets/badges/dbs-checked.png" alt="DBS Checked certification badge" class="footer-cert-icon">
+                <span>DBS Checked</span>
               </div>
-              <div class="flex items-center text-white/80 hover:text-white transition-colors duration-300">
-                <img src="/assets/badges/oplex-first-aid.png" alt="Pet First Aid Certified" class="w-8 h-8 mr-2 filter brightness-0 invert"><span class="text-sm">Pet First Aid</span>
+              <div class="footer-cert-item">
+                <img src="/assets/badges/oplex-first-aid.png" alt="Pet First Aid certification badge" class="footer-cert-icon">
+                <span>Pet First Aid</span>
               </div>
-              <div class="flex items-center text-white/80 hover:text-white transition-colors duration-300">
-                <img src="/assets/badges/protectivity-insurance.png" alt="Protectivity Insurance" class="w-8 h-8 mr-2 filter brightness-0 invert"><span class="text-sm">Fully Insured</span>
+              <div class="footer-cert-item">
+                <img src="/assets/badges/protectivity-insurance.png" alt="Protectivity Insurance badge" class="footer-cert-icon">
+                <span>Fully Insured</span>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Quick Links -->
-        <div>
-          <h3 class="mb-6 text-xl font-semibold text-white">Quick Links</h3>
-          <ul class="space-y-3">
-            <li>
-              <a href="index.html#home" class="inline-flex items-center text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1">
-                <span class="material-icons text-xs mr-2">arrow_right</span>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="index.html#about" class="inline-flex items-center text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1">
-                <span class="material-icons text-xs mr-2">arrow_right</span>
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="index.html#services" class="inline-flex items-center text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1">
-                <span class="material-icons text-xs mr-2">arrow_right</span>
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="index.html#testimonials" class="inline-flex items-center text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1">
-                <span class="material-icons text-xs mr-2">arrow_right</span>
-                Testimonials
-              </a>
-            </li>
-            <li>
-              <a href="faq.html" class="inline-flex items-center text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1">
-                <span class="material-icons text-xs mr-2">arrow_right</span>
-                FAQs
-              </a>
-            </li>
-            <li>
-              <a href="index.html#contact" class="inline-flex items-center text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1">
-                <span class="material-icons text-xs mr-2">arrow_right</span>
-                Contact
-              </a>
-            </li>
-          </ul>
+        <div class="footer-section">
+          <h3 class="footer-section-title">Quick Links</h3>
+          <nav aria-label="Quick navigation links">
+            <ul class="footer-links">
+              <li>
+                <a href="index.html#home" class="footer-link">
+                  <span class="material-icons" aria-hidden="true">arrow_right</span>
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="index.html#about" class="footer-link">
+                  <span class="material-icons" aria-hidden="true">arrow_right</span>
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="index.html#services" class="footer-link">
+                  <span class="material-icons" aria-hidden="true">arrow_right</span>
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="index.html#testimonials" class="footer-link">
+                  <span class="material-icons" aria-hidden="true">arrow_right</span>
+                  Testimonials
+                </a>
+              </li>
+              <li>
+                <a href="faq.html" class="footer-link">
+                  <span class="material-icons" aria-hidden="true">arrow_right</span>
+                  FAQs
+                </a>
+              </li>
+              <li>
+                <a href="index.html#contact" class="footer-link">
+                  <span class="material-icons" aria-hidden="true">arrow_right</span>
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
 
         <!-- Services -->
-        <div>
-          <h3 class="mb-6 text-xl font-semibold text-white">Our Services</h3>
-          <ul class="space-y-3">
-            <li>
-              <a href="index.html#services" class="inline-flex items-center text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1">
-                <span class="material-icons text-xs mr-2">arrow_right</span>
-                Dog Walking
-              </a>
-            </li>
-            <li>
-              <a href="index.html#services" class="inline-flex items-center text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1">
-                <span class="material-icons text-xs mr-2">arrow_right</span>
-                Pet Visits
-              </a>
-            </li>
-            <li>
-              <a href="index.html#services" class="inline-flex items-center text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1">
-                <span class="material-icons text-xs mr-2">arrow_right</span>
-                Live Streaming Walks
-              </a>
-            </li>
-            <li>
-              <a href="index.html#services" class="inline-flex items-center text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1">
-                <span class="material-icons text-xs mr-2">arrow_right</span>
-                Puppy Care
-              </a>
-            </li>
-            <li>
-              <a href="index.html#services" class="inline-flex items-center text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1">
-                <span class="material-icons text-xs mr-2">arrow_right</span>
-                Pet Sitting
-              </a>
-            </li>
-            <li>
-              <a href="index.html#services" class="inline-flex items-center text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1">
-                <span class="material-icons text-xs mr-2">arrow_right</span>
-                Dog Training
-              </a>
-            </li>
-          </ul>
+        <div class="footer-section">
+          <h3 class="footer-section-title">Our Services</h3>
+          <nav aria-label="Services navigation">
+            <ul class="footer-links">
+              <li>
+                <a href="index.html#services" class="footer-link">
+                  <span class="material-icons" aria-hidden="true">arrow_right</span>
+                  Dog Walking
+                </a>
+              </li>
+              <li>
+                <a href="index.html#services" class="footer-link">
+                  <span class="material-icons" aria-hidden="true">arrow_right</span>
+                  Pet Visits
+                </a>
+              </li>
+              <li>
+                <a href="index.html#services" class="footer-link">
+                  <span class="material-icons" aria-hidden="true">arrow_right</span>
+                  Live Streaming Walks
+                </a>
+              </li>
+              <li>
+                <a href="index.html#services" class="footer-link">
+                  <span class="material-icons" aria-hidden="true">arrow_right</span>
+                  Puppy Care
+                </a>
+              </li>
+              <li>
+                <a href="index.html#services" class="footer-link">
+                  <span class="material-icons" aria-hidden="true">arrow_right</span>
+                  Pet Sitting
+                </a>
+              </li>
+              <li>
+                <a href="index.html#services" class="footer-link">
+                  <span class="material-icons" aria-hidden="true">arrow_right</span>
+                  Dog Training
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
 
         <!-- Contact Info -->
-        <div>
-          <h3 class="mb-6 text-xl font-semibold text-white">Contact Us</h3>
-          <ul class="space-y-4">
-            <li class="flex items-start">
-              <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mr-3 mt-1">
-                <span class="material-icons text-sm">phone</span>
+        <div class="footer-section">
+          <h3 class="footer-section-title">Contact Us</h3>
+          <address class="footer-contact">
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon" aria-hidden="true">
+                <span class="material-icons">phone</span>
               </div>
-              <div>
-                <p class="text-white/60 text-sm mb-1">Phone</p>
-                <a href="tel:07300888847" class="text-white hover:text-brand-peach transition-all duration-300">073 0088 8847</a>
+              <div class="footer-contact-info">
+                <p class="footer-contact-label">Phone</p>
+                <a href="tel:07300888847" class="footer-contact-link">073 0088 8847</a>
               </div>
-            </li>
-            <li class="flex items-start">
-              <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mr-3 mt-1">
-                <span class="material-icons text-sm">email</span>
+            </div>
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon" aria-hidden="true">
+                <span class="material-icons">email</span>
               </div>
-              <div>
-                <p class="text-white/60 text-sm mb-1">Email</p>
-                <a href="mailto:pawpatrolleruk@gmail.com" class="text-white hover:text-brand-peach transition-all duration-300">pawpatrolleruk@gmail.com</a>
+              <div class="footer-contact-info">
+                <p class="footer-contact-label">Email</p>
+                <a href="mailto:pawpatrolleruk@gmail.com" class="footer-contact-link">pawpatrolleruk@gmail.com</a>
               </div>
-            </li>
-            <li class="flex items-start">
-              <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mr-3 mt-1">
-                <span class="material-icons text-sm">schedule</span>
+            </div>
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon" aria-hidden="true">
+                <span class="material-icons">schedule</span>
               </div>
-              <div>
-                <p class="text-white/60 text-sm mb-1">Business Hours</p>
-                <p class="text-white">Mon-Fri: 9:00 AM - 7:00 PM</p>
-                <p class="text-white/80 text-sm">Weekend services available</p>
+              <div class="footer-contact-info">
+                <p class="footer-contact-label">Business Hours</p>
+                <p class="footer-contact-text">Mon-Fri: 9:00 AM - 7:00 PM</p>
+                <p class="footer-contact-subtext">Weekend services available</p>
               </div>
-            </li>
-          </ul>
+            </div>
+          </address>
         </div>
       </div>
     </div>
 
     <!-- Bottom Footer -->
-    <div class="pt-8 mt-8 border-t border-white/10">
-      <div class="flex flex-col justify-between space-y-4 md:space-y-0 md:flex-row items-center">
-        <div>
-          <p class="text-white/80">&copy; <span id="current-year"></span> Paw Patroller UK. All Rights Reserved.</p>
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <div class="footer-copyright">
+          <p>&copy; <span id="current-year"></span> Paw Patroller UK. All Rights Reserved.</p>
         </div>
-        <div class="flex flex-wrap gap-6">
-          <a href="privacy-policy.html" class="text-white/80 hover:text-white transition-all duration-300">Privacy Policy</a>
-          <a href="#" id="open-cookie-settings" class="text-white/80 hover:text-white transition-all duration-300">Cookie Settings</a>
-        </div>
+        <nav class="footer-legal" aria-label="Legal links">
+          <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+          <a href="cookie-policy.html" class="footer-legal-link">Cookie Policy</a>
+          <button type="button" id="open-cookie-settings" class="footer-legal-link" style="background: none; border: none; padding: 0; font: inherit; cursor: pointer;">Cookie Settings</button>
+        </nav>
       </div>
     </div>
   </div>

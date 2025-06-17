@@ -1,114 +1,573 @@
 /**
  * Footer styles for Paw Patroller UK
+ * Modern, responsive footer design with proper CSS Grid and Flexbox
  */
 
-/* Footer container */
-footer {
-  background: linear-gradient(to right, var(--brand-purple-dark), var(--brand-purple));
+/* Main Footer Container */
+.footer-main {
+  background: linear-gradient(135deg, var(--brand-purple-dark, #4a148c) 0%, var(--brand-purple, #6a1b9a) 100%);
   color: white;
-  padding-top: 4rem;
-  padding-bottom: 2rem;
+  padding: 4rem 0 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Wave decoration */
-footer .absolute {
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Footer Container */
+.footer-wave-container {
+  position: relative;
+  padding-top: 1rem; /* Just add some spacing */
+}
+
+/* Footer Grid Layout */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+  padding: 1rem 0;
+}
+
+@media (min-width: 640px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    gap: 3rem;
+  }
+}
+
+/* Brand Section */
+.footer-brand {
+  grid-column: 1;
+  max-width: 100%;
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .footer-brand {
+    grid-column: 1 / -1;
+    max-width: 600px;
+  }
+}
+
+.footer-logo {
+  margin-bottom: 1.5rem;
+}
+
+.footer-brand-link {
+  font-family: 'Agent Orange', 'Fredoka', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-brand-link:hover {
+  color: var(--brand-peach, #ffccbc);
+  text-shadow: 0 0 10px rgba(255, 204, 188, 0.3);
+}
+
+.footer-description {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+/* Social Links */
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.footer-social-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Accessibility improvements */
+.footer-social-link:focus,
+.footer-link:focus,
+.footer-contact-link:focus,
+.footer-legal-link:focus,
+.footer-brand-link:focus {
+  outline: 2px solid var(--brand-peach, #ffccbc);
+  outline-offset: 2px;
+}
+
+/* Animation enhancements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-main {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Loading states */
+.footer-section {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.footer-section:nth-child(1) { animation-delay: 0.1s; }
+.footer-section:nth-child(2) { animation-delay: 0.2s; }
+.footer-section:nth-child(3) { animation-delay: 0.3s; }
+.footer-section:nth-child(4) { animation-delay: 0.4s; }
+
+/* Hover effects for better interactivity */
+.footer-contact-item:hover .footer-contact-icon {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.footer-contact-icon {
+  transition: all 0.3s ease;
+}
+
+/* Background pattern overlay for visual interest */
+.footer-main::before {
+  content: '';
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.03;
+  background-image: 
+    radial-gradient(circle at 20% 50%, white 2px, transparent 2px),
+    radial-gradient(circle at 80% 50%, white 2px, transparent 2px),
+    radial-gradient(circle at 40% 20%, white 1px, transparent 1px),
+    radial-gradient(circle at 60% 80%, white 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 50px 50px, 50px 50px;
+  pointer-events: none;
 }
 
-footer .transform {
-  transform: translateY(-100%);
+/* Footer Sections - using CSS Grid for layout */
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: fit-content;
 }
 
-footer svg {
-  width: 100%;
-  height: 100%;
+@media (max-width: 639px) {
+  .footer-section {
+    align-items: center;
+    text-align: center;
+  }
 }
 
-/* Footer sections */
-footer h3 {
+.footer-section-title {
   font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
   color: white;
+  margin-bottom: 1.5rem;
+  position: relative;
 }
 
-footer ul {
+.footer-section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  width: 2rem;
+  height: 2px;
+  background: var(--brand-peach, #ffccbc);
+  border-radius: 1px;
+}
+
+/* Footer Links */
+.footer-links {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-footer li {
+.footer-links li {
   margin-bottom: 0.75rem;
 }
 
-footer a {
+.footer-link {
+  display: flex;
+  align-items: center;
   color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
   transition: all 0.3s ease;
+  font-size: 0.95rem;
 }
 
-footer a:hover {
+.footer-link:hover {
   color: white;
-}
-
-footer a:hover[class*="translate"] {
   transform: translateX(0.25rem);
 }
 
-footer .material-icons {
+.footer-link .material-icons {
+  font-size: 0.875rem;
   margin-right: 0.5rem;
-  font-size: 0.75rem;
+  transition: transform 0.3s ease;
 }
 
-/* Social links */
-footer [class*="space-x"] {
+.footer-link:hover .material-icons {
+  transform: translateX(0.125rem);
+}
+
+/* Contact Information */
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-style: normal; /* Override default address styling */
   display: flex;
-  gap: 0.75rem;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-footer [class*="rounded-full"] {
-  border-radius: 9999px;
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
-
-footer [class*="rounded-full"]:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-footer a:hover[class*="-translate-y"] {
-  transform: translateY(-0.25rem);
-}
-
-/* Contact info */
-footer [class*="items-start"] {
+.footer-contact-item {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 1rem;
+  margin-bottom: 0; /* Reset since we're using gap */
 }
 
-footer [class*="text-white/60"] {
+.footer-contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.footer-contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  margin-right: 1rem;
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+.footer-contact-icon .material-icons {
+  font-size: 1.1rem;
+  color: var(--brand-peach, #ffccbc);
+}
+
+.footer-contact-info {
+  flex: 1;
+}
+
+.footer-contact-label {
   color: rgba(255, 255, 255, 0.6);
   font-size: 0.875rem;
   margin-bottom: 0.25rem;
+  font-weight: 500;
 }
 
-footer [class*="text-white"] {
+.footer-contact-link {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-contact-link:hover {
+  color: var(--brand-peach, #ffccbc);
+  text-shadow: 0 0 5px rgba(255, 204, 188, 0.3);
+}
+
+.footer-contact-text {
+  color: white;
+  margin: 0;
+  font-weight: 500;
+}
+
+.footer-contact-subtext {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  margin: 0.25rem 0 0;
+}
+
+/* Certifications */
+.footer-certifications {
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-cert-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.footer-cert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 640px) {
+  .footer-cert-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-cert-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.footer-cert-item {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+.footer-cert-item:hover {
+  color: white;
+  transform: translateX(0.25rem);
+}
+
+.footer-cert-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.75rem;
+  /* Remove the invert filter to show original badge colors */
+  filter: none;
+  opacity: 1;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  border-radius: 4px; /* Add slight rounding for better appearance */
+}
+
+.footer-cert-item:hover .footer-cert-icon {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Bottom Footer */
+.footer-bottom {
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  z-index: 2;
+}
+
+.footer-bottom-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom-content {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.footer-copyright {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .footer-legal {
+    justify-content: flex-end;
+  }
+}
+
+.footer-legal-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.footer-legal-link:hover {
   color: white;
 }
 
-footer a:hover[class*="text-brand-peach"] {
-  color: var(--brand-peach);
+.footer-legal-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background: var(--brand-peach, #ffccbc);
+  transition: width 0.3s ease;
 }
 
-/* Bottom footer */
-footer [class*="border-t"] {
-  padding-top: 2rem;
-  margin-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+.footer-legal-link:hover::after {
+  width: 100%;
 }
 
 /* Dark mode adjustments */
-.dark footer {
-  background: linear-gradient(to right, var(--brand-purple-dark), var(--brand-purple));
+.dark .footer-main {
+  background: linear-gradient(135deg, var(--brand-purple-dark, #4a148c) 0%, var(--brand-purple, #6a1b9a) 100%);
+}
+
+/* Responsive improvements */
+@media (max-width: 639px) {
+  .footer-main {
+    padding: 3rem 0 1.5rem;
+  }
+  
+  .footer-wave {
+    height: 3rem;
+    top: -1.5rem;
+  }
+  
+  .footer-grid {
+    gap: 2rem;
+    padding: 0.5rem 0;
+  }
+  
+  .footer-brand {
+    text-align: center;
+  }
+  
+  .footer-social {
+    justify-content: center;
+  }
+  
+  .footer-cert-list {
+    gap: 0.75rem;
+    align-items: center;
+  }
+  
+  .footer-cert-item {
+    font-size: 0.85rem;
+    justify-content: center;
+  }
+    .footer-cert-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: none; /* Ensure icons show original colors on mobile too */
+  }
+  
+  .footer-certifications {
+    text-align: center;
+  }
+}
+
+/* Print styles */
+@media print {
+  .footer-main {
+    background: none !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  .footer-wave {
+    display: none;
+  }
+  
+  .footer-social,
+  .footer-legal {
+    display: none;
+  }
+}
+
+/* Button reset for cookie settings */
+#open-cookie-settings {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  font: inherit !important;
+  cursor: pointer !important;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+#open-cookie-settings:hover {
+  color: white !important;
+}
+
+#open-cookie-settings::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background: var(--brand-peach, #ffccbc);
+  transition: width 0.3s ease;
+}
+
+#open-cookie-settings:hover::after {
+  width: 100%;
+}
+
+#open-cookie-settings:focus {
+  outline: 2px solid var(--brand-peach, #ffccbc);
+  outline-offset: 2px;
 }
