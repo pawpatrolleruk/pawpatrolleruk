@@ -8,6 +8,7 @@
 
 /* Component styles */
 @import './navigation.css';
+@import './mobile-nav-fix.css'; /* Mobile navigation fixes */
 @import './testimonials.css';
 @import './components.css';
 @import './footer.css';

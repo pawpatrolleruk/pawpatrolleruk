@@ -1,0 +1,264 @@
+/* Mobile Navigation Fallback CSS */
+
+/* Ensure mobile dropdown is visible on small screens */
+@media (max-width: 1023px) {
+  .mobile-dropdown {
+    display: block !important;
+    position: relative;
+  }
+  
+  .navbar-center {
+    display: none !important;
+  }
+  
+  .mobile-dropdown-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .mobile-dropdown-button:hover {
+    transform: scale(1.1);
+    background-color: rgba(106, 27, 154, 0.1);
+  }
+  
+  .mobile-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 320px;
+    margin-top: 0.5rem;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    z-index: 1000;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  
+  .mobile-dropdown-content.open {
+    display: block !important;
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  .mobile-dropdown-content .menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .mobile-dropdown-content .menu li {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    list-style: none;
+    position: relative;
+  }
+  
+  .mobile-dropdown-content .menu li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .mobile-dropdown-content .menu li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .mobile-dropdown-content .menu li a:hover,
+  .mobile-dropdown-content .menu li a:focus {
+    background-color: rgba(106, 27, 154, 0.1);
+    color: #6a1b9a;
+    transform: translateX(5px);
+  }
+  
+  .mobile-dropdown-content .menu li a.active {
+    background-color: rgba(106, 27, 154, 0.15);
+    color: #6a1b9a;
+    font-weight: 600;
+    border-left: 3px solid #6a1b9a;
+  }
+  
+  /* Dark mode support */
+  .dark .mobile-dropdown-content {
+    background-color: #1f2937;
+    color: #e5e7eb;
+  }
+  
+  .dark .mobile-dropdown-content .menu li a:hover,
+  .dark .mobile-dropdown-content .menu li a:focus {
+    background-color: #374151;
+  }
+}
+
+/* Very small mobile screens */
+@media (max-width: 480px) {
+  .mobile-dropdown-content {
+    width: 85% !important;
+    max-width: 280px !important;
+  }
+  
+  .navbar {
+    padding: 0.75rem 0 !important;
+  }
+}
+
+/* Desktop - ensure mobile dropdown is hidden */
+@media (min-width: 1024px) {
+  .mobile-dropdown {
+    display: none !important;
+  }
+  
+  .navbar-center {
+    display: flex !important;
+    align-items: center;
+  }
+}
+
+/* Animation keyframes for fallback */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+/* Hamburger menu icon animation */
+.menu-icon {
+  transition: transform 0.3s ease;
+}
+
+.mobile-dropdown-button[aria-expanded="true"] .menu-icon {
+  transform: rotate(90deg);
+}
+
+.mobile-dropdown-button[aria-expanded="true"] .menu-icon::before {
+  content: "close";
+}
+
+.mobile-dropdown-button[aria-expanded="false"] .menu-icon::before {
+  content: "menu";
+}
+
+/* Debug helper for mobile navigation - remove in production */
+.mobile-nav-debug {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  z-index: 9999;
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .mobile-nav-debug {
+    display: block;
+  }
+  .mobile-nav-debug::after {
+    content: "Mobile mode";
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-nav-debug {
+    display: block;
+  }
+  .mobile-nav-debug::after {
+    content: "Desktop mode";
+  }
+}
+
+/* Additional mobile navigation fixes */
+
+/* Ensure navbar has proper structure */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 4.5rem;
+  padding: 1rem 0;
+}
+
+.navbar-start {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* Container max-width and centering */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Menu basic styles */
+.menu {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.menu-horizontal {
+  flex-direction: row;
+}
+
+.menu li {
+  list-style: none;
+  position: relative;
+}
+
+.menu li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #374151;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.menu li a:hover {
+  color: #6a1b9a;
+  background-color: rgba(106, 27, 154, 0.05);
+}

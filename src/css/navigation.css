@@ -6,11 +6,11 @@
 @keyframes slideDown {
   0% {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateX(-50%) translateY(-10px) scale(0.95);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0) scale(1);
   }
 }
 
@@ -20,8 +20,8 @@
 }
 
 @keyframes scaleUp {
-  0% { transform: scale(0.95); }
-  100% { transform: scale(1); }
+  0% { transform: translateX(-50%) scale(0.95); }
+  100% { transform: translateX(-50%) scale(1); }
 }
 
 @keyframes borderPulse {
@@ -51,6 +51,44 @@
 
 .navbar-end {
   @apply flex items-center justify-end gap-2;
+}
+
+/* Mobile Navigation - Show dropdown button, hide desktop menu */
+@media (max-width: 1023px) {
+  .mobile-dropdown {
+    display: block !important;
+  }
+  
+  .navbar-center {
+    display: none !important;
+  }
+  
+  /* Better touch targets for mobile */
+  .mobile-dropdown-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  .mobile-dropdown-content .menu li a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+  }
+  
+  /* Ensure dropdown doesn't overflow on small screens */
+  .mobile-dropdown-content {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+}
+
+/* Tablet Navigation */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .mobile-dropdown-content {
+    width: 60%;
+    max-width: 400px;
+  }
 }
 
 .menu {
@@ -100,13 +138,20 @@
 
 /* Mobile Dropdown with enhanced styling */
 .mobile-dropdown {
-  position: static;
+  position: relative;
 }
 
 .mobile-dropdown-button {
-  @apply btn btn-ghost btn-circle;
   cursor: pointer;
   transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
 }
 
 .mobile-dropdown-button:hover {
@@ -117,16 +162,16 @@
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
-  right: 0;
-  width: 90%;
-  max-width: 90vw;
-  margin: 0.5rem auto;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  max-width: 320px;
+  margin-top: 0.5rem;
   background-color: white;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   border-radius: 0.75rem;
   padding: 1rem;
-  z-index: 100;
+  z-index: 1000;
   transform-origin: top center;
 }
 
@@ -184,17 +229,18 @@
 .mobile-dropdown-content.open {
   display: block;
   animation: slideDown 0.3s ease-out, scaleUp 0.3s ease-out;
+  transform: translateX(-50%) scale(1);
 }
 
 /* Desktop View Adjustments */
 @media (min-width: 1024px) {
   .navbar-center {
-    display: flex;
+    display: flex !important;
     align-items: center;
   }
 
   .mobile-dropdown {
-    display: none;
+    display: none !important;
   }
 
   /* Enhanced desktop menu */
@@ -211,5 +257,17 @@
   .menu-horizontal li a:hover {
     background-color: rgba(106, 27, 154, 0.05);
     transform: translateY(-2px);
+  }
+}
+
+/* Very small mobile screens */
+@media (max-width: 480px) {
+  .mobile-dropdown-content {
+    width: 85%;
+    max-width: 280px;
+  }
+  
+  .navbar {
+    padding: 0.75rem 0;
   }
 }

@@ -1,15 +1,18 @@
 <!-- Modern Navbar Component -->
 <header class="sticky top-0 z-50 transition-all duration-300 shadow-md backdrop-blur-md bg-white/95 hover:bg-white dark:bg-gray-900/95 dark:hover:bg-gray-900 dark:text-white">
+  <!-- Debug helper -->
+  <div class="mobile-nav-debug"></div>
+  
   <div class="container mx-auto">
     <div class="navbar min-h-[4.5rem]">
       <div class="navbar-start">
         <!-- Mobile dropdown with enhanced animation -->
-        <div class="mobile-dropdown">
-          <button class="mobile-dropdown-button flex items-center justify-center" 
+        <div class="mobile-dropdown lg:hidden">
+          <button class="mobile-dropdown-button flex items-center justify-center btn btn-ghost btn-circle" 
                   aria-expanded="false" 
                   aria-controls="mobile-menu" 
                   aria-label="Toggle navigation menu">
-            <span class="material-icons text-brand-purple dark:text-brand-peach">menu</span>
+            <span class="material-icons text-brand-purple dark:text-brand-peach menu-icon">menu</span>
           </button>
           <div class="mobile-dropdown-content dark:bg-gray-800 dark:text-white" 
                id="mobile-menu" 
@@ -33,7 +36,7 @@
       </div>
 
       <!-- Desktop navigation with modern styling -->
-      <div class="navbar-center">
+      <div class="navbar-center hidden lg:flex">
         <ul class="px-1 menu menu-horizontal font-fredoka dark:text-gray-200">
           <li><a href="index.html#home" id="nav-home" class="dark:hover:bg-gray-700">Home</a></li>
           <li><a href="index.html#about" id="nav-about" class="dark:hover:bg-gray-700">About Us</a></li>
@@ -100,21 +103,30 @@
 <!-- Enhanced JavaScript for navbar functionality -->
 <script type="module">
   document.addEventListener('DOMContentLoaded', function() {
-    // Mobile dropdown functionality
+    // Mobile dropdown functionality with enhanced error handling
     const mobileDropdownButton = document.querySelector('.mobile-dropdown-button');
     const mobileDropdownContent = document.querySelector('.mobile-dropdown-content');
 
+    console.log('Mobile dropdown elements:', { button: mobileDropdownButton, content: mobileDropdownContent });
+
     if (mobileDropdownButton && mobileDropdownContent) {
       mobileDropdownButton.addEventListener('click', function(event) {
+        event.preventDefault();
         event.stopPropagation();
+        
         const isExpanded = mobileDropdownContent.classList.contains('open');
+        const menuIcon = mobileDropdownButton.querySelector('.menu-icon');
+        
+        console.log('Mobile dropdown clicked, currently expanded:', isExpanded);
         
         if (isExpanded) {
           mobileDropdownContent.classList.remove('open');
           mobileDropdownButton.setAttribute('aria-expanded', 'false');
+          if (menuIcon) menuIcon.textContent = 'menu';
         } else {
           mobileDropdownContent.classList.add('open');
           mobileDropdownButton.setAttribute('aria-expanded', 'true');
+          if (menuIcon) menuIcon.textContent = 'close';
         }
       });
 
@@ -123,6 +135,8 @@
         if (!mobileDropdownButton.contains(event.target) && !mobileDropdownContent.contains(event.target)) {
           mobileDropdownContent.classList.remove('open');
           mobileDropdownButton.setAttribute('aria-expanded', 'false');
+          const menuIcon = mobileDropdownButton.querySelector('.menu-icon');
+          if (menuIcon) menuIcon.textContent = 'menu';
         }
       });
 
@@ -132,6 +146,8 @@
         link.addEventListener('click', function() {
           mobileDropdownContent.classList.remove('open');
           mobileDropdownButton.setAttribute('aria-expanded', 'false');
+          const menuIcon = mobileDropdownButton.querySelector('.menu-icon');
+          if (menuIcon) menuIcon.textContent = 'menu';
         });
       });
 
@@ -142,6 +158,8 @@
           mobileDropdownButton.click();
         }
       });
+    } else {
+      console.error('Mobile dropdown elements not found:', { button: mobileDropdownButton, content: mobileDropdownContent });
     }
 
     // Active link detection based on current page/section
