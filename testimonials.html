@@ -189,13 +189,11 @@
 
           // Find the card at the start of the requested page
           const cardIndex = pageIndex * itemsPerPage;
-          const card = allReviewsContainer.querySelector(`[data-index="${cardIndex}"]`);
-
-          if (card) {
+          const card = allReviewsContainer.querySelector(`[data-index="${cardIndex}"]`);          if (card) {
             // Scroll to the card
             allReviewsContainer.scrollTo({
               left: card.offsetLeft - allReviewsContainer.offsetLeft,
-              behavior: 'smooth'
+              behavior: 'auto'
             });
 
             // Update the active dot

@@ -180,6 +180,8 @@ function setupPagination(totalReviews) {
   const itemsPerPage = getItemsPerPage();
   const totalPages = Math.ceil(totalReviews / itemsPerPage);
   
+  console.log('Setting up pagination:', { totalReviews, itemsPerPage, totalPages });
+  
   // Only show pagination if we have more than one page
   if (totalPages <= 1) {
     paginationContainer.style.display = 'none';
@@ -248,21 +250,20 @@ function initCarouselNavigation() {
   });
   
   // Simple scroll tracking for button states and pagination dots
-  let scrollTimeout;
+  let isScrolling = false;
+  let isProgrammaticScroll = false;
+  let skipScrollUpdateUntil = 0;
+  let scrollDebounceTimeout;
+
   container.addEventListener('scroll', () => {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
+    if (isProgrammaticScroll) return;
+    clearTimeout(scrollDebounceTimeout);
+    scrollDebounceTimeout = setTimeout(() => {
       const maxScroll = container.scrollWidth - container.clientWidth;
       const currentScroll = container.scrollLeft;
-      
-      // Update button states
       prevButton.disabled = currentScroll <= 0;
       nextButton.disabled = currentScroll >= maxScroll - 10; // Small tolerance
-      
-      // Update pagination dots based on scroll position
       updateActiveDotFromScroll(container);
-      
-      console.log('Scroll position:', currentScroll, 'Max scroll:', maxScroll);
     }, 100);
   });
   
@@ -338,17 +339,15 @@ function scrollToPage(pageIndex) {
   const targetCard = cards[cardIndex];
   
   if (targetCard) {
-    console.log('Scrolling to card index:', cardIndex, 'Card position:', targetCard.offsetLeft);
-    
-    // Scroll to the target card's position
+    isProgrammaticScroll = true;
     container.scrollTo({
-      left: targetCard.offsetLeft - 24, // Subtract some margin
-      behavior: 'smooth'
+      left: scrollPosition,
+      behavior: 'auto'
     });
-    
-    // Update UI indicators immediately
     updateActiveDot(pageIndex);
     updateNavigationButtons(pageIndex);
+    // Reset the flag on the next animation frame so scroll handler can resume
+    requestAnimationFrame(() => { isProgrammaticScroll = false; });
   }
 }
 
@@ -395,7 +394,7 @@ function updateActiveDotFromScroll(container) {
   const scrollPosition = container.scrollLeft;
   
   // Calculate which page we're currently viewing based on scroll position
-  // We'll determine the page by finding which card is most visible
+  // Find the card that's most visible in the viewport center
   let currentPage = 0;
   const scrollCenter = scrollPosition + containerWidth / 2;
   
@@ -404,12 +403,13 @@ function updateActiveDotFromScroll(container) {
     const cardRight = cardLeft + card.offsetWidth;
     const cardCenter = cardLeft + card.offsetWidth / 2;
     
+    // If the card center is visible or the scroll center is within this card
     if (scrollCenter >= cardLeft && scrollCenter <= cardRight) {
       currentPage = Math.floor(index / itemsPerPage);
     }
   });
   
-  console.log('Scroll position:', scrollPosition, 'Container width:', containerWidth, 'Current page:', currentPage);
+  console.log('Scroll update - Position:', scrollPosition, 'Container width:', containerWidth, 'Current page:', currentPage, 'Items per page:', itemsPerPage);
   
   updateActiveDot(currentPage);
   updateNavigationButtons(currentPage);
@@ -420,9 +420,9 @@ function updateActiveDotFromScroll(container) {
  * @returns {number} Number of items per page
  */
 function getItemsPerPage() {
-  if (window.innerWidth >= CONFIG.breakpoints.desktop) return 3; // Desktop
-  if (window.innerWidth >= CONFIG.breakpoints.tablet) return 2; // Tablet
-  return 1; // Mobile default
+  if (window.innerWidth >= CONFIG.breakpoints.desktop) return 3; // Desktop: 3 items
+  if (window.innerWidth >= CONFIG.breakpoints.tablet) return 2; // Tablet: 2 items  
+  return 1; // Mobile: 1 item
 }
 
 /**

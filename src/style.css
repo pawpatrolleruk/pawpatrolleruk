@@ -295,7 +295,9 @@ h2.gradient-text {
 .review-image {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  background-color: #f8f9fa;
 }
 
 .review-image-placeholder {
@@ -559,7 +561,7 @@ h2.gradient-text {
   border-radius: 50%;
   background-color: #e0e0e0;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: none;
 }
 
 .pagination-dot.active {
