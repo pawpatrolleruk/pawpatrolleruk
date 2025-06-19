@@ -312,6 +312,15 @@ h2.gradient-text {
   background-attachment: fixed;
 }
 
+/* Move hero background to overflow left and show right side on mobile */
+@media screen and (max-width: 767px) {
+  .hero {
+    background-position: -30vw center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
 /* Badge styles */
 .badge-card {
   display: flex;

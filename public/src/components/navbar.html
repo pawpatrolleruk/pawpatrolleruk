@@ -122,12 +122,21 @@ document.addEventListener('DOMContentLoaded', function() {
   flex-wrap: wrap;
   padding: 1rem 0;
   position: relative;
+  gap: 0.5rem;
+}
+
+.logo {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .logo a {
   color: #6a1b9a;
   text-decoration: none;
   font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dark .logo a {
@@ -220,6 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-shrink: 0;
 }
 
 .action-btn {
@@ -308,6 +318,13 @@ document.addEventListener('DOMContentLoaded', function() {
     width: 2rem;
     height: 2rem;
   }
+}
+
+@media (max-width: 768px) {
+  .action-btn { width: 2rem; height: 2rem; }
+  .nav-actions { gap: 0.25rem; }
+  .nav-actions .social-link { width: 1.75rem; height: 1.75rem; }
+  .nav-actions .social-link svg { width: 1rem; height: 1rem; }
 }
 
 @media (max-width: 480px) {
