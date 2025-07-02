@@ -27,7 +27,7 @@ jobs:
           
       - run: npm ci
       - run: npm run test -- --run
-      - run: npm run build
+      - run: BASE_URL="/pawpatrolleruk2/" npm run build
 
       - uses: actions/upload-pages-artifact@v3
         with:

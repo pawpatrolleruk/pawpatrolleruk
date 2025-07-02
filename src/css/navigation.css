@@ -232,6 +232,68 @@
   transform: translateX(-50%) scale(1);
 }
 
+/* Basic styles for nav links and action buttons */
+.nav-link {
+  @apply block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 lg:hover:bg-transparent lg:border-0 lg:hover:text-brand-purple lg:p-0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.action-btn {
+  @apply p-2 text-gray-600 rounded-full hover:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors duration-300;
+}
+
+/* Animated underline for desktop nav links */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, var(--brand-purple) 0%, #9c27b0 100%);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 80%;
+  opacity: 1;
+}
+
+.nav-link.active {
+  color: var(--brand-purple);
+  font-weight: 500;
+}
+
+
+/* Hamburger Menu Animation */
+.hamburger span {
+  transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+#nav-toggle:checked ~ .hamburger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+#nav-toggle:checked ~ .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+#nav-toggle:checked ~ .hamburger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile menu visibility */
+@media (max-width: 1023px) {
+  #nav-menu {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+  }
+}
+
 /* Desktop View Adjustments */
 @media (min-width: 1024px) {
   .navbar-center {

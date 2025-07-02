@@ -154,8 +154,18 @@
   transition: all 0.3s ease;
 }
 
-.footer-social-full-link:hover svg {
+.footer-social-link svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  opacity: 0.85;
+  fill: white;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.footer-social-link:hover svg {
   opacity: 1;
+  fill: white;
   transform: scale(1.1);
 }
 
@@ -165,7 +175,7 @@
     align-items: center;
     text-align: center;
   }
-  
+
   .footer-social-full-link {
     justify-content: center;
   }
@@ -537,30 +547,30 @@
   .footer-main {
     padding: 3rem 0 1.5rem;
   }
-  
+
   .footer-wave {
     height: 3rem;
     top: -1.5rem;
   }
-  
+
   .footer-grid {
     gap: 2rem;
     padding: 0.5rem 0;
   }
-  
+
   .footer-brand {
     text-align: center;
   }
-  
+
   .footer-social {
     justify-content: center;
   }
-  
+
   .footer-cert-list {
     gap: 0.75rem;
     align-items: center;
   }
-  
+
   .footer-cert-item {
     font-size: 0.85rem;
     justify-content: center;
@@ -570,7 +580,7 @@
     height: 1.5rem;
     filter: none; /* Ensure icons show original colors on mobile too */
   }
-  
+
   .footer-certifications {
     text-align: center;
   }
@@ -583,11 +593,11 @@
     color: black !important;
     box-shadow: none !important;
   }
-  
+
   .footer-wave {
     display: none;
   }
-  
+
   .footer-social,
   .footer-legal {
     display: none;

@@ -5,10 +5,11 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "scripts": {
-    "dev": "vite --host",
+    "dev": "npm run copy-assets && vite --host",
+    "dev:watch": "npx nodemon --watch assets --watch src/components --ext html,css,js,json --exec \"npm run copy-assets\" & vite --host",
     "copy-assets": "node copy-assets.js",
     "prebuild": "npm run copy-assets",
     "build": "vite build",

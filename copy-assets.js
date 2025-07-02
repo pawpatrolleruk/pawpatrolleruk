@@ -119,7 +119,7 @@ function copyFiles(sourceDir, destDir, options = {}) {
   const { isImage = false, expectedFiles = [] } = options;
 
   if (!fs.existsSync(sourceDir)) {
-    console.log(`Source directory doesn't exist: ${sourceDir}`);
+    console.warn(`Source directory doesn't exist: ${sourceDir}. Please add the required assets to this directory.`);
     return;
   }
 

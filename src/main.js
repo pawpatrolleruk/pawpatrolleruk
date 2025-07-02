@@ -93,19 +93,19 @@ function setupFooterInteractions() {
  */
 async function loadPageComponents() {
   // Define component mappings (component path -> target selector)
+  const BASE_URL = import.meta.env.BASE_URL || '/';
   const componentMap = {
-    // Only load components if their target containers exist
     ...(document.querySelector('#navbar-container') && {
-      '/src/components/navbar.html': '#navbar-container'
+      [`${BASE_URL}src/components/navbar.html`]: '#navbar-container'
     }),
     ...(document.querySelector('#footer-container') && {
-      '/src/components/footer.html': '#footer-container'
+      [`${BASE_URL}src/components/footer.html`]: '#footer-container'
     }),
     ...(document.querySelector('#floating-buttons-container') && {
-      '/src/components/floating-buttons.html': '#floating-buttons-container'
+      [`${BASE_URL}src/components/floating-buttons.html`]: '#floating-buttons-container'
     }),
     ...(document.querySelector('#cookie-banner-container') && {
-      '/src/components/cookie-banner.html': '#cookie-banner-container'
+      [`${BASE_URL}src/components/cookie-banner.html`]: '#cookie-banner-container'
     })
   };  
   
@@ -149,9 +149,18 @@ function setupMobileNavigation() {
 
 function setupActiveNavigation() {
   const navLinks = document.querySelectorAll('#mobile-nav-menu a');
-  const currentPath = window.location.pathname.replace(/\/index\.html$/, '/');
+  const base = import.meta.env.BASE_URL || '/';
+  let currentPath = window.location.pathname;
+  if (base !== '/' && currentPath.startsWith(base)) {
+    currentPath = currentPath.slice(base.length - 1);
+  }
+  currentPath = currentPath.replace(/\/index\.html$/, '/');
   navLinks.forEach(link => {
-    if (link.pathname === currentPath) {
+    let linkPath = link.pathname;
+    if (base !== '/' && linkPath.startsWith(base)) {
+      linkPath = linkPath.slice(base.length - 1);
+    }
+    if (linkPath === currentPath) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');
