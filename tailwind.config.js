@@ -17,6 +17,7 @@ export default {
         'brand-peach': '#ffccbc',
       },
       fontFamily: {
+        'agent-orange': ['"Agent Orange"', 'sans-serif'],
         'fredoka': ['"Fredoka"', 'sans-serif'],
         'poppins': ['"Poppins"', 'sans-serif'],
       },

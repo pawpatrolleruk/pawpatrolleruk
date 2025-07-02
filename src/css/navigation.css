@@ -274,16 +274,22 @@
   transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
 }
 
-#nav-toggle:checked ~ .hamburger span:nth-child(1) {
+/* Fix for hamburger animation with updated structure */
+#nav-toggle:checked + .hamburger span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
 
-#nav-toggle:checked ~ .hamburger span:nth-child(2) {
+#nav-toggle:checked + .hamburger span:nth-child(2) {
   opacity: 0;
 }
 
-#nav-toggle:checked ~ .hamburger span:nth-child(3) {
+#nav-toggle:checked + .hamburger span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Updated mobile menu visibility for new structure */
+#nav-toggle:checked ~ #nav-menu {
+  display: block !important;
 }
 
 /* Mobile menu visibility */

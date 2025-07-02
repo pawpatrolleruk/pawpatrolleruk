@@ -131,24 +131,21 @@ async function loadPageComponents() {
 
 /**
  * Setup mobile navigation menu and active state
- * (migrated from main-fixed.js)
+ * (updated for new navbar structure)
  */
 function setupMobileNavigation() {
   setTimeout(() => {
-    const navToggle = document.getElementById('mobile-nav-toggle');
-    const navMenu = document.getElementById('mobile-nav-menu');
-    if (!navToggle || !navMenu) return;
-    navToggle.addEventListener('click', function () {
-      navMenu.classList.toggle('open');
-      navToggle.classList.toggle('open');
-      document.body.classList.toggle('nav-open');
-    });
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    
+    // Since we're using CSS-only toggle with checkbox, we don't need click handlers
+    // Just setup active navigation
     setupActiveNavigation();
   }, 200);
 }
 
 function setupActiveNavigation() {
-  const navLinks = document.querySelectorAll('#mobile-nav-menu a');
+  const navLinks = document.querySelectorAll('.nav-link');
   const base = import.meta.env.BASE_URL || '/';
   let currentPath = window.location.pathname;
   if (base !== '/' && currentPath.startsWith(base)) {
