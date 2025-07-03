@@ -9,8 +9,8 @@
         </a>
       </div>
 
-      <!-- Social Icons and Theme Toggle (Always Visible) -->
-      <div class="flex items-center gap-2">
+      <!-- Right side container for proper hamburger functionality -->
+      <div class="flex items-center gap-2 relative">
         <!-- Social Icons - Always visible -->
         <button id="theme-toggle" class="action-btn" aria-label="Toggle theme">
           <span id="theme-toggle-light-icon" class="material-icons text-lg">light_mode</span>
@@ -43,45 +43,65 @@
             </path>
           </svg>
         </a>
-        
+
         <!-- Mobile Menu Toggle -->
         <input type="checkbox" id="nav-toggle" class="hidden peer lg:hidden">
-        <label for="nav-toggle" class="hamburger cursor-pointer z-50 lg:hidden">
+        <label for="nav-toggle" class="hamburger cursor-pointer z-50 lg:hidden p-2 -m-2">
           <span class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 transition-transform duration-300"></span>
           <span class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 mt-1.5 transition-opacity duration-300"></span>
           <span class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 mt-1.5 transition-transform duration-300"></span>
         </label>
-      </div>
 
-      <!-- Navigation Menu -->
-      <div id="nav-menu"
-        class="hidden absolute top-full left-0 w-full bg-white/95 dark:bg-gray-900/95 lg:static lg:flex lg:w-auto lg:bg-transparent lg:dark:bg-transparent peer-checked:block">
-        <div
-          class="lg:flex lg:items-center lg:gap-8 container mx-auto px-4 py-4 lg:p-0 border-t border-gray-200 dark:border-gray-700 lg:border-none">
-          <!-- Main Nav Links -->
-          <ul class="menu flex flex-col gap-4 lg:flex-row lg:gap-4">
-            <li><a href="index.html#home" id="nav-home" class="nav-link">Home</a></li>
-            <li><a href="index.html#about" id="nav-about" class="nav-link">About</a></li>
-            <li><a href="index.html#services" id="nav-services" class="nav-link">Services</a></li>
-            <li><a href="testimonials.html" id="nav-testimonials" class="nav-link">Testimonials</a></li>
-            <li><a href="faq.html" id="nav-faq" class="nav-link">FAQs</a></li>
-            <li><a href="index.html#contact" id="nav-contact" class="nav-link">Contact</a></li>
-          </ul>
+        <!-- Navigation Menu -->
+        <div id="nav-menu"
+          class="hidden absolute top-full right-0 w-screen bg-white/95 dark:bg-gray-900/95 lg:static lg:flex lg:w-auto lg:bg-transparent lg:dark:bg-transparent peer-checked:block">
+          <div
+            class="lg:flex lg:items-center lg:gap-8 container mx-auto px-4 py-4 lg:p-0 border-t border-gray-200 dark:border-gray-700 lg:border-none">
+            <!-- Main Nav Links -->
+            <ul class="menu flex flex-col gap-4 lg:flex-row lg:gap-4">
+              <li><a href="index.html#home" id="nav-home" class="nav-link">Home</a></li>
+              <li><a href="index.html#about" id="nav-about" class="nav-link">About</a></li>
+              <li><a href="index.html#services" id="nav-services" class="nav-link">Services</a></li>
+              <li><a href="testimonials.html" id="nav-testimonials" class="nav-link">Testimonials</a></li>
+              <li><a href="faq.html" id="nav-faq" class="nav-link">FAQs</a></li>
+              <li><a href="index.html#contact" id="nav-contact" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-
-
     </div>
   </div>
 </nav>
 <script>
-  // Closes the mobile menu when any link inside the menu is clicked.
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      // Uncheck the checkbox to hide the menu
-      const toggle = document.getElementById('nav-toggle');
-      if (toggle) {
-        toggle.checked = false;
+  // Enhanced mobile menu functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.getElementById('nav-toggle');
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    // Ensure hamburger is clickable and functional
+    if (hamburger && navToggle) {
+      hamburger.addEventListener('click', function(e) {
+        e.preventDefault();
+        navToggle.checked = !navToggle.checked;
+      });
+    }
+
+    // Close mobile menu when any link inside the menu is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navToggle) {
+          navToggle.checked = false;
+        }
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (navToggle && navToggle.checked) {
+        if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+          navToggle.checked = false;
+        }
       }
     });
   });
