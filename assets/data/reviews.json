@@ -54,5 +54,47 @@
     "verified_booking": true,
     "rating": 5,
     "image_url": "tim.jpg"
+  },
+  {
+    "reviewer_name": "Hayley B.",
+    "review_text": "Reliable dog walker with good timekeeping, took great care of Molly my cockapoo, followed all my instructions and made sure my home as safe and secure. Would have no hesitation in recommending Kristina.",
+    "verified_booking": true,
+    "rating": 5,
+    "image_url": null
+  },
+  {
+    "reviewer_name": "Cat B.",
+    "review_text": "Kristina has been excellent at walking our 4 year old French bulldog Lenny. Thank you so much Kristina for talking great care of him and taking him on some lovely walks!",
+    "verified_booking": true,
+    "rating": 5,
+    "image_url": null
+  },
+  {
+    "reviewer_name": "Daniel U.",
+    "review_text": "Highly recommended service. Kristina is great with dogs, deeply cares about them which shows in how she handles them. Our dog loved going on walks with her. The fact that she also trained as a doggy first aider not only a great comfort, but also an indication of how much she cares about our four legged friends! So thumbs up and big thanks for Kristina!",
+    "verified_booking": true,
+    "rating": 5,
+    "image_url": null
+  },
+  {
+    "reviewer_name": "Joao O.",
+    "review_text": "Kristina was an AMAZING sitter! She was very attentive and kind and looked after both our cats so well. She went above and beyond our expectations. Our cats, Pepper and Pickle looked incredibly happy and I am sure they will miss her! Thank you again so much for all of your work and looking after our two cats :)",
+    "verified_booking": true,
+    "rating": 5,
+    "image_url": null
+  },
+  {
+    "reviewer_name": "Zivile T.",
+    "review_text": "We are so grateful for the amazing care Kristina provided for our cat, Shanty, while we were away. Shanty can be a little shy, but Kristina quickly made her feel comfortable and at ease. We received regular updates, including pictures, which really put our minds at rest. It was clear that Shanty was in great hands - happy, well-fed, and even a bit spoiled! Coming home to a relaxed and content cat made all the difference. We highly recommend Kristina for anyone looking for a responsible and caring pet sitter.",
+    "verified_booking": true,
+    "rating": 5,
+    "image_url": null
+  },
+  {
+    "reviewer_name": "Jolanta Z.",
+    "review_text": "I had the absolute pleasure of having Kristina as my cat sitter, and I cannot express how grateful I am for her exceptional service. From the moment she stepped into my home, I could tell that she truly has a passion for caring for animals. I highly recommend Kristina as a cat sitter to anyone in need of top-notch care for their feline companions. Her dedication, kindness, and expertise make her an exceptional choice. Thank you, Kristina, for taking such wonderful care of my cat Tigis!",
+    "verified_booking": true,
+    "rating": 5,
+    "image_url": null
   }
 ]
