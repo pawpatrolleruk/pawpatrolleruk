@@ -16,7 +16,7 @@ if (!fs.existsSync(publicReviewsDir)) {
 
 // Note: reviews.json is copied by copy-assets.js during the prebuild process
 
-const BASE_URL = process.env.BASE_URL || (process.env.NODE_ENV === 'production' ? '/pawpatrolleruk2/' : '/');
+const BASE_URL = process.env.BASE_URL || '/';
 
 export default defineConfig({
   root: './',
