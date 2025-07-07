@@ -2,6 +2,28 @@
  * Navigation styles
  */
 
+/* Social Top Bar Styles */
+.social-top-bar {
+  position: relative;
+  z-index: 60;
+}
+
+.social-top-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-top-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
 /* Animation Keyframes for Navigation */
 @keyframes slideDown {
   0% {
@@ -350,8 +372,23 @@
     width: 85%;
     max-width: 280px;
   }
-  
+
   .navbar {
     padding: 0.75rem 0;
+  }
+
+  /* Ensure mobile menu doesn't cause horizontal overflow */
+  #nav-menu {
+    right: 0;
+    left: auto;
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+  }
+
+  /* Prevent any element from causing horizontal scroll */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }

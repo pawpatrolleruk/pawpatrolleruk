@@ -6,14 +6,13 @@ import cookieConsentUI from './js/cookies/ui.js';
 import { revokeConsent } from './js/cookies/index.js';
 import { initTestimonials } from './js/testimonials.js';
 import ComponentLoader from './js/component-loader.js';
-import themeSwitcher from './js/theme-switcher.js';
+// Theme switcher removed on customer request
 
 // DOM ready event handler
 document.addEventListener('DOMContentLoaded', async function() {
   // Load reusable components
   await loadPageComponents();
-  // Setup theme toggle and footer interactions
-  setupThemeToggle();
+  // Setup footer interactions (theme toggle removed on customer request)
   setupFooterInteractions();
   // Setup mobile navigation (migrated from main-fixed.js)
   setupMobileNavigation();
@@ -22,50 +21,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 });
 
 /**
- * Setup theme toggle functionality
+ * Theme toggle functionality removed on customer request
  */
-function setupThemeToggle() {
-  const themeToggleBtn = document.getElementById('theme-toggle');
-
-  if (themeToggleBtn) {
-    // Bind click event to toggle theme
-    themeToggleBtn.addEventListener('click', function() {
-      themeSwitcher.toggleTheme();
-    });
-  }
-
-  // Update icons based on current theme when page loads
-  const currentTheme = themeSwitcher.getCurrentTheme();
-  const lightIcon = document.getElementById('theme-toggle-light-icon');
-  const darkIcon = document.getElementById('theme-toggle-dark-icon');
-
-  if (lightIcon && darkIcon) {
-    if (currentTheme === 'dark' || 
-        (currentTheme === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      lightIcon.classList.add('hidden');
-      darkIcon.classList.remove('hidden');
-    } else {
-      lightIcon.classList.remove('hidden');
-      darkIcon.classList.add('hidden');
-    }
-  }
-
-  // Listen for theme changes to update icons
-  window.addEventListener('themeChange', function(event) {
-    const lightIcon = document.getElementById('theme-toggle-light-icon');
-    const darkIcon = document.getElementById('theme-toggle-dark-icon');
-
-    if (lightIcon && darkIcon) {
-      if (event.detail.theme === 'dark') {
-        lightIcon.classList.add('hidden');
-        darkIcon.classList.remove('hidden');
-      } else {
-        lightIcon.classList.remove('hidden');
-        darkIcon.classList.add('hidden');
-      }
-    }
-  });
-}
 
 /**
  * Setup footer interactions
