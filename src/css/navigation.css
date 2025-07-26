@@ -366,6 +366,26 @@
   }
 }
 
+/* Enhanced mobile responsiveness */
+@media (max-width: 640px) {
+  .mobile-dropdown-content {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .navbar-component {
+    padding: 0.75rem 0;
+  }
+
+  /* Improved mobile menu positioning */
+  #nav-menu {
+    right: 0.75rem;
+    width: calc(100vw - 1.5rem);
+    max-width: 350px;
+    box-sizing: border-box;
+  }
+}
+
 /* Very small mobile screens */
 @media (max-width: 480px) {
   .mobile-dropdown-content {
@@ -373,15 +393,15 @@
     max-width: 280px;
   }
 
-  .navbar {
+  .navbar-component {
     padding: 0.75rem 0;
   }
 
   /* Ensure mobile menu doesn't cause horizontal overflow */
   #nav-menu {
-    right: 0;
+    right: 0.5rem;
     left: auto;
-    width: 100%;
+    width: calc(100vw - 1rem);
     max-width: 320px;
     box-sizing: border-box;
   }
@@ -390,5 +410,19 @@
   * {
     max-width: 100%;
     box-sizing: border-box;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 375px) {
+  #nav-menu {
+    right: 0.25rem;
+    width: calc(100vw - 0.5rem);
+    max-width: 300px;
+  }
+
+  .mobile-nav-link {
+    padding: 0.75rem 0.75rem !important;
+    font-size: 0.9rem;
   }
 }

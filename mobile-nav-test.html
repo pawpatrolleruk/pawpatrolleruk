@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Navigation Test - Paw Patroller UK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Test viewport sizes */
+        .test-viewport {
+            border: 2px solid #6a1b9a;
+            margin: 20px auto;
+            background: white;
+            position: relative;
+        }
+        
+        .viewport-320 { width: 320px; height: 568px; }
+        .viewport-375 { width: 375px; height: 667px; }
+        .viewport-414 { width: 414px; height: 736px; }
+        .viewport-768 { width: 768px; height: 1024px; }
+        
+        .viewport-label {
+            position: absolute;
+            top: -30px;
+            left: 0;
+            background: #6a1b9a;
+            color: white;
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+        
+        /* Include the mobile navigation styles */
+        .mobile-nav-menu {
+            transform: translateY(-10px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            z-index: 1000;
+            visibility: hidden;
+        }
+
+        #nav-toggle:checked ~ .mobile-nav-menu,
+        .peer:checked ~ .mobile-nav-menu {
+            display: block !important;
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+            visibility: visible;
+        }
+
+        #nav-toggle:checked + .hamburger .hamburger-line:nth-child(1),
+        .peer:checked + .hamburger .hamburger-line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        #nav-toggle:checked + .hamburger .hamburger-line:nth-child(2),
+        .peer:checked + .hamburger .hamburger-line:nth-child(2) {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        #nav-toggle:checked + .hamburger .hamburger-line:nth-child(3),
+        .peer:checked + .hamburger .hamburger-line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        
+        .mobile-nav-link {
+            display: flex !important;
+            align-items: center;
+            padding: 0.875rem 1rem !important;
+            border-radius: 0.5rem;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            color: #374151 !important;
+            text-decoration: none;
+            font-weight: 500;
+            min-height: 44px;
+            min-width: 44px;
+        }
+
+        .mobile-nav-link:hover {
+            background-color: rgba(106, 27, 154, 0.08) !important;
+            color: #6a1b9a !important;
+            transform: translateX(2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4">
+    <h1 class="text-2xl font-bold text-center mb-8 text-gray-800">Mobile Navigation Test</h1>
+    
+    <!-- 320px viewport test -->
+    <div class="test-viewport viewport-320">
+        <div class="viewport-label">320px (iPhone SE)</div>
+        <iframe src="http://localhost:3000/" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+    
+    <!-- 375px viewport test -->
+    <div class="test-viewport viewport-375">
+        <div class="viewport-label">375px (iPhone 12/13/14)</div>
+        <iframe src="http://localhost:3000/" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+    
+    <!-- 414px viewport test -->
+    <div class="test-viewport viewport-414">
+        <div class="viewport-label">414px (iPhone Plus)</div>
+        <iframe src="http://localhost:3000/" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+    
+    <!-- 768px viewport test -->
+    <div class="test-viewport viewport-768">
+        <div class="viewport-label">768px (iPad Portrait)</div>
+        <iframe src="http://localhost:3000/" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+    
+    <div class="text-center mt-8">
+        <p class="text-gray-600">Test the mobile navigation by clicking the hamburger menu in each viewport size.</p>
+        <p class="text-sm text-gray-500 mt-2">Check for: menu toggle, proper positioning, touch targets, and responsive behavior.</p>
+    </div>
+</body>
+</html>
