@@ -12,15 +12,35 @@ class ComponentLoader {
    * @param {string} targetSelector - CSS selector for the target element
    * @returns {Promise} - Promise that resolves when the component is loaded
    */
-  static async loadComponent(componentPath, targetSelector) {
+  static async loadComponent(componentPath, targetSelector, deps = {}) {
     try {
-      // Normalize path for GitHub Pages subdirectory
+      // Resolve path consistently for both dev ("/") and GitHub Pages ("/<repo>/")
       let finalPath = componentPath;
-      if (componentPath.startsWith('/')) {
-        const base = import.meta.env && import.meta.env.BASE_URL ? import.meta.env.BASE_URL : '/';
-        finalPath = base.replace(/\/$/, '') + componentPath;
+      // Vite injects import.meta.env.BASE_URL at build time
+      let base = '/';
+      try {
+        base = (import.meta && import.meta.env && import.meta.env.BASE_URL) || '/';
+      } catch (_) {
+        base = '/';
       }
-      const response = await fetch(finalPath);
+      const normalizedBase = base.endsWith('/') ? base.slice(0, -1) : base;
+
+      // If absolute URL, leave as is
+      if (/^https?:\/\//i.test(componentPath)) {
+        finalPath = componentPath;
+      // If already base-prefixed, leave as is
+      } else if (componentPath.startsWith(normalizedBase + '/')) {
+        finalPath = componentPath;
+      // If root-absolute path, prefix base
+      } else if (componentPath.startsWith('/')) {
+        finalPath = normalizedBase + componentPath;
+      // Otherwise treat as relative to base
+      } else {
+        finalPath = normalizedBase + '/' + componentPath;
+      }
+
+      const doFetch = deps.fetch || fetch;
+      const response = await doFetch(finalPath);
       if (!response.ok) {
         throw new Error(`Failed to load component: ${response.status} ${response.statusText} (${finalPath})`);
       }
@@ -58,7 +78,7 @@ class ComponentLoader {
    * @returns {Promise} - Promise that resolves when all components are loaded
    */
   static async initComponents(componentMap) {
-    const promises = Object.entries(componentMap).map(([componentPath, targetSelector]) => 
+    const promises = Object.entries(componentMap).map(([componentPath, targetSelector]) =>
       this.loadComponent(componentPath, targetSelector)
     );
     

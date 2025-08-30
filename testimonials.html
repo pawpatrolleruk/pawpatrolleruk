@@ -189,12 +189,28 @@
 
           // Find the card at the start of the requested page
           const cardIndex = pageIndex * itemsPerPage;
-          const card = allReviewsContainer.querySelector(`[data-index="${cardIndex}"]`);          if (card) {
-            // Scroll to the card
-            allReviewsContainer.scrollTo({
-              left: card.offsetLeft - allReviewsContainer.offsetLeft,
-              behavior: 'auto'
-            });
+          const card = allReviewsContainer.querySelector(`[data-index="${cardIndex}"]`);
+          if (card) {
+            // Compute a target scroll position that centers the card smoothly
+            const containerRect = allReviewsContainer.getBoundingClientRect();
+            const targetRect = card.getBoundingClientRect();
+            const deltaLeft = targetRect.left - containerRect.left;
+            let targetScrollLeft = allReviewsContainer.scrollLeft + deltaLeft;
+            targetScrollLeft -= (allReviewsContainer.clientWidth - card.clientWidth) / 2;
+
+            // Manual smooth scroll to exact card left to avoid mobile snap quirks
+            const start = allReviewsContainer.scrollLeft;
+            const end = card.offsetLeft;
+            const duration = 300;
+            const begin = performance.now();
+            const ease = t => t<.5 ? 2*t*t : -1+(4-2*t)*t;
+            function step(now){
+              const p = Math.min(1, (now - begin) / duration);
+              allReviewsContainer.scrollLeft = start + (end - start) * ease(p);
+              if (p < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+
 
             // Update the active dot
             updateAllActiveDot(pageIndex);

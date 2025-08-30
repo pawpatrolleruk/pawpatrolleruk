@@ -141,20 +141,21 @@
 .review-carousel {
   display: flex;
   overflow-x: auto;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   gap: 1.5rem;
   padding: 1rem 0.5rem;
-  scroll-snap-type: x mandatory;
-  scroll-padding: 0 1rem;
+  scroll-snap-type: none;
+  scroll-padding: 0 0.5rem;
   position: relative;
   /* Important: prevent touch event issues */
   touch-action: pan-x;
   user-select: none;
   /* Ensure all cards are aligned properly */
   align-items: stretch;
+  overscroll-behavior-x: contain;
 }
 
 .review-carousel::-webkit-scrollbar {
@@ -162,9 +163,9 @@
 }
 
 .review-carousel .review-card {
-  flex: 0 0 calc(100% - 2rem);
-  scroll-snap-align: center;
-  max-width: 400px;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   /* Ensure consistent height and alignment */
   min-height: 350px;
   display: flex;
@@ -174,13 +175,13 @@
 
 @media (min-width: 768px) {
   .review-carousel .review-card {
-    flex: 0 0 calc(50% - 1rem);
+    flex: 0 0 50%;
   }
 }
 
 @media (min-width: 1024px) {
   .review-carousel .review-card {
-    flex: 0 0 calc(33.333% - 1rem);
+    flex: 0 0 33.333%;
   }
 }
 

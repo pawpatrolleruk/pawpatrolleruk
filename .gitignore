@@ -37,3 +37,6 @@ Thumbs.db
 *.sw?
 /node_modules/
 .junie
+
+# Local helper scripts
+userinput.py
